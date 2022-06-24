@@ -314,4 +314,8 @@ p {
   .medals p::after {
     height: 80%;
   }
+
+  .card_letter_message > p {
+    font-size: 14px;
+  }
 }
