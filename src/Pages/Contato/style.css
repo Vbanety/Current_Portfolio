@@ -1,0 +1,128 @@
+
+.title_contact {
+  color: var(--title-page-color);
+}
+
+.column_contact {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  border-radius: 1rem 1rem 0 0;
+  background-color: var(--switch-color-to-cards);
+}
+
+.flex_contact {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: auto;
+  padding: 2rem;
+}
+
+.info_contacts {
+  width: 350px;
+  margin-bottom: auto
+}
+
+.info_contacts div {
+  margin: auto;
+  background-color: #B0B3B9;
+  box-shadow: 4px 4px 2px rgba(255, 255,255, .2);
+  border-radius: 1rem;
+  text-align: center;
+  margin-bottom: 1rem;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  font-size: 18px;
+}
+.info_contacts div p {
+  color: #075FE4
+}
+.info_contacts div img, p {
+  margin: auto;
+}
+
+form {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  width: 50%;
+  margin: auto 0 auto auto;
+}
+form input, form textarea {
+  font-weight: 600;
+  width: 100%;
+  min-height: 45px;
+  margin: .5rem;
+  padding: .5rem;
+  border-radius: .5rem;
+  border: none;
+  color: rgba(0,0,0,.5)
+}
+
+form input, textarea:focus {
+  outline: none;
+}
+form input:hover, form textarea:hover {
+  border: .2rem solid #075FE4;
+  padding: .3rem;
+}
+
+form button {
+  margin-left: auto;
+  width: 120px;
+  height: 45px;
+  background-color: #075FE4;
+  border: none;
+  border-radius: .3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  color: #fff
+}
+
+form button img {
+  margin-right: .5rem;
+}
+.list_icons_contact {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30%;
+  margin: auto 2rem 2rem auto;
+}
+
+.list_icons_contact li {
+  margin-left: auto;
+}
+ .list_icons_contact li a img {
+  width: 40px
+}
+
+@media (max-width: 700px) {
+  .container h1 {
+    margin-left: 0;
+  }
+  .flex_contact {
+    flex-direction: column;
+  }
+  .info_contacts {
+    width: 100%
+  }
+
+  form {
+    width: 100%;
+  }
+
+  .list_icons_contact {
+    width: 100%;
+  }
+
+  .list_icons_contact li {
+    margin: auto
+  }
+}

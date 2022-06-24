@@ -1,0 +1,111 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Outfit:wght@400;700&family=Poppins:ital,wght@0,400;0,600;0,700;1,400&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Outfit:wght@400;700&family=Poppins:ital,wght@0,400;0,600;0,700;1,400&family=Roboto:wght@400;700&display=swap');
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+}
+
+:root {
+  --switch-color-to-cards: #2B313C;
+  --background-color: #1B1F24;
+  --title-page-color: #F8E85F
+}
+
+body {
+  background-color: var(--background-color);
+}
+
+.allPages {
+  overflow: hidden;
+  position: relative;
+}
+
+.line_blue {
+  height: .2rem;
+  padding: 1rem 2rem;
+  width: 100%;
+  display: flex;
+  background-color: var(--background-color);
+}
+
+.title_page {
+  margin: 0 auto 0 0;
+  color: var(--title-page-color);
+}
+
+.line_blue hr {
+  border: none;
+  width: 100%;
+  height: .3rem;
+  background-color: #075FE4;
+}
+
+.home, .reports, .products {
+  display: flex;
+  height: 90vh;
+  align-items: center;
+  justify-content: center;
+  font-size: 3rem;
+}
+
+/* ANIMATE LETTERS */
+
+.animateText {
+  opacity: 1;
+  transition: all 1s;
+  animation-name: moving;
+  animation-duration: 500ms;
+}
+
+@keyframes moving {
+  0%   {transform: translateY(10px); opacity: 1;}
+  20%   {transform: translateY(8px); opacity: .8;}
+  40%  {transform: translateY(6px); opacity: .6;}
+  60%  {transform: translateY(4px); opacity: .4;}
+  80%  {transform: translateY(2px); opacity: .2;}
+  90%  {transform: translateY(2px); opacity: .1;}
+  100%  {transform: translateY(0); opacity: 0;}
+}
+
+.animateText.active {
+  opacity: 0;
+  /* transform: translateY(5px); */
+}
+
+.animateTextEn {
+  opacity: 0;
+  transition: all 1s;
+  animation-name: movingEn;
+  animation-duration: 500ms;
+}
+
+@keyframes movingEn {
+  0%   {transform: translateY(10px); opacity: 1;}
+  20%   {transform: translateY(8px); opacity: .8;}
+  40%  {transform: translateY(6px); opacity: .6;}
+  60%  {transform: translateY(4px); opacity: .4;}
+  80%  {transform: translateY(2px); opacity: .2;}
+  90%  {transform: translateY(2px); opacity: .1;}
+  100%  {transform: translateY(0); opacity: 0;}
+}
+
+.animateTextEn.active {
+  opacity: 1;
+  /* transform: translateY(5px); */
+}
+
+@media (min-width: 1400px) {
+  .container {
+    margin-top: 7vh;
+  }
+}
+
+@media (max-width: 600px) {
+  .line_blue {
+    padding: 1rem;
+  }
+}
