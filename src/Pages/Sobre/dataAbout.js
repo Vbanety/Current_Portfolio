@@ -29,7 +29,7 @@ export const aboutData = [
               }
             ],
             titleTestimonies: 'Testemunhos',
-            curiosity: 'Lorem ipsum dolor sit amet. Nam internos libero ut dolor suscipit et fugit nulla quo internos suscipit...Lorem ipsum dolor sit amet. Nam internos libero ut dolor suscipit et fugit nulla quo internos suscipit Lorem ipsum dolor sit amet. Nam internos libero ut dolor suscipit et fugit nulla quo internos suscipit...Lorem ipsum dolor sit amet. Nam internos libero ut dolor suscipit et fugit nulla quo internos suscipit...'
+            curiosity: 'O sucesso não ocorre por acaso. Em vez de dizer: isto não pode ser feito, continue questionando o seu cérebro: como isto pode ser feito? Comprometa­se com suas metas e encare os obstáculos como etapas para atingir o objetivo final. Faça parte da solução, ao invés de ser parte do problema. Faça bem­feito não só para agradar aos outros, mas principalmente para agradar a si próprio. Se você falha em planejar, está planejando falhar. - "Lair Ribeiro"'
           }
         ],
         testimonies: [
@@ -139,7 +139,7 @@ export const aboutData = [
               }
             ],
             titleTestimonies: 'Testimonies',
-            curiosity: 'Lorem ipsum dolor sit amet. Nam internos libero ut dolor suscipit et fugit nulla quo internos suscipit...Lorem ipsum dolor sit amet. Nam internos libero ut dolor suscipit et fugit nulla quo internos suscipit Lorem ipsum dolor sit amet. Nam internos libero ut dolor suscipit et fugit nulla quo internos suscipit...Lorem ipsum dolor sit amet. Nam internos libero ut dolor suscipit et fugit nulla quo internos suscipit...'
+            curiosity: "Success does not happen by ccident. Instead of saying: this can't be done, keep asking your brain: how can this be done? Commit to your goals and see obstacles as steps to reach the ultimate goal. Be part of the solution instead of being part of the problem. Do it well not only to please others, but mainly to please yourself. If you fail to plan, you are planning to fail. - 'Lair Ribeiro'"
           }
         ],
         testimonies: [

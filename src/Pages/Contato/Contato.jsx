@@ -1,4 +1,4 @@
-import React from 'react'
+import {useState, useEffect} from 'react'
 import Navbar from '../../Components/Navbar/Navbar'
 import Footer from '../../Components/Footer/Footer'
 import iconArroba from '../../../public/assets/at_arroba.svg'
@@ -11,8 +11,32 @@ import iconLinkedIn from '../../../public/assets/linkedin_white.svg'
 import iconTwitter from '../../../public/assets/twetter_white.svg'
 import Animation from '../../Components/Animation'
 import './style.css'
+import { TextContentData } from '../../Components/TextContent/TextContentData'
+
 
 export default function Sobre() {
+  const [languagesBrEn, setLanguagesBrEn] = useState(TextContentData[0].portuguese.contact)  
+  
+
+  useEffect(() => {
+    const dx = document.getElementById('container')
+    const verifyInputLanguages = dx.parentNode.parentNode.querySelector('.setLanguages').querySelectorAll('input')
+
+    verifyInputLanguages.forEach((e) => e.addEventListener('change', () => {
+      if(e.id == 'pt') {
+        setLanguagesBrEn(TextContentData[0].portuguese.contact)
+      } else if(e.id == 'en') {
+        setLanguagesBrEn(TextContentData[1].english.contact)
+        
+      } else {
+        return false
+      }
+    }
+    ))
+
+
+  }, [])
+  
   return (
     <div className="allPages">
       <Animation>
@@ -20,32 +44,32 @@ export default function Sobre() {
         <div className='line_blue'>
           <hr />
         </div>
-        <div className='container'>
-          <h1 className='title_contact'>Contato</h1>
+        <div id='container' className='container'>
+          <h1 className='title_contact'>{languagesBrEn.titlePage}</h1>
           <div className='column_contact'>
             <div className='flex_contact'>
               <div className="info_contacts">
                 <div>
                   <img src={iconArroba} />
-                  <p>vbanetyy@gmail.com</p>
+                  <p>{languagesBrEn.myEmail}</p>
                 </div>
 
                 <div>
                   <img src={iconPhoneWight} />
-                  <p>(12) 9 8259-0753</p>
+                  <p>{languagesBrEn.phone}</p>
                 </div>
 
                 <div>
                   <img src={iconLocation} />
-                  <p>São José dos Campos - SP</p>
+                  <p>{languagesBrEn.address}</p>
                 </div>
               </div>
 
               <form>
-                <input type='email' id='email' placeholder="Email.." />
-                <input type='text' id='userName' placeholder="Nome" />
-                <textarea type="text" placeholder='Mensagem' rows="10" cols="40"></textarea>
-                <button><img src={iconSend} /> Enviar
+                <input type='email' id='email' placeholder={languagesBrEn.fieldEmail} />
+                <input type='text' id='userName' placeholder={languagesBrEn.fieldName} />
+                <textarea type="text" placeholder={languagesBrEn.fieldMessage} rows="10" cols="40"></textarea>
+                <button><img src={iconSend} /> {languagesBrEn.sendSend}
                 </button>
               </form>
             </div>

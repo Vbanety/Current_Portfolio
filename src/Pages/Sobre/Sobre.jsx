@@ -23,10 +23,8 @@ export default function Contato() {
     verifyInputLanguages.forEach((e) => e.addEventListener('change', () => {
       if(e.id == 'pt') {
         setLanguagesBrEn(pt)
-        console.log(languagesBrEn)
       } else if(e.id == 'en') {
         setLanguagesBrEn(en)
-        console.log(languagesBrEn)
       } else {
         return false
       }
@@ -102,8 +100,7 @@ export default function Contato() {
               })}
             </div>
             <div className="card_letter_message">
-              <p>Lorem ipsum dolor sit amet. Nam internos libero ut dolor suscipit et fugit nulla quo internos suscipit...Lorem ipsum dolor sit amet. Nam internos libero ut dolor suscipit et fugit nulla quo internos suscipit
-                Lorem ipsum dolor sit amet. Nam internos libero ut dolor suscipit et fugit nulla quo internos suscipit...Lorem ipsum dolor sit amet. Nam internos libero ut dolor suscipit et fugit nulla quo internos suscipit...</p>
+              <p>{data.aboutMe[0].curiosity}</p>
               <img src={card_message} alt="card_Message" />
             </div>
           </div>
