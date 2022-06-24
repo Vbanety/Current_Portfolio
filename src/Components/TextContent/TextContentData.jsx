@@ -12,7 +12,7 @@ export const TextContentData = [
       
       shills: {
         titlePage: 'Habilidades',
-        titleTechs: 'Tecnologia',
+        titleTechs: 'Tecnologias',
         titleOne: 'Estrutura',
         titleTwo: 'Layout de páginas',
         titleThree: 'Criação de lógicas',
