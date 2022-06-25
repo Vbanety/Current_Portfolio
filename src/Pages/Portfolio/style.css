@@ -236,4 +236,8 @@
   .textContent img {
     max-width: 90%;
   }
+
+  .content {
+    min-height: 70% !important;
+  }
 }
