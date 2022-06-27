@@ -11,15 +11,21 @@ function Navbar() {
   const [sidebar, setSidebar] = useState(false)
   const btnBrRef = useRef(null)
   const btnEnRef = useRef(null)
+  const sideBarRef = useRef(null)
   const showSidebar = () => setSidebar(!sidebar)
 
   const refSidebar = useRef(null)
 
   useEffect(() => {
+    const navHidden = document.getElementById('navbarZ')
+    
     function handleClickOutSide(event) {
       if (refSidebar.current && !refSidebar.current.contains(event.target)) {
         { setSidebar(false) }
+        sideBarRef.current.className !== 'navbar' ? navHidden.classList.add('active') : navHidden.classList.remove('active')
       }
+
+
     }
 
     document.addEventListener("mousedown", handleClickOutSide);
@@ -33,7 +39,7 @@ function Navbar() {
   return (
     <>
 
-      <div className="navbar">
+      <div id="navbarZ" className="navbar" ref={sideBarRef}>
         <Link to="" className="menu-bars">
           <FontAwesomeIcon style={{ color: '#075fe4' }} icon={faBars} onClick={showSidebar} />
         </Link>

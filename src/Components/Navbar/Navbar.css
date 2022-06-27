@@ -32,6 +32,10 @@
   background: none;
 }
 
+.navbar.active {
+  z-index: 0;
+}
+
 .navbar-toggle {
   display: flex;
 }

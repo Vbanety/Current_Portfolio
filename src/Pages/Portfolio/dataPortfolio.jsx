@@ -70,7 +70,7 @@ export const dataPortfolio = [
       {
         index: 2,
         title: 'NLW2 Rocketseat - Proffy',
-        text: 'Projeto densenvolvido por video aulas da semana da next-lavel-week na Rocketseat, onde absorvi muito conteúdo voltado para react.js.',
+        text: 'Projeto densenvolvido por video aulas da semana da next-level-week na Rocketseat, onde absorvi muito conteúdo voltado para react.js.',
         icons: [
           {
             html: reactIcon,

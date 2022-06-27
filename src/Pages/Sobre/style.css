@@ -177,7 +177,7 @@ p {
   margin: auto;
 }
 
-.person_name > img {
+.person_name a > img {
   width: 70px;
   border-radius: 50%;
   box-shadow: 4px 4px 5px rgba(255, 255, 255, .2);

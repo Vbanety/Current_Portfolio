@@ -39,6 +39,7 @@ export const aboutData = [
             person: 'https://avatars.githubusercontent.com/u/61259055?s=100&v=4',
             name: 'José Silva',
             position: 'SysAdmin DevOps',
+            link: 'https://www.linkedin.com/in/jose-junior-silva/',
             star: [
               {
                 one: starIcon
@@ -65,6 +66,7 @@ export const aboutData = [
             person: 'https://media-exp2.licdn.com/dms/image/C4D03AQHbPvopzG62tA/profile-displayphoto-shrink_200_200/0/1616934787177?e=1661385600&v=beta&t=ANIKp6w3qVYFqKCXRNx04yUgC_K5Zp0RCu2yTK6w2UQ',
             name: 'L. Felipe Camargo',
             position: 'Mobile & Web FronEnd',
+            link: 'https://www.linkedin.com/in/lfelipe-camargo/',
             star: [
               {
                 one: starIcon
@@ -88,9 +90,10 @@ export const aboutData = [
           
           {
             index: 2,
-            person: 'https://avatars.githubusercontent.com/u/59374587?v=4',
-            name: 'Felipe Sales',
-            position: 'Flutter Developer',
+            person: 'https://media-exp2.licdn.com/dms/image/C4D03AQEdwgTt8QU1jA/profile-displayphoto-shrink_200_200/0/1516816691829?e=1661990400&v=beta&t=xYrZkxSY-6A472ky7OpTPF9icDWGM1tlvpto6-zfKlg',
+            name: 'André Estevão',
+            position: 'Dev. FullStack & Comunicador Social',
+            link: 'https://www.linkedin.com/in/andreaesil/',
             star: [
               {
                 one: starIcon
@@ -108,7 +111,7 @@ export const aboutData = [
                 five: starIcon
               }
             ],
-            description: 'Lorem ipsum dolor sit amet. Nam internos libero ut dolor suscipit et fugit nulla quo internos suscipit...Lorem ipsum dolor sit amet. Nam internos libero ut dolor suscipit et fugit nulla quo internos suscipit...',
+            description: 'O Vinícius é um profissional que, acima de outras qualidades, é dedicado. Muito focado e quando aceita uma missão, procura cumpri-la da melhor forma e trata com seriedade os projetos os quais participa. Eu participei de dois projetos com ele e em ambos ele depositou seu profissionalismo, buscando entregar o melhor código.',
             iconCote: coteIcon
           },
         ]
@@ -149,6 +152,7 @@ export const aboutData = [
             person: 'https://avatars.githubusercontent.com/u/61259055?s=100&v=4',
             name: 'José Silva',
             position: 'SysAdmin DevOps',
+            link: 'https://www.linkedin.com/in/jose-junior-silva/',
             star: [
               {
                 one: starIcon
@@ -175,6 +179,7 @@ export const aboutData = [
             person: 'https://media-exp2.licdn.com/dms/image/C4D03AQHbPvopzG62tA/profile-displayphoto-shrink_200_200/0/1616934787177?e=1661385600&v=beta&t=ANIKp6w3qVYFqKCXRNx04yUgC_K5Zp0RCu2yTK6w2UQ',
             name: 'L. Felipe Camargo',
             position: 'Mobile & Web FronEnd',
+            link: 'https://www.linkedin.com/in/lfelipe-camargo/',
             star: [
               {
                 one: starIcon
@@ -198,9 +203,10 @@ export const aboutData = [
           
           {
             index: 2,
-            person: 'https://avatars.githubusercontent.com/u/59374587?v=4',
-            name: 'Felipe Sales',
-            position: 'Flutter Developer',
+            person: 'https://media-exp2.licdn.com/dms/image/C4D03AQEdwgTt8QU1jA/profile-displayphoto-shrink_200_200/0/1516816691829?e=1661990400&v=beta&t=xYrZkxSY-6A472ky7OpTPF9icDWGM1tlvpto6-zfKlg',
+            name: 'André Estevão',
+            position: 'Dev. FullStack & Social Communicator',
+            link: 'https://www.linkedin.com/in/andreaesil/',
             star: [
               {
                 one: starIcon
@@ -218,7 +224,7 @@ export const aboutData = [
                 five: starIcon
               }
             ],
-            description: 'Lorem ipsum dolor sit amet. Nam internos libero ut dolor suscipit et fugit nulla quo internos suscipit...Lorem ipsum dolor sit amet. Nam internos libero ut dolor suscipit et fugit nulla quo internos suscipit...',
+            description: 'Vinícius is a professional who, above other qualities, is dedicated. Very focused and when he accepts a mission, he tries to fulfill it in the best way and treats the projects in which he participates seriously. I participated in two projects with him and in both he put his professionalism, seeking to deliver the best code.',
             iconCote: coteIcon
           },
         ]

@@ -80,7 +80,9 @@ export default function Contato() {
                   <div className="depoiments" key={item.index}>
                     <div className="top_info">
                       <div className='person_name'>
+                        <a href={item.link} target="blank">
                         <img src={item.person} alt="person" />
+                        </a>
                         <div>
                           <h4>{item.name}</h4>
                           <p>{item.position}</p>
