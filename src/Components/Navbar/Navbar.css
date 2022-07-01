@@ -17,6 +17,7 @@
   align-items: center;
   justify-content: space-between;
   width: 300px;
+  position: relative;
 }
 
 .header_avatar h1 {
@@ -173,6 +174,28 @@ span {
     min-height: 50vh;
 }
 }
+@media (max-width: 820px) {
+  .flex_contact {
+    flex-direction: column;
+  }
+
+  .info_contacts {
+    width: 100% !important;
+  }
+
+  .info_contacts div {
+    flex-direction: row !important;
+  }
+
+  form {
+    width: 100% !important;
+  }
+}
+@media (max-width: 768px) {
+  .navbar {
+    height: 8vh;
+  }
+}
 
 @media (max-width: 600px) {
   .navbar {
@@ -186,5 +209,9 @@ span {
   .header_avatar h1 {
     color: #fff;
     font-size: 22px;
+  }
+
+  .info_contacts div {
+    flex-direction: column !important;
   }
 }

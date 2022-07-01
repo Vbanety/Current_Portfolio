@@ -1,24 +1,39 @@
 
 import React, { useState, useRef, useEffect } from 'react'
 import { Link } from 'react-router-dom'
+import { DataPlayer } from '../Player/dataPlayer'
 import { SidebarData } from '../Navbar/SidebarData'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faBars, faClose, faCode } from '@fortawesome/free-solid-svg-icons'
 import headerAvatar from '../../../public/assets/headerAvatar.svg'
 import './Navbar.css'
 
+import PlayerMusic from '../Player/PlayerMusic'
+
 function Navbar() {
+  const [songs, setSongs] = useState(DataPlayer)  
+  const [isPlaying, setIsPlaying] = useState(false)
+  const [currentSong, setCurrentSong] = useState(DataPlayer[0])
   const [sidebar, setSidebar] = useState(false)
   const btnBrRef = useRef(null)
   const btnEnRef = useRef(null)
   const sideBarRef = useRef(null)
   const showSidebar = () => setSidebar(!sidebar)
-
+  const audioElem = useRef()
   const refSidebar = useRef(null)
+
+
+  useEffect(() => {
+    if(isPlaying) {
+      audioElem.current.play()
+    } else {
+      audioElem.current.pause()
+    }
+  }, [isPlaying])
+
 
   useEffect(() => {
     const navHidden = document.getElementById('navbarZ')
-    
     function handleClickOutSide(event) {
       if (refSidebar.current && !refSidebar.current.contains(event.target)) {
         { setSidebar(false) }
@@ -43,7 +58,7 @@ function Navbar() {
         <Link to="" className="menu-bars">
           <FontAwesomeIcon style={{ color: '#075fe4' }} icon={faBars} onClick={showSidebar} />
         </Link>
-        <div className='header_avatar'>
+         <div className='header_avatar'> {/* will be relative position*/}
           <div className="setLanguages">
             <div className='getPtBr'>
               <input id="pt" type='radio' name='radio' ref={btnBrRef} />
@@ -55,7 +70,17 @@ function Navbar() {
             </div>
           </div>
           <FontAwesomeIcon icon={faCode} style={{ color: '#075FE4', fontSize: '32', fontWeight: 'bold' }} />
-          <h1>Vini-IT</h1>
+
+          <PlayerMusic 
+            songs={songs} 
+            setSongs={setSongs} 
+            isPlaying={isPlaying} 
+            setIsPlaying={setIsPlaying}
+            audioElem={audioElem}
+            currentSong={currentSong}
+            setCurrentSong={setCurrentSong}
+          />
+
           <img src={headerAvatar} />
         </div>
       </div>

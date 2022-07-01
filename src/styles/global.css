@@ -62,13 +62,40 @@ body {
 }
 
 @keyframes moving {
-  0%   {transform: translateY(10px); opacity: 1;}
-  20%   {transform: translateY(8px); opacity: .8;}
-  40%  {transform: translateY(6px); opacity: .6;}
-  60%  {transform: translateY(4px); opacity: .4;}
-  80%  {transform: translateY(2px); opacity: .2;}
-  90%  {transform: translateY(2px); opacity: .1;}
-  100%  {transform: translateY(0); opacity: 0;}
+  0% {
+    transform: translateY(10px);
+    opacity: 1;
+  }
+
+  20% {
+    transform: translateY(8px);
+    opacity: .8;
+  }
+
+  40% {
+    transform: translateY(6px);
+    opacity: .6;
+  }
+
+  60% {
+    transform: translateY(4px);
+    opacity: .4;
+  }
+
+  80% {
+    transform: translateY(2px);
+    opacity: .2;
+  }
+
+  90% {
+    transform: translateY(2px);
+    opacity: .1;
+  }
+
+  100% {
+    transform: translateY(0);
+    opacity: 0;
+  }
 }
 
 .animateText.active {
@@ -84,18 +111,176 @@ body {
 }
 
 @keyframes movingEn {
-  0%   {transform: translateY(10px); opacity: 1;}
-  20%   {transform: translateY(8px); opacity: .8;}
-  40%  {transform: translateY(6px); opacity: .6;}
-  60%  {transform: translateY(4px); opacity: .4;}
-  80%  {transform: translateY(2px); opacity: .2;}
-  90%  {transform: translateY(2px); opacity: .1;}
-  100%  {transform: translateY(0); opacity: 0;}
+  0% {
+    transform: translateY(10px);
+    opacity: 1;
+  }
+
+  20% {
+    transform: translateY(8px);
+    opacity: .8;
+  }
+
+  40% {
+    transform: translateY(6px);
+    opacity: .6;
+  }
+
+  60% {
+    transform: translateY(4px);
+    opacity: .4;
+  }
+
+  80% {
+    transform: translateY(2px);
+    opacity: .2;
+  }
+
+  90% {
+    transform: translateY(2px);
+    opacity: .1;
+  }
+
+  100% {
+    transform: translateY(0);
+    opacity: 0;
+  }
 }
 
 .animateTextEn.active {
   opacity: 1;
-  /* transform: translateY(5px); */
+}
+
+/* PLAYER NAVTOP STYLE */
+
+audio {
+  width: 11rem;
+  height: 2rem;
+  margin-bottom: 1rem;
+}
+
+.hiddenPlayer::after {
+  content: '';
+  position: absolute;
+  left: 95px;
+  top: -16px;
+  background: #000;
+  width: 1rem;
+  height: 1rem;
+  clip-path: polygon(0% 100%, 50% 0%, 100% 100%, 0% 100%);
+}
+
+.hiddenPlayer {
+  position: absolute;
+  left: 90px;
+  bottom: -14.2rem;
+  width: 12rem;
+  height: auto;
+  background-color: rgba(0, 0, 0, .6);
+  border-radius: .5rem;
+  flex-direction: column;
+  align-items: center;
+  display: none;
+  padding: 1rem;
+  transform: translateY(-10px);
+  opacity: 1;
+  transition: all .5s ease;
+}
+
+.hiddenPlayer.active {
+  display: flex;
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.progress {
+  background-color: #075FE4;
+  height: .2rem;
+  margin: 0  auto .5rem 0;
+  border-radius: .1rem;
+}
+
+.progress:hover {
+  cursor: pointer;
+}
+
+.closePlayer {
+  position: absolute;
+  right: -.2rem;
+  top: -.6rem;
+  color: #fff !important;
+}
+
+.closePlayer:hover {
+  cursor: pointer;
+}
+
+.hiddenPlayer div {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: 90%;
+}
+
+.hiddenPlayer img {
+  width: 5rem;
+  margin: 1rem auto;
+  border-radius: 50%;
+}
+
+.hiddenPlayer b {
+  color: #fff;
+}
+
+.hiddenPlayer p {
+  color: #075FE4;
+  width: 100%;
+  text-align: center;
+  position: relative;
+}
+
+.hiddenPlayer p svg path:hover {
+  fill: #075FE4
+}
+
+
+
+.btn_player {
+  background-color: #fff;
+  border: 2px solid #fff;
+  width: 1.8rem;
+  height: 1.8rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.btn_player::before {
+  content: ' ';
+  position: absolute;
+  width: 1.8rem !important;
+  height: 1.8rem !important;
+  border-radius: 50%;
+  left: 0;
+  top: 0;
+  background-color: transparent;
+}
+
+.btn_player:hover {
+  cursor: pointer;
+}
+
+.btn_search svg path {
+  fill: #fff
+}
+.btn_search svg path:hover {
+  fill: #075FE4
+}
+
+.btn_search svg:hover {
+  cursor: pointer;
 }
 
 @media (min-width: 1400px) {
@@ -107,5 +292,14 @@ body {
 @media (max-width: 600px) {
   .line_blue {
     padding: 1rem;
+  }
+  .hiddenPlayer {
+    left: 12rem;
+  }
+}
+
+@media (max-width: 440px) {
+  .hiddenPlayer {
+    left: 4.5rem;
   }
 }

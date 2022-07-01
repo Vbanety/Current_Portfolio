@@ -75,9 +75,9 @@ export default function Sobre() {
             </div>
 
             <ul className='list_icons_contact'>
-              <li><a href=''><img src={iconTwitter} /></a></li>
-              <li><a href=''><img src={iconInstagram} /></a></li>
-              <li><a href=''><img src={iconLinkedIn} /></a></li>
+              <li><a href='https://twitter.com/Twitte3Vinicius' target="blank"><img src={iconTwitter} /></a></li>
+              <li><a href='https://www.instagram.com/viny_batista_10/' target="blank"><img src={iconInstagram} /></a></li>
+              <li><a href='https://www.linkedin.com/in/vinicius-batista-815983137/' target="blank"><img src={iconLinkedIn} /></a></li>
             </ul>
           </div>
         </div>
