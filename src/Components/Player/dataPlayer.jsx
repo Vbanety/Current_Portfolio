@@ -9,28 +9,28 @@ export const DataPlayer = [
     title: 'Jump',
     author: 'Van Halen',
     picture: vanHalenPicure,
-    player: '/public/assets/sounds/Van_Halen_-_Jump.mp3'
+    player: '/public/assets/sounds/Van_Halen_-_Jump.ogg'
   },
 
   {
     title: "Don't Stop Believin",
     author: 'Journey',
     picture: journeyPicture,
-    player: "/public/assets/sounds/Journey - Don't Stop Believin.mp3"
+    player: "/public/assets/sounds/Journey - Don't Stop Believin.ogg"
   },
 
   {
     title: "Summer of '69",
     author: "Bryan Adams",
     picture: bryanPicture,
-    player: "/public/assets/sounds/Bryan Adams - Summer of 69.mp3"
+    player: "/public/assets/sounds/Bryan Adams - Summer of 69.ogg"
   },
 
   {
     title: "Girls Just Want",
     author: "Cyndi Louper",
     picture: cyndiPicure,
-    player: "/public/assets/sounds/Girls_Just_Wanna_Have_Fun.mp3"
+    player: "/public/assets/sounds/Girls_Just_Wanna_Have_Fun.ogg"
   }
 
 ]
