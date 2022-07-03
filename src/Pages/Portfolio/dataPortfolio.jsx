@@ -69,30 +69,6 @@ export const dataPortfolio = [
 
       {
         index: 2,
-        title: 'NLW2 Rocketseat - Proffy',
-        text: 'Projeto densenvolvido por video aulas da semana da next-level-week na Rocketseat, onde absorvi muito conteúdo voltado para react.js.',
-        icons: [
-          {
-            html: reactIcon,
-            css: tsIcon,
-            js: jsIcon,
-            react: sqlIcon,
-            bootstrap: cssIcon,
-            php: phpIcon,
-            laravel: laravelIcon,
-            sql: reactIcon,
-            apiIcon: apiIcon,
-            github: gitHubIcon,
-            www: wwwIcon
-          },
-        ],
-        repo: 'https://github.com/Vbanety/All-NLW-bootcamps/tree/main/NLW%2302',
-        site: 'https://proffy-neon.vercel.app/',
-        more: 'modal2'
-      },
-
-      {
-        index: 3,
         title: 'NLW1 Rocketseat - Ecoleta',
         text: 'Iniciando com os estudos na plataforma Rocketseat, acompanhando a semana com next-level-week desenvolvendo um projeto social "Ecoleta website".',
         icons: [
@@ -113,6 +89,29 @@ export const dataPortfolio = [
         repo: 'https://github.com/Vbanety/All-NLW-bootcamps/tree/main/NLW%2301',
         site: 'https://morning-dusk-66700.herokuapp.com/',
         more: 'modal3'
+      },
+      {
+        index: 3,
+        title: 'NLW2 Rocketseat - Proffy',
+        text: 'Projeto densenvolvido por video aulas da semana da next-level-week na Rocketseat, onde absorvi muito conteúdo voltado para react.js.',
+        icons: [
+          {
+            html: reactIcon,
+            css: tsIcon,
+            js: jsIcon,
+            react: sqlIcon,
+            bootstrap: cssIcon,
+            php: phpIcon,
+            laravel: laravelIcon,
+            sql: reactIcon,
+            apiIcon: apiIcon,
+            github: gitHubIcon,
+            www: wwwIcon
+          },
+        ],
+        repo: 'https://github.com/Vbanety/All-NLW-bootcamps/tree/main/NLW%2302',
+        site: 'https://proffy-neon.vercel.app/',
+        more: 'modal2'
       },
 
       {
@@ -216,30 +215,6 @@ export const dataPortfolio = [
 
       {
         index: 2,
-        title: 'NLW Rocketseat',
-        text: 'Project developed by next-level-week video classes at Rocketseat, where I absorbed a lot of content focused on react.js.',
-        icons: [
-          {
-            html: reactIcon,
-            css: tsIcon,
-            js: jsIcon,
-            react: sqlIcon,
-            bootstrap: cssIcon,
-            php: phpIcon,
-            laravel: laravelIcon,
-            sql: reactIcon,
-            apiIcon: apiIcon,
-            github: gitHubIcon,
-            www: wwwIcon
-          },
-        ],
-        repo: 'https://github.com/Vbanety/All-NLW-bootcamps/tree/main/NLW%2302',
-        site: 'https://proffy-neon.vercel.app/',
-        more: 'modal2'
-      },
-
-      {
-        index: 3,
         title: 'NLW1 Rocketseat - Ecoleta',
         text: 'Starting with studies on the Rocketseat platform, following the week with next-level-week developing a social project "Ecoleta website".',
         icons: [
@@ -260,6 +235,29 @@ export const dataPortfolio = [
         repo: 'https://github.com/Vbanety/All-NLW-bootcamps/tree/main/NLW%2301',
         site: 'https://morning-dusk-66700.herokuapp.com/',
         more: 'modal3'
+      },
+      {
+        index: 3,
+        title: 'NLW Rocketseat',
+        text: 'Project developed by next-level-week video classes at Rocketseat, where I absorbed a lot of content focused on react.js.',
+        icons: [
+          {
+            html: reactIcon,
+            css: tsIcon,
+            js: jsIcon,
+            react: sqlIcon,
+            bootstrap: cssIcon,
+            php: phpIcon,
+            laravel: laravelIcon,
+            sql: reactIcon,
+            apiIcon: apiIcon,
+            github: gitHubIcon,
+            www: wwwIcon
+          },
+        ],
+        repo: 'https://github.com/Vbanety/All-NLW-bootcamps/tree/main/NLW%2302',
+        site: 'https://proffy-neon.vercel.app/',
+        more: 'modal2'
       },
 
       {

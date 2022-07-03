@@ -14,23 +14,23 @@ export default function Portfolio() {
   const [transitionText, setTransitionText] = useState(false)
   const [transitionTextEn, setTransitionTextEn] = useState(false)
   const [languages, setLanguages] = useState(dataPortfolio[0].pt)
-  const array = [languages]
+  const [languagesModal, setLanguagesModal] = useState(dataModal[0].pt)
   const [getModal, setGetModal] = useState('')
   const modalRef = useRef(null);
   const currentBtn = document.querySelectorAll('#btnModal')
-  
+
   let x = currentBtn.forEach((v) => { return v.value })
+
 
   const data = dataModal.filter(e => e.index === getModal)
   const handleShowModal = () => {
-    console.log(data);
     var x = document.querySelector('#modal')
     x.classList.add('active')
     var b = document.querySelector('.content')
     b.classList.add('active')
     window.scroll({
-      top: 0, 
-      left: 0, 
+      top: 0,
+      left: 0,
       behavior: 'smooth'
     });
   }
@@ -58,26 +58,31 @@ export default function Portfolio() {
 
     verifyInputLanguages.forEach((e) => e.addEventListener('change', () => {
       if (e.id == 'pt') {
-        return setLanguages(dataPortfolio[0].pt) 
+        setLanguages(dataPortfolio[0].pt)
+        setLanguagesModal(dataModal[0].pt)
       } else if (e.id == 'en') {
-        return setLanguages(dataPortfolio[0].en) 
+        setLanguages(dataPortfolio[0].en)
+        setLanguagesModal(dataModal[0].en)
       }
     }
     ))
-    
+
   }, [])
 
-  // console.log(languages)
   return (
     <div className='allPages'>
-      {dataModal.filter(i => i.index == getModal).map(filtered => {
+      {languagesModal.filter(i => i.index == getModal).map(filtered => {
         return (
           <>
             <div id="modal" className="modal">
-              <div className="content" ref={modalRef}value="modalRef">
+              <div className="content" ref={modalRef} value="modalRef">
                 <h1>{filtered.title}</h1>
                 <div className='textContent'>
-                  <p>{filtered.text}</p>
+                  <div className='groupText'>
+                    <p>{filtered.text[0].p1}</p>
+                    <p>{filtered.text[0].p2}</p>
+                    <p>{filtered.text[0].p3}</p>
+                  </div>
                   <div className='groupImage'>
                     <img src={filtered.img[0].img1} alt='images' />
                     <img src={filtered.img[0].img2} alt='images' />
@@ -113,9 +118,9 @@ export default function Portfolio() {
                           </div>
                           <p className={
                             transitionText ? 'animateText' : 'animateText active'
-                            &&
-                            transitionTextEn ? 'animateTextEn' : 'animateTextEn active'
-                            }>{item.text}
+                              &&
+                              transitionTextEn ? 'animateTextEn' : 'animateTextEn active'
+                          }>{item.text}
                             <button
                               id="btnModal"
                               onMouseOver={(e) => setGetModal(e.currentTarget.value)}

@@ -54,7 +54,7 @@ function Navbar() {
   return (
     <>
 
-      <div id="navbarZ" className="navbar" ref={sideBarRef}>
+      <div id="navbarZ" className={sidebar ? 'navbar active' : 'navbar'} ref={sideBarRef}>
         <Link to="" className="menu-bars">
           <FontAwesomeIcon style={{ color: '#075fe4' }} icon={faBars} onClick={showSidebar} />
         </Link>

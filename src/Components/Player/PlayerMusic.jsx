@@ -1,7 +1,6 @@
 import React, { useState, useRef } from 'react'
-// import { DataPlayer } from './dataPlayer'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faPlayCircle, faPauseCircle,  faBackwardStep, faForwardStep,  faClose } from '@fortawesome/free-solid-svg-icons'
+import { faPlayCircle, faPauseCircle,  faBackwardStep, faForwardStep,  faClose, faMusic } from '@fortawesome/free-solid-svg-icons'
 
 export default function PlayerMusic({audioElem, isPlaying, setIsPlaying, currentSong, setCurrentSong, songs}) {
 
@@ -65,8 +64,8 @@ export default function PlayerMusic({audioElem, isPlaying, setIsPlaying, current
       <FontAwesomeIcon
         onClick={() => handleOpenPlayer()}
         className='btn_player'
-        fontSize={25}
-        icon={faPlayCircle}
+        fontSize={15}
+        icon={faMusic}
       />
       <div className={!showPlayer ? 'hiddenPlayer active' : 'hiddenPlayer'}>
         <p>{currentSong.title} <FontAwesomeIcon className='closePlayer' onClick={() => handleClosePlayer()} icon={faClose} /></p>

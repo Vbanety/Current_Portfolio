@@ -17,80 +17,225 @@ import ImgFylo3 from '../../../public/assets/images/fylo3.jpeg'
 
 export const dataModal = [
   {
-    index: 'modal0',
-    title: 'Portfolio',
-    img: [
+    pt: [
       {
-        img1: ImgPort1,
-        img2: ImgPort2,
-        img3: ImgPort3
-      }
-    ],
-    text: 'Lorem ipsum dolor sit amet. Nam internos libero ut dolor suscipit et fugit nulla quo internos suscipit, Lorem ipsum dolor sit amet. Nam internos libero ut dolor suscipit et fugit nulla quo internos suscipit, Lorem ipsum dolor sit amet. Nam internos libero ut dolor suscipit et fugit nulla quo internos suscipit..Lorem ipsum dolor sit amet. Nam internos libero ut dolor suscipit et fugit nulla quo internos suscipit, Lorem ipsum dolor sit amet. Nam internos libero ut dolor suscipit et fugit nulla quo internos suscipit, Lorem ipsum dolor sit amet. Nam internos libero ut dolor suscipit et fugit nulla quo internos suscipit...Lorem ipsum dolor sit amet. Nam internos libero ut dolor suscipit et fugit nulla quo internos suscipit, Lorem ipsum dolor sit amet. Nam internos libero ut dolor suscipit et fugit nulla quo internos suscipit, Lorem ipsum dolor sit amet. Nam internos libero ut dolor suscipit et fugit nulla quo internos suscipit...',
-  repo: 'https://github.com/vbanety',
-  site: 'https://www.vini-dev-it.com.br',
-  },
-  {
-    index: 'modal1',
-    title: 'Do-do-List',
-    img: 'https://i.pinimg.com/600x315/b2/57/f3/b257f3af0e9ac5d0ac2719983d232654.jpg',
-    text: 'Lorem ipsum dolor sit amet. Nam internos libero ut dolor suscipit et fugit nulla quo internos suscipit, Lorem ipsum dolor sit amet. Nam internos libero ut dolor suscipit et fugit nulla quo internos suscipit, Lorem ipsum dolor sit amet. Nam internos libero ut dolor suscipit et fugit nulla quo internos suscipit..Lorem ipsum dolor sit amet. Nam internos libero ut dolor suscipit et fugit nulla quo internos suscipit, Lorem ipsum dolor sit amet. Nam internos libero ut dolor suscipit et fugit nulla quo internos suscipit, Lorem ipsum dolor sit amet. Nam internos libero ut dolor suscipit et fugit nulla quo internos suscipit...Lorem ipsum dolor sit amet. Nam internos libero ut dolor suscipit et fugit nulla quo internos suscipit, Lorem ipsum dolor sit amet. Nam internos libero ut dolor suscipit et fugit nulla quo internos suscipit, Lorem ipsum dolor sit amet. Nam internos libero ut dolor suscipit et fugit nulla quo internos suscipit...',
-  repo: 'https://github.com/vbanety',
-  site: 'https://www.vini-dev-it.com.br',
-  },
-  {
-    index: 'modal2',
-    title: 'NLW2 Rocketseat - Proffy',
-    img: [
+        index: 'modal0',
+        title: 'Portfolio',
+        img: [
+          {
+            img1: ImgPort1,
+            img2: ImgPort2,
+            img3: ImgPort3
+          }
+        ],
+        text: [
+          {
+            p1: 'Primeiro portfolio desenvolvido apenas com HTML, CSS e JAVASCRIPT, além da utilização da bliblioteca SCROLLREAVEL para apresentar os dados de forma animada ao scroll para página para baixo durante a navegação.',
+            p2: 'E nesse projeto, eu pude praticar o desenvolvimento da lógica da funcionalidade carrossel como também implementar um carrossel em javascript utilizando funções nativas do javascript como setInterval e addEventListener',
+            p3: 'Também pude compreender e desenvolver  sobre envio de dados do formulário para o email cadastrado utilizando a biblioteca nodemailer.'
+          }
+        ],
+      repo: 'https://github.com/vbanety',
+      site: 'https://www.vini-dev-it.com.br',
+      },
       {
-        img1: ImgProffy1,
-        img2: ImgProffy2,
-        img3: ImgProffy3
-      }
-    ],
-    text: 'Lorem ipsum dolor sit amet. Nam internos libero ut dolor suscipit et fugit nulla quo internos suscipit, Lorem ipsum dolor sit amet. Nam internos libero ut dolor suscipit et fugit nulla quo internos suscipit, Lorem ipsum dolor sit amet. Nam internos libero ut dolor suscipit et fugit nulla quo internos suscipit..Lorem ipsum dolor sit amet. Nam internos libero ut dolor suscipit et fugit nulla quo internos suscipit, Lorem ipsum dolor sit amet. Nam internos libero ut dolor suscipit et fugit nulla quo internos suscipit, Lorem ipsum dolor sit amet. Nam internos libero ut dolor suscipit et fugit nulla quo internos suscipit...Lorem ipsum dolor sit amet. Nam internos libero ut dolor suscipit et fugit nulla quo internos suscipit, Lorem ipsum dolor sit amet. Nam internos libero ut dolor suscipit et fugit nulla quo internos suscipit, Lorem ipsum dolor sit amet. Nam internos libero ut dolor suscipit et fugit nulla quo internos suscipit...',
-  repo: 'https://github.com/vbanety',
-  site: 'https://www.vini-dev-it.com.br',
-  },
-
-  {
-    index: 'modal3',
-    title: 'NLW1 Rocketseat - Ecoleta',
-    img: [
+        index: 'modal1',
+        title: 'Do-do-List',
+        img: 'https://i.pinimg.com/600x315/b2/57/f3/b257f3af0e9ac5d0ac2719983d232654.jpg',
+        text: [
+          {
+            p1: 'Primeiro portfolio desenvolvido apenas com HTML, CSS e JAVASCRIPT, além da utilização da bliblioteca SCROLLREAVEL para animação.',
+            p2: 'E nesse projeto, eu pude praticar o desenvolvimento da lógica como também implementar um carrossel em javascript utilizando funções nativas do javascript como setInterval e addEventListener',
+            p3: 'Também pude compreender e desenvolver  sobre envio de formulário para o email cadastrado a biblioteca nodemailer.'
+          }
+        ],
+      repo: 'https://github.com/vbanety',
+      site: 'https://www.vini-dev-it.com.br',
+      },
       {
-        img1: ImgEcoleta1,
-        img2: ImgEcoleta2,
-        img3: ImgEcoleta3
-      }
-    ],
-    text: 'Lorem ipsum dolor sit amet. Nam internos libero ut dolor suscipit et fugit nulla quo internos suscipit, Lorem ipsum dolor sit amet. Nam internos libero ut dolor suscipit et fugit nulla quo internos suscipit, Lorem ipsum dolor sit amet. Nam internos libero ut dolor suscipit et fugit nulla quo internos suscipit..Lorem ipsum dolor sit amet. Nam internos libero ut dolor suscipit et fugit nulla quo internos suscipit, Lorem ipsum dolor sit amet. Nam internos libero ut dolor suscipit et fugit nulla quo internos suscipit, Lorem ipsum dolor sit amet. Nam internos libero ut dolor suscipit et fugit nulla quo internos suscipit...Lorem ipsum dolor sit amet. Nam internos libero ut dolor suscipit et fugit nulla quo internos suscipit, Lorem ipsum dolor sit amet. Nam internos libero ut dolor suscipit et fugit nulla quo internos suscipit, Lorem ipsum dolor sit amet. Nam internos libero ut dolor suscipit et fugit nulla quo internos suscipit...',
-  repo: 'https://github.com/vbanety',
-  site: 'https://www.vini-dev-it.com.br',
-  },
-
-  {
-    index: 'modal4',
-    title: 'Dark-Fylo - FRONTENDMENTOR',
-    img: [
+        index: 'modal3',
+        title: 'NLW1 Rocketseat - Ecoleta',
+        img: [
+          {
+            img1: ImgEcoleta1,
+            img2: ImgEcoleta2,
+            img3: ImgEcoleta3
+          }
+        ],
+        text: [
+          {
+            p1: 'Esse foi o primeiro evento da Rocketseat que participei e acompanhei as aulas ministradas pelo Mayk Brito, o projeto desenvolvido foi voltado para entender como o é feito a comunicação entre o frontend e backend.',
+            p2: 'Além das ferramentas base para o desenvolvimento web, foi utilizado o framework nunjunk, sqlite3, nodemon e express, para o desenvolvimento do backend.',
+            p3: 'As chamadas de dados do backend para renderização no frontend foram feitas através de requisições no servidor via HTTP utilizando os métodos POST, GET PUT e DELETE.'
+          }
+        ],
+      repo: 'https://github.com/vbanety',
+      site: 'https://www.vini-dev-it.com.br',
+      },
       {
-        img1: ImgFylo1,
-        img2: ImgFylo2,
-        img3: ImgFylo3
-      }
+        index: 'modal2',
+        title: 'NLW2 Rocketseat - Proffy',
+        img: [
+          {
+            img1: ImgProffy1,
+            img2: ImgProffy2,
+            img3: ImgProffy3
+          }
+        ],
+        text: [
+          {
+            p1: 'Projeto densenvolvido por video aulas da semana da next-level-week na plataforma online Rocketseat, onde absorvi muito conteúdo voltado para react.js, e as ferramentas que envolve seu ecossitema.',
+            p2: 'Meu primeiro contato com TYPESCRIPT, SQLITE e CORS, pude assimilar os conceitos de tipagem de dados com typescript forçando a correta utilização na declaração de variáveis.',
+            p3: 'A biblioteca SQLITE como banco de dados não relacional foi uma experiência fantástica, desenvolvendo queries de atualização, insersão e exclusão de dados, sendo estruturado dentro da biblioteca CORS para criação de endpoints.'
+          }
+        ],
+      repo: 'https://github.com/vbanety',
+      site: 'https://www.vini-dev-it.com.br',
+      },
+      {
+        index: 'modal4',
+        title: 'Dark-Fylo - FRONTENDMENTOR',
+        img: [
+          {
+            img1: ImgFylo1,
+            img2: ImgFylo2,
+            img3: ImgFylo3
+          }
+        ],
+        text: [
+          {
+            p1: 'Landing page desenvolvida como desafio da plataforma Frontendmentor, para aprimorar a questão de estrutura HTML e responsividade com CSS, o a plataforma disponibiliza arquivos, descrições das regras e exemplo de layout a seguir.',
+            p2: 'O objetivo foi desenvolver uma página web estática que possa ser vizualizada de qualquer tipo de dispositivo, contento os brackpoints necessários para renderizar conforme o screen a ser utilizado.',
+            p3: 'Nesse projeto entre outros que participei nessa plataforma, a cada projeto finalizado, compartilhava minha solução na comunidade através do aplicativo slack, onde recebo feedbacks, com dicas de devs e tutores para desenvolver minhas habilidades em frontend.'
+          }
+        ],
+      repo: 'https://github.com/vbanety',
+      site: 'https://www.vini-dev-it.com.br',
+      },
+      {
+        index: 'modal5',
+        title: 'Dashboard',
+        img: 'http://1.bp.blogspot.com/_N6RSTgEScug/S0DT9EaeUBI/AAAAAAAAA58/8Y849awG49E/s400/Mar+e+deck.jpg',
+        text: [
+          {
+            p1: 'Primeiro portfolio desenvolvido apenas com HTML, CSS e JAVASCRIPT, além da utilização da bliblioteca SCROLLREAVEL para animação.',
+            p2: 'E nesse projeto, eu pude praticar o desenvolvimento da lógica como também implementar um carrossel em javascript utilizando funções nativas do javascript como setInterval e addEventListener',
+            p3: 'Também pude compreender e desenvolver  sobre envio de formulário para o email cadastrado a biblioteca nodemailer.'
+          }
+        ],
+      repo: 'https://github.com/vbanety',
+      site: 'https://www.vini-dev-it.com.br',
+      },
     ],
-    text: 'Lorem ipsum dolor sit amet. Nam internos libero ut dolor suscipit et fugit nulla quo internos suscipit, Lorem ipsum dolor sit amet. Nam internos libero ut dolor suscipit et fugit nulla quo internos suscipit, Lorem ipsum dolor sit amet. Nam internos libero ut dolor suscipit et fugit nulla quo internos suscipit..Lorem ipsum dolor sit amet. Nam internos libero ut dolor suscipit et fugit nulla quo internos suscipit, Lorem ipsum dolor sit amet. Nam internos libero ut dolor suscipit et fugit nulla quo internos suscipit, Lorem ipsum dolor sit amet. Nam internos libero ut dolor suscipit et fugit nulla quo internos suscipit...Lorem ipsum dolor sit amet. Nam internos libero ut dolor suscipit et fugit nulla quo internos suscipit, Lorem ipsum dolor sit amet. Nam internos libero ut dolor suscipit et fugit nulla quo internos suscipit, Lorem ipsum dolor sit amet. Nam internos libero ut dolor suscipit et fugit nulla quo internos suscipit...',
-  repo: 'https://github.com/vbanety',
-  site: 'https://www.vini-dev-it.com.br',
-  },
-
-  {
-    index: 'modal5',
-    title: 'Dashboard',
-    img: 'http://1.bp.blogspot.com/_N6RSTgEScug/S0DT9EaeUBI/AAAAAAAAA58/8Y849awG49E/s400/Mar+e+deck.jpg',
-    text: 'Lorem ipsum dolor sit amet. Nam internos libero ut dolor suscipit et fugit nulla quo internos suscipit, Lorem ipsum dolor sit amet. Nam internos libero ut dolor suscipit et fugit nulla quo internos suscipit, Lorem ipsum dolor sit amet. Nam internos libero ut dolor suscipit et fugit nulla quo internos suscipit..Lorem ipsum dolor sit amet. Nam internos libero ut dolor suscipit et fugit nulla quo internos suscipit, Lorem ipsum dolor sit amet. Nam internos libero ut dolor suscipit et fugit nulla quo internos suscipit, Lorem ipsum dolor sit amet. Nam internos libero ut dolor suscipit et fugit nulla quo internos suscipit...Lorem ipsum dolor sit amet. Nam internos libero ut dolor suscipit et fugit nulla quo internos suscipit, Lorem ipsum dolor sit amet. Nam internos libero ut dolor suscipit et fugit nulla quo internos suscipit, Lorem ipsum dolor sit amet. Nam internos libero ut dolor suscipit et fugit nulla quo internos suscipit...',
-  repo: 'https://github.com/vbanety',
-  site: 'https://www.vini-dev-it.com.br',
-  },
+    en: [
+      {
+        index: 'modal0',
+        title: 'Portfolio',
+        img: [
+          {
+            img1: ImgPort1,
+            img2: ImgPort2,
+            img3: ImgPort3
+          }
+        ],
+        text: [
+          {
+            p1: 'First portfolio developed only with HTML, CSS and JAVASCRIPT, in addition to using the SCROLLREAVEL library to present data in an animated way when scrolling down during navigation.',
+            p2: 'And in this project, I could practice developing the logic of the carousel functionality as well as implementing a carousel in javascript using native javascript functions like setInterval and addEventListener.',
+            p3: 'I was also able to understand and develop about sending form data to the registered email using the nodemailer library.'
+          }
+        ],
+      repo: 'https://github.com/vbanety',
+      site: 'https://www.vini-dev-it.com.br',
+      },
+      {
+        index: 'modal1',
+        title: 'Do-do-List',
+        img: 'https://i.pinimg.com/600x315/b2/57/f3/b257f3af0e9ac5d0ac2719983d232654.jpg',
+        text: [
+          {
+            p1: 'Primeiro portfolio desenvolvido apenas com HTML, CSS e JAVASCRIPT, além da utilização da bliblioteca SCROLLREAVEL para animação.',
+            p2: 'E nesse projeto, eu pude praticar o desenvolvimento da lógica como também implementar um carrossel em javascript utilizando funções nativas do javascript como setInterval e addEventListener',
+            p3: 'Também pude compreender e desenvolver  sobre envio de formulário para o email cadastrado a biblioteca nodemailer.'
+          }
+        ],
+      repo: 'https://github.com/vbanety',
+      site: 'https://www.vini-dev-it.com.br',
+      },
+      {
+        index: 'modal3',
+        title: 'NLW1 Rocketseat - Ecoleta',
+        img: [
+          {
+            img1: ImgEcoleta1,
+            img2: ImgEcoleta2,
+            img3: ImgEcoleta3
+          }
+        ],
+        text: [
+          {
+            p1: 'This was the first Rocketseat event that I attended and I followed the classes taught by Mayk Brito, the project developed was aimed at understanding how communication between the frontend and backend is done.',
+            p2: 'In addition to the basic tools for web development, the framework nunjunk, sqlite3, nodemon and express was used for the development of the backend.',
+            p3: 'The backend data calls for frontend rendering were made through requests to the server via HTTP using the POST, GET PUT and DELETE methods.'
+          }
+        ],
+      repo: 'https://github.com/vbanety',
+      site: 'https://www.vini-dev-it.com.br',
+      },
+      {
+        index: 'modal2',
+        title: 'NLW2 Rocketseat - Proffy',
+        img: [
+          {
+            img1: ImgProffy1,
+            img2: ImgProffy2,
+            img3: ImgProffy3
+          }
+        ],
+        text: [
+          {
+            p1: 'Project developed by video classes of the week of next-level-week on the Rocketseat online platform, where I absorbed a lot of content focused on react.js, and the tools that surround its ecosystem.',
+            p2: 'My first contact with TYPESCRIPT, SQLITE and CORS, I was able to assimilate the concepts of data typing with typescript forcing the correct use in the declaration of variables.',
+            p3: 'The SQLITE library as a non-relational database was a fantastic experience, developing queries to update, insert and delete data, being structured within the CORS library for creating endpoints.'
+          }
+        ],
+      repo: 'https://github.com/vbanety',
+      site: 'https://www.vini-dev-it.com.br',
+      },
+      {
+        index: 'modal4',
+        title: 'Dark-Fylo - FRONTENDMENTOR',
+        img: [
+          {
+            img1: ImgFylo1,
+            img2: ImgFylo2,
+            img3: ImgFylo3
+          }
+        ],
+        text: [
+          {
+            p1: 'Landing page developed as a challenge for the Frontendmentor platform, to improve the issue of HTML structure and responsiveness with CSS, the platform provides files, descriptions of the rules and example of layout below.',
+            p2: 'The objective was to develop a static web page that can be viewed from any type of device, containing the necessary brackpoints to render according to the screen to be used.',
+            p3: 'In this project among others that I participated in this platform, with each project completed, I shared my solution in the community through the slack application, where I receive feedback, with tips from devs and tutors to develop my frontend skills.'
+          }
+        ],
+      repo: 'https://github.com/vbanety',
+      site: 'https://www.vini-dev-it.com.br',
+      },
+      {
+        index: 'modal5',
+        title: 'Dashboard',
+        img: 'http://1.bp.blogspot.com/_N6RSTgEScug/S0DT9EaeUBI/AAAAAAAAA58/8Y849awG49E/s400/Mar+e+deck.jpg',
+        text: [
+          {
+            p1: 'Primeiro portfolio desenvolvido apenas com HTML, CSS e JAVASCRIPT, além da utilização da bliblioteca SCROLLREAVEL para animação.',
+            p2: 'E nesse projeto, eu pude praticar o desenvolvimento da lógica como também implementar um carrossel em javascript utilizando funções nativas do javascript como setInterval e addEventListener',
+            p3: 'Também pude compreender e desenvolver  sobre envio de formulário para o email cadastrado a biblioteca nodemailer.'
+          }
+        ],
+      repo: 'https://github.com/vbanety',
+      site: 'https://www.vini-dev-it.com.br',
+      },
+    ]
+  }
 ]
-
-// console.log(dataModal)
