@@ -66,6 +66,7 @@ export default function PlayerMusic({audioElem, isPlaying, setIsPlaying, current
         className='btn_player'
         fontSize={15}
         icon={faMusic}
+        title="Click aqui para ouvir uma musica enquanto navega no meu site."
       />
       <div className={!showPlayer ? 'hiddenPlayer active' : 'hiddenPlayer'}>
         <p>{currentSong.title} <FontAwesomeIcon className='closePlayer' onClick={() => handleClosePlayer()} icon={faClose} /></p>

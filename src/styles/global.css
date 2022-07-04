@@ -247,7 +247,6 @@ audio {
 
 
 .btn_player {
-  /* background-color: #fff; */
   color: #075FE4;
   border: 2px solid #fff;
   width: 1.2rem;
@@ -273,6 +272,8 @@ audio {
 
 .btn_player:hover {
   cursor: pointer;
+  color: #fff;
+  border: 2px solid  #075FE4;
 }
 
 .btn_search svg path {
