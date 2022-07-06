@@ -14,6 +14,10 @@ import ImgFylo1 from '../../../public/assets/images/fylo1.jpeg'
 import ImgFylo2 from '../../../public/assets/images/fylo2.jpeg'
 import ImgFylo3 from '../../../public/assets/images/fylo3.jpeg'
 
+import ImgTodo1 from '../../../public/assets/images/todo1.jpeg'
+import ImgTodo2 from '../../../public/assets/images/todo2.jpeg'
+import ImgTodo3 from '../../../public/assets/images/todo3.jpeg'
+
 
 export const dataModal = [
   {
@@ -40,17 +44,23 @@ export const dataModal = [
       },
       {
         index: 'modal1',
-        title: 'Do-do-List',
-        img: 'https://i.pinimg.com/600x315/b2/57/f3/b257f3af0e9ac5d0ac2719983d232654.jpg',
-        text: [
+        title: 'Lista de Afazeres - FRONTENDMENTOR',
+        img: [
           {
-            p1: 'Primeiro portfolio desenvolvido apenas com HTML, CSS e JAVASCRIPT, além da utilização da bliblioteca SCROLLREAVEL para animação.',
-            p2: 'E nesse projeto, eu pude praticar o desenvolvimento da lógica como também implementar um carrossel em javascript utilizando funções nativas do javascript como setInterval e addEventListener',
-            p3: 'Também pude compreender e desenvolver  sobre envio de formulário para o email cadastrado a biblioteca nodemailer.'
+            img1: ImgTodo1,
+            img2: ImgTodo2,
+            img3: ImgTodo3
           }
         ],
-      repo: 'https://github.com/vbanety',
-      site: 'https://www.vini-dev-it.com.br',
+        text: [
+          {
+            p1: 'Desafio proposto da plataforma FRONTENDMENTOR, para praticar Html, CSS e JavaScript, no entando eu desenvolvi em React e Vite.',
+            p2: 'Nesse desafio requer manipulação da DOM via javascript, porém a utilização de Hooks do React facilitou para manipular os estados e criar interação para página.',
+            p3: 'Também aproveitei para práticar e aprender mais afundo sobre LOCALSTORAGE, com isso pude criar objetos, salvar em cache do navegador, permitindo manipular-los e consumi-los no formato de arrays.'
+          }
+        ],
+      repo: 'https://github.com/Vbanety/To-do-list-localstorage/tree/main',
+      site: 'https://to-do-list-localstorage.vercel.app/',
       },
       {
         index: 'modal3',
@@ -104,7 +114,7 @@ export const dataModal = [
         ],
         text: [
           {
-            p1: 'Landing page desenvolvida como desafio da plataforma Frontendmentor, para aprimorar a questão de estrutura HTML e responsividade com CSS, o a plataforma disponibiliza arquivos, descrições das regras e exemplo de layout a seguir.',
+            p1: 'Landing page desenvolvida como desafio da plataforma FRONTENDMENTOR, para aprimorar a questão de estrutura HTML e responsividade com CSS, o a plataforma disponibiliza arquivos, descrições das regras e exemplo de layout a seguir.',
             p2: 'O objetivo foi desenvolver uma página web estática que possa ser vizualizada de qualquer tipo de dispositivo, contento os brackpoints necessários para renderizar conforme o screen a ser utilizado.',
             p3: 'Nesse projeto entre outros que participei nessa plataforma, a cada projeto finalizado, compartilhava minha solução na comunidade através do aplicativo slack, onde recebo feedbacks, com dicas de devs e tutores para desenvolver minhas habilidades em frontend.'
           }
@@ -150,17 +160,23 @@ export const dataModal = [
       },
       {
         index: 'modal1',
-        title: 'Do-do-List',
-        img: 'https://i.pinimg.com/600x315/b2/57/f3/b257f3af0e9ac5d0ac2719983d232654.jpg',
-        text: [
+        title: 'Do-do-List - FRONTENDMENTOR',
+        img: [
           {
-            p1: 'Primeiro portfolio desenvolvido apenas com HTML, CSS e JAVASCRIPT, além da utilização da bliblioteca SCROLLREAVEL para animação.',
-            p2: 'E nesse projeto, eu pude praticar o desenvolvimento da lógica como também implementar um carrossel em javascript utilizando funções nativas do javascript como setInterval e addEventListener',
-            p3: 'Também pude compreender e desenvolver  sobre envio de formulário para o email cadastrado a biblioteca nodemailer.'
+            img1: ImgTodo1,
+            img2: ImgTodo2,
+            img3: ImgTodo3
           }
         ],
-      repo: 'https://github.com/vbanety',
-      site: 'https://www.vini-dev-it.com.br',
+        text: [
+          {
+            p1: 'Challenge proposed from the FRONTENDMENTOR platform, to practice Html, CSS and JavaScript, however I developed in React and Vite.',
+            p2: 'This challenge requires DOM manipulation via javascript, but the use of React Hooks made it easier to manipulate the states and create interaction for the page.',
+            p3: 'I also took the opportunity to practice and learn more about LOCALSTORAGE, with this I was able to create objects, save them in the browser cache, allowing them to manipulate and consume them in the format of arrays..'
+          }
+        ],
+        repo: 'https://github.com/Vbanety/To-do-list-localstorage/tree/main',
+        site: 'https://to-do-list-localstorage.vercel.app/',
       },
       {
         index: 'modal3',
@@ -214,7 +230,7 @@ export const dataModal = [
         ],
         text: [
           {
-            p1: 'Landing page developed as a challenge for the Frontendmentor platform, to improve the issue of HTML structure and responsiveness with CSS, the platform provides files, descriptions of the rules and example of layout below.',
+            p1: 'Landing page developed as a challenge for the FRONTENDMENTOR platform, to improve the issue of HTML structure and responsiveness with CSS, the platform provides files, descriptions of the rules and example of layout below.',
             p2: 'The objective was to develop a static web page that can be viewed from any type of device, containing the necessary brackpoints to render according to the screen to be used.',
             p3: 'In this project among others that I participated in this platform, with each project completed, I shared my solution in the community through the slack application, where I receive feedback, with tips from devs and tutors to develop my frontend skills.'
           }

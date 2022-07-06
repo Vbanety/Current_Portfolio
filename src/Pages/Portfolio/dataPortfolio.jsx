@@ -45,15 +45,15 @@ export const dataPortfolio = [
 
       {
         index: 1,
-        title: 'Lista de afazeres',
-        text: 'Desenvolvido para praticar o processo de CRUD e manipulação de estados utilizando hooks do React.js',
+        title: 'Lista de afazeres - FRONTENDMENTOR',
+        text: 'Desafio proposto da plataforma FRONTENDMENTOR, para praticar Html, CSS e JavaScript, no entando eu desenvolvi em React e Vite.',
         icons: [
           {
             html: htmlIcon,
             css: cssIcon,
             js: jsIcon,
-            react: reactIcon,
-            bootstrap: bootstrapIcon,
+            react: slackIcon,
+            bootstrap: reactIcon,
             php: phpIcon,
             laravel: laravelIcon,
             sql: sqlIcon,
@@ -62,8 +62,8 @@ export const dataPortfolio = [
             www: wwwIcon
           },
         ],
-        repo: 'https://github.com/vbanety',
-        site: 'https://www.vini-dev-it.com.br',
+        repo: 'https://github.com/Vbanety/To-do-list-localstorage/tree/main',
+        site: 'https://to-do-list-localstorage.vercel.app/',
         more: 'modal1'
       },
 
@@ -192,7 +192,7 @@ export const dataPortfolio = [
       {
         index: 1,
         title: 'To-do List',
-        text: 'Developed to practice the CRUD process and state manipulation using React.js hooks.',
+        text: 'Challenge proposed from the FRONTENDMENTOR platform, to practice Html, CSS and JavaScript, however I developed in React and Vite.',
         icons: [
           {
             html: htmlIcon,
@@ -208,8 +208,8 @@ export const dataPortfolio = [
             www: wwwIcon
           },
         ],
-        repo: 'https://github.com/vbanety',
-        site: 'https://www.vini-dev-it.com.br',
+        repo: 'https://github.com/Vbanety/To-do-list-localstorage/tree/main',
+        site: 'https://to-do-list-localstorage.vercel.app/',
         more: 'modal1'
       },
 
