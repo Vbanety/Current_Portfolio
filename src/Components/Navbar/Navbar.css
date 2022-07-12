@@ -215,4 +215,8 @@ span {
   .info_contacts div {
     flex-direction: column !important;
   }
+
+  .flex_contact {
+    padding: 1rem;
+  }
 }

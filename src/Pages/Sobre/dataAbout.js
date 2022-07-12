@@ -14,6 +14,7 @@ export const aboutData = [
             positionJob: 'Desenvolvedor FrontEnd',
             titleDescription: 'Resumo',
             resume: 'Currículo',
+            pdf: '../../../public/assets/pdf/cv_br_18_ 04.pdf',
             paragraphs: [
               {
                 text: `- Após me formar em técnico de informática em 2011, comecei a prestar serviços de freelancer como suporte ténico T.I nos períodos vagos, em 2019 iniciei na empresa ${TIVIT} como suporte técnico para solucionar problemas de microinformática para o cliente ITAU, e nesse mesmo período iniciei meus estudos na área de programação por conta própria.`
@@ -141,6 +142,7 @@ export const aboutData = [
                 text: "- Since then, I've been working on creating features, implementing pages with reactjs, consuming API and Backend data through endpoints."
               }
             ],
+            pdf: '/public/assets/pdf/cv_en_12_07.pdf',
             titleTestimonies: 'Testimonies',
             curiosity: "'Success does not happen by accident. Instead of saying: this can't be done, keep asking your brain: how can this be done? Commit to your goals and view obstacles as steps to reach the ultimate goal. Be part of the solution instead of being part of the problem. Do it well not only to please others, but mainly to please yourself. If you fail to plan, you are planning to fail. - (Doctor. Lair Ribeiro)'"
           }

@@ -65,7 +65,7 @@ export default function Contato() {
                 </>
               )
             })}
-            <a href="../../../public/assets/pdf/CV-Dev 18 04 2022.pdf" target="_blank"><img src={downloadIcon} /><span>{data.aboutMe[0].resume}</span></a>
+            <a href={data.aboutMe[0].pdf} download target="_blank"><img src={downloadIcon} /><span>{data.aboutMe[0].resume}</span></a>
           </div>
 
           <div className='line_blue_divide'>

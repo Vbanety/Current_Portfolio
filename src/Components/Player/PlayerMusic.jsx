@@ -68,7 +68,7 @@ export default function PlayerMusic({audioElem, isPlaying, setIsPlaying, current
         icon={faMusic}
         title="Click aqui para ouvir uma musica enquanto navega no meu site."
       />
-      <div className={!showPlayer ? 'hiddenPlayer active' : 'hiddenPlayer'}>
+      <div key={currentSong.index} className={!showPlayer ? 'hiddenPlayer active' : 'hiddenPlayer'}>
         <p>{currentSong.title} <FontAwesomeIcon className='closePlayer' onClick={() => handleClosePlayer()} icon={faClose} /></p>
         <b>{currentSong.author}</b>
         <img src={currentSong.picture}/>
