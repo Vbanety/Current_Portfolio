@@ -153,10 +153,10 @@ button[type=submit]:hover {
 .list_icons_contact li {
   margin-left: auto;
 }
- .list_icons_contact li a img {
+
+.list_icons_contact li a img {
   width: 40px
 }
-
 
 #modalEmail,
 .modalFirst {
@@ -233,6 +233,7 @@ button[type=submit]:hover {
 
   .info_contacts div {
     flex-direction: row !important;
+    height: 60px;
   }
 
   .info_contacts div p {
