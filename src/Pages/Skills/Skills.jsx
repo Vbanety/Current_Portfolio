@@ -4,7 +4,6 @@ import Footer from '../../Components/Footer/Footer'
 import { IconData } from './dataSkills'
 import Animation from '../../Components/Animation'
 import AnimationCards from '../../Components/AnimationCards'
-// import { TextContentDataTest } from '../../Components/TextContent/TextContentDataTestXXXXXX'
 import { TextContentDataTest } from '../../Components/TextContent/TextContentDataTest'
 import './style.css'
 
