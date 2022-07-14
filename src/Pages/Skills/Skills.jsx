@@ -4,12 +4,19 @@ import Footer from '../../Components/Footer/Footer'
 import { IconData } from './dataSkills'
 import Animation from '../../Components/Animation'
 import AnimationCards from '../../Components/AnimationCards'
-import { TextContentData } from '../../Components/TextContent/TextContentData'
+// import { TextContentDataTest } from '../../Components/TextContent/TextContentDataTestXXXXXX'
+import { TextContentDataTest } from '../../Components/TextContent/TextContentDataTest'
 import './style.css'
 
 export default function Skills() {
-  const [languagesBrEn, setLanguagesBrEn] = useState(TextContentData[0]
-    .portuguese)  
+  
+  let data = localStorage.getItem('data')
+
+  let parseData = JSON.parse(data)
+
+  var verifyData = parseData == null ? TextContentDataTest[0].portuguese : parseData
+
+  const [languagesBrEn, setLanguagesBrEn] = useState(verifyData)  
     const [transitionText, setTransitionText] = useState(false)
     const [transitionTextEn, setTransitionTextEn] = useState(false)
   useEffect(() => {
@@ -29,9 +36,15 @@ export default function Skills() {
 
     verifyInputLanguages.forEach((e) => e.addEventListener('change', () => {
       if(e.id == 'pt') {
-        setLanguagesBrEn(TextContentData[0].portuguese)
+        localStorage.setItem('data', JSON.stringify(TextContentDataTest[0].portuguese))
+        let dataPt = localStorage.getItem('data')
+        let parseDataPt = JSON.parse(dataPt)
+        setLanguagesBrEn(parseDataPt)
       } else if(e.id == 'en') {
-        setLanguagesBrEn(TextContentData[1].english)
+        localStorage.setItem('data', JSON.stringify(TextContentDataTest[1].english))
+        let dataEn = localStorage.getItem('data')
+        let parseDataEn = JSON.parse(dataEn)
+        setLanguagesBrEn(parseDataEn)
       } else {
         return false
       }

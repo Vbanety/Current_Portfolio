@@ -2,23 +2,32 @@
 import { useState, useEffect } from 'react'
 import Navbar from '../../Components/Navbar/Navbar'
 import Footer from '../../Components/Footer/Footer'
-import iconArroba from '../../../public/assets/at_arroba.svg'
-import iconPhoneWight from '../../../public/assets/phone_white.svg'
-import iconLocation from '../../../public/assets/location.svg'
-import iconSend from '../../../public/assets/sentIcon.svg'
+import iconArroba from '/assets/at_arroba.svg'
+import iconPhoneWight from '/assets/phone_white.svg'
+import iconLocation from '/assets/location.svg'
+import iconSend from '/assets/sentIcon.svg'
 import './style.css'
-import iconInstagram from '../../../public/assets/instagram_white.svg'
-import iconLinkedIn from '../../../public/assets/linkedin_white.svg'
-import iconTwitter from '../../../public/assets/twetter_white.svg'
+import iconInstagram from '/assets/instagram_white.svg'
+import iconLinkedIn from '/assets/linkedin_white.svg'
+import iconTwitter from '/assets/twetter_white.svg'
 import Animation from '../../Components/Animation'
 import './style.css'
-import { TextContentData } from '../../Components/TextContent/TextContentData'
+import { TextContentDataTest } from '../../Components/TextContent/TextContentDataTest'
+
 import emailjs from "emailjs-com"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCheckCircle, faSpinner, faPaperPlane, faExclamationCircle } from '@fortawesome/free-solid-svg-icons'
 
 
 export default function Sobre() {
+
+  let data = localStorage.getItem('data')
+
+  let parseData = JSON.parse(data)
+
+  var verifyData = parseData == null ? TextContentDataTest[0].portuguese : parseData
+
+  const [languagesBrEn, setLanguagesBrEn] = useState(verifyData)
   const [loading, setLoading] = useState(false)
   const [loadingFirst, seLoadingFirst] = useState(false)
   const [modal, setModal] = useState(false)
@@ -71,8 +80,6 @@ export default function Sobre() {
     }
   }
 
-  const [languagesBrEn, setLanguagesBrEn] = useState(TextContentData[0].portuguese.contact)
-
 
   useEffect(() => {
     const dx = document.getElementById('container')
@@ -80,9 +87,16 @@ export default function Sobre() {
 
     verifyInputLanguages.forEach((e) => e.addEventListener('change', () => {
       if (e.id == 'pt') {
-        setLanguagesBrEn(TextContentData[0].portuguese.contact)
+        localStorage.setItem('data', JSON.stringify(TextContentDataTest[0].portuguese))
+        let dataPt = localStorage.getItem('data')
+        let parseDataPt = JSON.parse(dataPt)
+        setLanguagesBrEn(parseDataPt)
+
       } else if (e.id == 'en') {
-        setLanguagesBrEn(TextContentData[1].english.contact)
+        localStorage.setItem('data', JSON.stringify(TextContentDataTest[1].english))
+        let dataEn = localStorage.getItem('data')
+        let parseDataEn = JSON.parse(dataEn)
+        setLanguagesBrEn(parseDataEn)
 
       } else {
         return false
@@ -119,23 +133,23 @@ export default function Sobre() {
               </div>
             </div>)
           }
-          <h1 className='title_contact'>{languagesBrEn.titlePage}</h1>
+          <h1 className='title_contact'>{languagesBrEn.contact.titlePage}</h1>
           <div className='column_contact'>
             <div className='flex_contact'>
               <div className="info_contacts">
                 <div>
                   <img src={iconArroba} />
-                  <p>{languagesBrEn.myEmail}</p>
+                  <p>{languagesBrEn.contact.myEmail}</p>
                 </div>
 
                 <div>
                   <img src={iconPhoneWight} />
-                  <p>{languagesBrEn.phone}</p>
+                  <p>{languagesBrEn.contact.phone}</p>
                 </div>
 
                 <div>
                   <img src={iconLocation} />
-                  <p>{languagesBrEn.address}</p>
+                  <p>{languagesBrEn.contact.address}</p>
                 </div>
               </div>
 
@@ -144,20 +158,20 @@ export default function Sobre() {
                   type='email'
                   id='email'
                   name="email"
-                  placeholder={languagesBrEn.fieldEmail}
+                  placeholder={languagesBrEn.contact.fieldEmail}
                   onChange={(e) => setEmail(e.target.value)}
                 />
                 <input
                   type='text'
                   id='userName'
                   name='name'
-                  placeholder={languagesBrEn.fieldName}
+                  placeholder={languagesBrEn.contact.fieldName}
                   onChange={(e) => setName(e.target.value)}
                 />
                 <textarea
                   type="text"
                   name='text'
-                  placeholder={languagesBrEn.fieldMessage}
+                  placeholder={languagesBrEn.contact.fieldMessage}
                   rows="10"
                   cols="40"
                   onChange={(e) => setText(e.target.value)}

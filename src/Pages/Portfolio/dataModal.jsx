@@ -1,22 +1,22 @@
-import ImgProffy1 from '../../../public/assets/images/proffy1.jpeg'
-import ImgProffy2 from '../../../public/assets/images/proffy2.jpeg'
-import ImgProffy3 from '../../../public/assets/images/proffy3.jpeg'
+import ImgProffy1 from '/assets/images/proffy1.jpeg'
+import ImgProffy2 from '/assets/images/proffy2.jpeg'
+import ImgProffy3 from '/assets/images/proffy3.jpeg'
 
-import ImgEcoleta1 from '../../../public/assets/images/ecoleta1.jpeg'
-import ImgEcoleta2 from '../../../public/assets/images/ecoleta2.jpeg'
-import ImgEcoleta3 from '../../../public/assets/images/ecoleta3.jpeg'
+import ImgEcoleta1 from '/assets/images/ecoleta1.jpeg'
+import ImgEcoleta2 from '/assets/images/ecoleta2.jpeg'
+import ImgEcoleta3 from '/assets/images/ecoleta3.jpeg'
 
-import ImgPort1 from '../../../public/assets/images/port1.jpeg'
-import ImgPort2 from '../../../public/assets/images/port2.jpeg'
-import ImgPort3 from '../../../public/assets/images/port3.jpeg'
+import ImgPort1 from '/assets/images/port1.jpeg'
+import ImgPort2 from '/assets/images/port2.jpeg'
+import ImgPort3 from '/assets/images/port3.jpeg'
 
-import ImgFylo1 from '../../../public/assets/images/fylo1.jpeg'
-import ImgFylo2 from '../../../public/assets/images/fylo2.jpeg'
-import ImgFylo3 from '../../../public/assets/images/fylo3.jpeg'
+import ImgFylo1 from '/assets/images/fylo1.jpeg'
+import ImgFylo2 from '/assets/images/fylo2.jpeg'
+import ImgFylo3 from '/assets/images/fylo3.jpeg'
 
-import ImgTodo1 from '../../../public/assets/images/todo1.jpeg'
-import ImgTodo2 from '../../../public/assets/images/todo2.jpeg'
-import ImgTodo3 from '../../../public/assets/images/todo3.jpeg'
+import ImgTodo1 from '/assets/images/todo1.jpeg'
+import ImgTodo2 from '/assets/images/todo2.jpeg'
+import ImgTodo3 from '/assets/images/todo3.jpeg'
 
 
 export const dataModal = [

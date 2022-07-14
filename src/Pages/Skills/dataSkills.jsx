@@ -1,12 +1,12 @@
-import htmlIcon from '../../../public/assets/htm_icon.svg'
-import cssIcon from '../../../public/assets/css_icon.svg'
-import jsIcon from '../../../public/assets/js_icon.svg'
-import bootstrapIcon from '../../../public/assets/bootstrap_icon.svg'
-import phpIcon from '../../../public/assets/php_icon.svg'
-import reactIcon from '../../../public/assets/react_icon.svg'
-import laravelIcon from '../../../public/assets/laravel_icon.svg'
-import sqlIcon from '../../../public/assets/Sql.svg'
-import apiIcon from '../../../public/assets/rest-api_icon.svg'
+import htmlIcon from '/assets/htm_icon.svg'
+import cssIcon from '/assets/css_icon.svg'
+import jsIcon from '/assets/js_icon.svg'
+import bootstrapIcon from '/assets/bootstrap_icon.svg'
+import phpIcon from '/assets/php_icon.svg'
+import reactIcon from '/assets/react_icon.svg'
+import laravelIcon from '/assets/laravel_icon.svg'
+import sqlIcon from '/assets/Sql.svg'
+import apiIcon from '/assets/rest-api_icon.svg'
 
 
 export const IconData = [

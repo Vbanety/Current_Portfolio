@@ -1,20 +1,25 @@
 import {useState, useEffect} from 'react'
 import Navbar from '../../Components/Navbar/Navbar'
 import Footer from '../../Components/Footer/Footer'
-import downloadIcon from '../../../public/assets/download.svg'
-import mySelf from '../../../public/assets/me.png'
-import medal from '../../../public/assets/medal.svg'
-import card_message from '../../../public/assets/cartao_stars.png'
-import { aboutData } from './dataAbout'
+import downloadIcon from '/assets/download.svg'
+import mySelf from '/assets/me.png'
+import medal from '/assets/medal.svg'
+import card_message from '/assets/cartao_stars.png'
+import { TextContentDataTest } from '../../Components/TextContent/TextContentDataTest'
 import Animation from '../../Components/Animation'
 import AnimationCards from '../../Components/AnimationCards'
 
 import './style.css'
 
 export default function Contato() {
-  var pt = 'portuguese'
-  var en = 'english'
-  const [languagesBrEn, setLanguagesBrEn] = useState(aboutData[0].portuguese[0]) 
+  
+  let dataA = localStorage.getItem('data')
+
+  let parseData = JSON.parse(dataA)
+
+  var verifyData = parseData == null ? TextContentDataTest[0].portuguese.about : parseData
+
+  const [languagesBrEn, setLanguagesBrEn] = useState(verifyData) 
 
   useEffect(() => {
     const dx = document.getElementById('container')
@@ -22,9 +27,17 @@ export default function Contato() {
 
     verifyInputLanguages.forEach((e) => e.addEventListener('change', () => {
       if(e.id == 'pt') {
-        setLanguagesBrEn(pt)
+        localStorage.setItem('data', JSON.stringify(TextContentDataTest[0].portuguese))
+        let dataPt = localStorage.getItem('data')
+        let parseDataPt = JSON.parse(dataPt)
+        setLanguagesBrEn(parseDataPt)
+        console.log(languagesBrEn)
       } else if(e.id == 'en') {
-        setLanguagesBrEn(en)
+        localStorage.setItem('data', JSON.stringify(TextContentDataTest[1].english))
+        let dataEn = localStorage.getItem('data')
+        let parseDataEn = JSON.parse(dataEn)
+        setLanguagesBrEn(parseDataEn)
+        console.log(languagesBrEn)
       } else {
         return false
       }
@@ -33,7 +46,6 @@ export default function Contato() {
 
   }, [])
 
-  const data = languagesBrEn !== pt && languagesBrEn !== en ? aboutData[0].portuguese[0] : aboutData[0][languagesBrEn][0]
   return (
     <div className='allPages'>
       <Animation>
@@ -44,18 +56,18 @@ export default function Contato() {
         </div>
         <div id="container" className='container'>
           <div className='card_me'>
-            <h1 style={{ color: '#f8e85f' }}>{data.aboutMe[0].titlePage}</h1>
+            <h1 style={{ color: '#f8e85f' }}>{languagesBrEn.about.aboutMe[0].titlePage}</h1>
               <div className="card-contact">
                 <img src={mySelf} alt="" />
-                <h1 className='titleName'>{data.aboutMe[0].name}</h1>
-                <p>{data.aboutMe[0].positionJob}</p>
+                <h1 className='titleName'>{languagesBrEn.about.aboutMe[0].name}</h1>
+                <p>{languagesBrEn.about.aboutMe[0].positionJob}</p>
               </div>
             {/* <AnimationCards>
             </AnimationCards> */}
           </div>
           <div className="description_contact">
-            <h1>{data.aboutMe[0].titleDescription}</h1>
-            {data.aboutMe[0].paragraphs.map((item, index) => {
+            <h1>{languagesBrEn.about.aboutMe[0].titleDescription}</h1>
+            {languagesBrEn.about.aboutMe[0].paragraphs.map((item, index) => {
               return (
                 <>
                   <div className="medals">
@@ -65,7 +77,7 @@ export default function Contato() {
                 </>
               )
             })}
-            <a href={data.aboutMe[0].pdf} download target="_blank"><img src={downloadIcon} /><span>{data.aboutMe[0].resume}</span></a>
+            <a href={languagesBrEn.about.aboutMe[0].pdf} download target="_blank"><img src={downloadIcon} /><span>{languagesBrEn.about.aboutMe[0].resume}</span></a>
           </div>
 
           <div className='line_blue_divide'>
@@ -74,8 +86,8 @@ export default function Contato() {
           <div className="section_bottom">
 
             <div className="card_testemunhos">
-              <h1>{data.aboutMe[0].titleTestimonies}</h1>
-              {data.testimonies.map((item) => {
+              <h1>{languagesBrEn.about.aboutMe[0].titleTestimonies}</h1>
+              {languagesBrEn.about.testimonies.map((item) => {
                 return (
                   <div className="depoiments" key={item.index}>
                     <div className="top_info">
@@ -102,7 +114,7 @@ export default function Contato() {
               })}
             </div>
             <div className="card_letter_message">
-              <p>{data.aboutMe[0].curiosity}</p>
+              <p>{languagesBrEn.about.aboutMe[0].curiosity}</p>
               <img src={card_message} alt="card_Message" />
             </div>
           </div>

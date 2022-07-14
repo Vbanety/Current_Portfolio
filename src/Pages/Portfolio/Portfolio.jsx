@@ -1,8 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react'
 import Navbar from '../../Components/Navbar/Navbar'
 import Footer from '../../Components/Footer/Footer'
-import { dataPortfolio } from './dataPortfolio'
-import { dataModal } from './dataModal'
+import { TextContentDataTest } from '../../Components/TextContent/TextContentDataTest'
 import '../../Pages/Portfolio/style.css'
 import Animation from '../../Components/Animation'
 import AnimationCards from '../../Components/AnimationCards'
@@ -11,10 +10,16 @@ import { faPlus, faClose } from '@fortawesome/free-solid-svg-icons'
 
 
 export default function Portfolio() {
+
+  let dataP = localStorage.getItem('data')
+  let parseData = JSON.parse(dataP)
+
+  var verifyData = parseData == null ? TextContentDataTest[0].portuguese.portfolio : parseData.portfolio
+
   const [transitionText, setTransitionText] = useState(false)
   const [transitionTextEn, setTransitionTextEn] = useState(false)
-  const [languages, setLanguages] = useState(dataPortfolio[0].pt)
-  const [languagesModal, setLanguagesModal] = useState(dataModal[0].pt)
+  const [languages, setLanguages] = useState(verifyData.info.ct)
+  const [languagesModal, setLanguagesModal] = useState(verifyData.dataModal.ct)
   const [getModal, setGetModal] = useState('')
   const modalRef = useRef(null);
   const currentBtn = document.querySelectorAll('#btnModal')
@@ -22,7 +27,8 @@ export default function Portfolio() {
   let x = currentBtn.forEach((v) => { return v.value })
 
 
-  const data = dataModal.filter(e => e.index === getModal)
+  const data = TextContentDataTest[0].portuguese.portfolio.dataModal.ct;
+  data.filter(e => e.index === getModal)
   const handleShowModal = () => {
     var x = document.querySelector('#modal')
     x.classList.add('active')
@@ -48,6 +54,7 @@ export default function Portfolio() {
     const animate = dd.parentNode.parentNode.querySelector('.setLanguages').querySelectorAll('input')
 
     animate.forEach((e) => e.addEventListener('change', () => {
+      console.log(e.id)
       if (e.id == 'pt') {
         return setTransitionText(true) && setTransitionTextEn(false)
       } else if (e.id == 'en') {
@@ -58,11 +65,17 @@ export default function Portfolio() {
 
     verifyInputLanguages.forEach((e) => e.addEventListener('change', () => {
       if (e.id == 'pt') {
-        setLanguages(dataPortfolio[0].pt)
-        setLanguagesModal(dataModal[0].pt)
+        localStorage.setItem('data', JSON.stringify(TextContentDataTest[0].portuguese))
+        let dataPt = localStorage.getItem('data')
+        let parseDataPt = JSON.parse(dataPt)
+        setLanguages(parseDataPt.portfolio.info.ct)
+        setLanguagesModal(parseDataPt.portfolio.dataModal.ct)
       } else if (e.id == 'en') {
-        setLanguages(dataPortfolio[0].en)
-        setLanguagesModal(dataModal[0].en)
+        localStorage.setItem('data', JSON.stringify(TextContentDataTest[1].english))
+        let dataEn = localStorage.getItem('data')
+        let parseDataEn = JSON.parse(dataEn)
+        setLanguages(parseDataEn.portfolio.info.ct)
+        setLanguagesModal(parseDataEn.portfolio.dataModal.ct)
       }
     }
     ))

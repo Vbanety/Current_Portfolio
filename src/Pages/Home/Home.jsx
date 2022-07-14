@@ -1,12 +1,19 @@
 import React, {useEffect, useState} from 'react'
-import myPicture from '../../../public/assets/ComponentMyself.svg'
+import myPicture from '/assets/ComponentMyself.svg'
 import Animation from '../../Components/Animation'
-import { TextContentData } from '../../Components/TextContent/TextContentData'
+// import { TextContentData } from '../../Components/TextContent/TextContentDataTest'
+import { TextContentDataTest } from '../../Components/TextContent/TextContentDataTest'
 import './style.css'
 
 export default function Home() {
-  
-  const [languagesBrEn, setLanguagesBrEn] = useState(TextContentData[0].portuguese)  
+
+  let data = localStorage.getItem('data')
+
+  let parseData = JSON.parse(data)
+
+  var verifyData = parseData == null ? TextContentDataTest[0].portuguese : parseData
+
+  const [languagesBrEn, setLanguagesBrEn] = useState(verifyData)  
   
 
   useEffect(() => {
@@ -15,9 +22,15 @@ export default function Home() {
 
     verifyInputLanguages.forEach((e) => e.addEventListener('change', () => {
       if(e.id == 'pt') {
-        setLanguagesBrEn(TextContentData[0].portuguese)
+        localStorage.setItem('data', JSON.stringify(TextContentDataTest[0].portuguese))
+        let dataPt = localStorage.getItem('data')
+        let parseDataPt = JSON.parse(dataPt)
+        setLanguagesBrEn(parseDataPt)
       } else if(e.id == 'en') {
-        setLanguagesBrEn(TextContentData[1].english)
+        localStorage.setItem('data', JSON.stringify(TextContentDataTest[1].english))
+        let dataEn = localStorage.getItem('data')
+        let parseDataEn = JSON.parse(dataEn)
+        setLanguagesBrEn(parseDataEn)
       } else {
         return false
       }

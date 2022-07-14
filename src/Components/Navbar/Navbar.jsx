@@ -5,7 +5,7 @@ import { DataPlayer } from '../Player/dataPlayer'
 import { SidebarData } from '../Navbar/SidebarData'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faBars, faClose, faCode } from '@fortawesome/free-solid-svg-icons'
-import headerAvatar from '../../../public/assets/headerAvatar.svg'
+import headerAvatar from '/assets/headerAvatar.svg'
 import './Navbar.css'
 
 import PlayerMusic from '../Player/PlayerMusic'
