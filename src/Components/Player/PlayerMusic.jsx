@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react'
+import React, { useState, useRef, useEffect } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPlayCircle, faPauseCircle,  faBackwardStep, faForwardStep,  faClose, faMusic } from '@fortawesome/free-solid-svg-icons'
 
@@ -7,10 +7,30 @@ export default function PlayerMusic({audioElem, isPlaying, setIsPlaying, current
   const [showPlayer, setShowPlayer] = useState(true)
 
   const clickRef = useRef()
+  const playerRef = useRef()
+  const refPlayer = useRef(null)
   
   const handleOpenPlayer = () => {
     setShowPlayer(false)
   }
+
+  useEffect(() => {
+    const playHidden = document.getElementById('idPlayer')
+    function handleClickOutSidePlayer(event) {
+      if (playerRef.current && !playerRef.current.contains(event.target)) {
+        { setShowPlayer(!false) }
+        refPlayer.current.className !== 'hiddenPlayer' ? playHidden.classList.remove('active') : playHidden.classList.add('active')
+        console.log(playerRef.current.className)
+      }
+    }
+
+    document.addEventListener("mousedown", handleClickOutSidePlayer);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutSidePlayer);
+    };
+
+  }, [])
+
 
   const handleClosePlayer = () => {
     setShowPlayer(true)
@@ -67,8 +87,9 @@ export default function PlayerMusic({audioElem, isPlaying, setIsPlaying, current
         fontSize={15}
         icon={faMusic}
         title="Click aqui para ouvir uma musica enquanto navega no meu site."
+        ref={refPlayer}
       />
-      <div key={currentSong.index} className={!showPlayer ? 'hiddenPlayer active' : 'hiddenPlayer'}>
+      <div id="idPlayer" key={currentSong.index} className={!showPlayer ? 'hiddenPlayer active' : 'hiddenPlayer'} ref={playerRef}>
         <p>{currentSong.title} <FontAwesomeIcon className='closePlayer' onClick={() => handleClosePlayer()} icon={faClose} /></p>
         <b>{currentSong.author}</b>
         <img src={currentSong.picture}/>
