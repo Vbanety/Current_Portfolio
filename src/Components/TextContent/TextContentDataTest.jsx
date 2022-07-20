@@ -35,6 +35,10 @@ import ImgTodo1 from '/assets/images/todo1.jpeg'
 import ImgTodo2 from '/assets/images/todo2.jpeg'
 import ImgTodo3 from '/assets/images/todo3.jpeg'
 
+import ImgCrud1 from '/assets/images/crud1.jpeg'
+import ImgCrud2 from '/assets/images/crud2.jpeg'
+import ImgCrud3 from '/assets/images/crud3.jpeg'
+
 
 import starIcon from '/assets/star.svg'
 import coteIcon from '/assets/cotes.svg'
@@ -194,8 +198,8 @@ export const TextContentDataTest = [
       
             {
               index: 5,
-              title: 'Todo-list',
-              text: 'Lorem ipsum dolor sit amet. Nam internos libero ut dolor suscipit et fugit nulla quo internos suscipit...',
+              title: 'Crud Web App',
+              text: 'Vinicius ipsum dolor sit amet. Nam internos libero ut dolor suscipit et fugit nulla quo internos suscipit...',
               icons: [
                 {
                   html: htmlIcon,
@@ -211,8 +215,8 @@ export const TextContentDataTest = [
                   www: wwwIcon
                 },
               ],
-              repo: 'https://github.com/vbanety',
-              site: 'https://www.vini-dev-it.com.br',
+              repo: 'https://github.com/Vbanety/v-crud-web-app',
+              site: 'https://v-crup-web-apps.surge.sh',
               more: 'modal5'
             }
           ],
@@ -321,8 +325,14 @@ export const TextContentDataTest = [
             },
             {
               index: 'modal5',
-              title: 'Dashboard',
-              img: 'http://1.bp.blogspot.com/_N6RSTgEScug/S0DT9EaeUBI/AAAAAAAAA58/8Y849awG49E/s400/Mar+e+deck.jpg',
+              title: 'Crud Web App',
+              img: [
+                {
+                  img1: ImgCrud1,
+                  img2: ImgCrud2,
+                  img3: ImgCrud3
+                }
+              ],
               text: [
                 {
                   p1: 'Primeiro portfolio desenvolvido apenas com HTML, CSS e JAVASCRIPT, além da utilização da bliblioteca SCROLLREAVEL para animação.',
@@ -603,7 +613,7 @@ export const TextContentDataTest = [
       
             {
               index: 5,
-              title: 'Todo-list',
+              title: 'Crud Web App',
               text: 'Lorem ipsum dolor sit amet. Nam internos libero ut dolor suscipit et fugit nulla quo internos suscipit...',
               icons: [
                 {
@@ -620,8 +630,8 @@ export const TextContentDataTest = [
                   www: wwwIcon
                 },
               ],
-              repo: 'https://github.com/vbanety',
-              site: 'https://www.vini-dev-it.com.br',
+              repo: 'https://github.com/Vbanety/v-crud-web-app',
+              site: 'https://v-crup-web-apps.surge.sh',
               more: 'modal5'
             }
           ]
@@ -730,8 +740,14 @@ export const TextContentDataTest = [
             },
             {
               index: 'modal5',
-              title: 'Dashboard',
-              img: 'http://1.bp.blogspot.com/_N6RSTgEScug/S0DT9EaeUBI/AAAAAAAAA58/8Y849awG49E/s400/Mar+e+deck.jpg',
+              title: 'Crud Web App',
+              img: [
+                {
+                  img1: ImgCrud1,
+                  img2: ImgCrud2,
+                  img3: ImgCrud3
+                }
+              ],
               text: [
                 {
                   p1: 'Primeiro portfolio desenvolvido apenas com HTML, CSS e JAVASCRIPT, além da utilização da bliblioteca SCROLLREAVEL para animação.',
