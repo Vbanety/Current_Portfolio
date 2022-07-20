@@ -199,7 +199,7 @@ export const TextContentDataTest = [
             {
               index: 5,
               title: 'Crud Web App',
-              text: 'Vinicius ipsum dolor sit amet. Nam internos libero ut dolor suscipit et fugit nulla quo internos suscipit...',
+              text: 'Aplicativo desenvolvido com o intuíto de praticar o framework Tailwindcss e firebase, nesse projeto foi utilizado funções de filtro com o método sort() do javascript.',
               icons: [
                 {
                   html: htmlIcon,
@@ -335,9 +335,9 @@ export const TextContentDataTest = [
               ],
               text: [
                 {
-                  p1: 'Primeiro portfolio desenvolvido apenas com HTML, CSS e JAVASCRIPT, além da utilização da bliblioteca SCROLLREAVEL para animação.',
-                  p2: 'E nesse projeto, eu pude praticar o desenvolvimento da lógica como também implementar um carrossel em javascript utilizando funções nativas do javascript como setInterval e addEventListener',
-                  p3: 'Também pude compreender e desenvolver  sobre envio de formulário para o email cadastrado a biblioteca nodemailer.'
+                  p1: 'No decorrer do desenvolvimento do projeto pude assimilar o manuseio das classes compreendendo melhor a sintase do Tailwind Css, acompanhando a documentação e desenvolvendo ao mesmo tempo.',
+                  p2: 'Outro desafio foi a implementação do formulário de cadastro e edição, onde aproveitei a mesma interface para executar o processo de insert e update através das funções nativas do firebase.',
+                  p3: 'Nesse caso necessitei da utilização dos Hooks do React para manipular estado e referências para monitorar estados com onChange.'
                 }
               ],
             repo: 'https://github.com/vbanety',
@@ -614,7 +614,7 @@ export const TextContentDataTest = [
             {
               index: 5,
               title: 'Crud Web App',
-              text: 'Lorem ipsum dolor sit amet. Nam internos libero ut dolor suscipit et fugit nulla quo internos suscipit...',
+              text: 'Application developed with the intention of practicing the Tailwind Css framework and firebase, in this project we used filter functions with the sort() method of javascript.',
               icons: [
                 {
                   html: htmlIcon,
@@ -750,9 +750,9 @@ export const TextContentDataTest = [
               ],
               text: [
                 {
-                  p1: 'Primeiro portfolio desenvolvido apenas com HTML, CSS e JAVASCRIPT, além da utilização da bliblioteca SCROLLREAVEL para animação.',
-                  p2: 'E nesse projeto, eu pude praticar o desenvolvimento da lógica como também implementar um carrossel em javascript utilizando funções nativas do javascript como setInterval e addEventListener',
-                  p3: 'Também pude compreender e desenvolver  sobre envio de formulário para o email cadastrado a biblioteca nodemailer.'
+                  p1: "During the development of the project I was able to assimilate the handling of the classes, understanding the Tailwind Css synthase better, following the documentation and developing at the same time.",
+                   p2: "Another challenge was the implementation of the registration and editing form, where I took advantage of the same interface to execute the insert and update process through firebase's native functions.",
+                   p3: "In this case I needed to use React Hooks to manipulate state and references to monitor states with onChange."
                 }
               ],
             repo: 'https://github.com/vbanety',
