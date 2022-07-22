@@ -12,6 +12,8 @@ import gitHubIcon from '/assets/gitubIcon.svg'
 import wwwIcon from '/assets/www.svg'
 import tsIcon from '/assets/typescript.png'
 import figmaIcon from '/assets/figma.svg'
+import tailwindcssIcon from '/assets/tailwindcss.svg'
+import firebaseIcon from '/assets/firebase.svg'
 import herokuIcon from '/assets/heroku.svg'
 import slackIcon from '/assets/slack.png'
 
@@ -203,10 +205,10 @@ export const TextContentDataTest = [
               icons: [
                 {
                   html: htmlIcon,
-                  css: cssIcon,
+                  css: tailwindcssIcon,
                   js: jsIcon,
                   react: reactIcon,
-                  bootstrap: bootstrapIcon,
+                  bootstrap: firebaseIcon,
                   php: phpIcon,
                   laravel: laravelIcon,
                   sql: sqlIcon,
@@ -565,7 +567,7 @@ export const TextContentDataTest = [
             },
             {
               index: 3,
-              title: 'NLW Rocketseat',
+              title: 'NLW2 Rocketseat - Proffy',
               text: 'Project developed by next-level-week video classes at Rocketseat, where I absorbed a lot of content focused on react.js.',
               icons: [
                 {
@@ -618,10 +620,10 @@ export const TextContentDataTest = [
               icons: [
                 {
                   html: htmlIcon,
-                  css: cssIcon,
+                  css: tailwindcssIcon,
                   js: jsIcon,
                   react: reactIcon,
-                  bootstrap: bootstrapIcon,
+                  bootstrap: firebaseIcon,
                   php: phpIcon,
                   laravel: laravelIcon,
                   sql: sqlIcon,

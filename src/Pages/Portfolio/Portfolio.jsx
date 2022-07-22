@@ -87,7 +87,7 @@ export default function Portfolio() {
       {languagesModal.filter(i => i.index == getModal).map(filtered => {
         return (
           <>
-            <div id="modal" className="modal">
+            <div key={filtered.id} id="modal" className="modal">
               <div className="content" ref={modalRef} value="modalRef">
                 <h1>{filtered.title}</h1>
                 <div className='textContent'>
@@ -144,7 +144,7 @@ export default function Portfolio() {
                             </button>
                           </p>
 
-                          <ol>
+                          <ol key={index}>
                             <li><img src={item.icons[0].html} /></li>
                             <li><img src={item.icons[0].css} /></li>
                             <li><img src={item.icons[0].js} /></li>

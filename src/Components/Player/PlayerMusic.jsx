@@ -20,7 +20,7 @@ export default function PlayerMusic({audioElem, isPlaying, setIsPlaying, current
       if (playerRef.current && !playerRef.current.contains(event.target)) {
         { setShowPlayer(!false) }
         refPlayer.current.className !== 'hiddenPlayer' ? playHidden.classList.remove('active') : playHidden.classList.add('active')
-        console.log(playerRef.current.className)
+        // console.log(playerRef.current.className)
       }
     }
 
