@@ -98,7 +98,7 @@ export const TextContentDataTest = [
                 },
               ],
               repo: 'https://github.com/Vbanety/Personal-Portfolio',
-              site: 'https://www.vini-dev-it.com.br',
+              site: 'https://personal-portfolio-roan.vercel.app/',
               more: 'modal0'
       
             },
@@ -513,7 +513,7 @@ export const TextContentDataTest = [
                 },
               ],
               repo: 'https://github.com/Vbanety/Personal-Portfolio',
-              site: 'https://www.vini-dev-it.com.br',
+              site: 'https://personal-portfolio-roan.vercel.app/',
               more: 'modal0'
       
             },
