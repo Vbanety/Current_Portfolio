@@ -217,11 +217,16 @@ p {
     margin-top: 2rem;
 }
   .description_contact h1 {
-    margin-top: 2.5rem;
+    /* margin-top: 2.5rem; */
   }
 
   .medals p {
     font-size: 20px;
+  }
+
+  .card_me {
+    margin-top: 0;
+    margin-bottom: auto;
   }
 }
 

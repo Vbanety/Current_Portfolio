@@ -69,11 +69,11 @@
   }
 
   .jobs ul li p {
-    font-size: 25px;
+    font-size: 20px;
   }
 
   .jobs ul li ol li img {
-    width: 55px !important;
+    /* width: 55px !important; */
   }
 }
 @media (max-width: 900px) {

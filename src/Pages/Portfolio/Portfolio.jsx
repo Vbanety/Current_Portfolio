@@ -26,7 +26,6 @@ export default function Portfolio() {
 
   let x = currentBtn.forEach((v) => { return v.value })
 
-
   const data = TextContentDataTest[0].portuguese.portfolio.dataModal.ct;
   data.filter(e => e.index === getModal)
   const handleShowModal = () => {
@@ -101,6 +100,9 @@ export default function Portfolio() {
                     <img src={filtered.img[0].img2} alt='images' />
                     <img src={filtered.img[0].img3} alt='images' />
                   </div>
+                  <div className='dataModal'>
+                    <span>{filtered.createdAt}</span>
+                  </div>
                 </div>
                 <button className='btnModalClose' onClick={() => handleCloseModal()}
                 ><FontAwesomeIcon icon={faClose} /></button>
@@ -152,13 +154,19 @@ export default function Portfolio() {
                             <li><img src={item.icons[0].react} /></li>
                           </ol>
 
-                          <div className="buttons">
-                            <button><img src={item.icons[0].github} /><a href={item.repo} target="blank">Repo</a></button>
-                            <button><img src={item.icons[0].www} /><a href={item.site} target="blank">Site</a></button>
+                          <div className="footer_card">
+                            <div className="buttons">
+                              <button><img src={item.icons[0].github} /><a href={item.repo} target="blank">Repo</a></button>
+                              <button><img src={item.icons[0].www} /><a href={item.site} target="blank">Site</a></button>
+                            </div>
+
+                            <div className="dates">
+                              <span>{item.createdAt}</span>
+                            </div>
                           </div>
                         </li>
                       </>
-                    )
+                    );
                   })}
                 </ul>
               </div>

@@ -100,14 +100,14 @@ export const TextContentDataTest = [
               repo: 'https://github.com/Vbanety/Personal-Portfolio',
               site: 'https://personal-portfolio-roan.vercel.app/',
               more: 'modal0',
-              createdAt: 'Criado em 11/07/2021'
+              createdAt: 'Criado em 11/07/21'
       
             },
       
             {
               index: 1,
-              title: 'Lista de afazeres - FRONTENDMENTOR',
-              text: 'Desafio proposto da plataforma FRONTENDMENTOR, para praticar Html, CSS e JavaScript, no entando eu desenvolvi em React e Vite.',
+              title: 'Lista de afazeres - FrontEndMentor',
+              text: 'Desafio proposto da plataforma FrontEndMentor, para praticar Html, CSS e JavaScript, no entando eu desenvolvi em React e Vite.',
               icons: [
                 {
                   html: htmlIcon,
@@ -126,7 +126,7 @@ export const TextContentDataTest = [
               repo: 'https://github.com/Vbanety/To-do-list-localstorage/tree/main',
               site: 'https://to-do-list-localstorage.vercel.app/',
               more: 'modal1',
-              createdAt: 'Criado em: 04/06/2022'
+              createdAt: 'Criado em: 04/06/22'
             },
       
             {
@@ -150,7 +150,8 @@ export const TextContentDataTest = [
               ],
               repo: 'https://github.com/Vbanety/All-NLW-bootcamps/tree/main/NLW%2301',
               site: 'https://morning-dusk-66700.herokuapp.com/',
-              more: 'modal3'
+              more: 'modal3',
+              createdAt: 'Criado em: 27/03/21'
             },
             {
               index: 3,
@@ -173,13 +174,14 @@ export const TextContentDataTest = [
               ],
               repo: 'https://github.com/Vbanety/All-NLW-bootcamps/tree/main/NLW%2302',
               site: 'https://proffy-neon.vercel.app/',
-              more: 'modal2'
+              more: 'modal2',
+              createdAt: 'Criado em: 02/04/21'
             },
       
             {
               index: 4,
-              title: 'Dark-Fylo - FRONTENDMENTOR',
-              text: 'Landing page desenvolvida como desafio da plataforma Frontendmentor, para aprimorar a questão de estrutura HTML e responsividade com CSS.',
+              title: 'Dark-Fylo - FrontEndMentor',
+              text: 'Landing page desenvolvida como desafio da plataforma FrontEndMentor, para aprimorar a questão de estrutura HTML e responsividade com CSS.',
               icons: [
                 {
                   html: htmlIcon,
@@ -197,7 +199,8 @@ export const TextContentDataTest = [
               ],
               repo: 'https://github.com/Vbanety/FRONTENDMENTOR03/tree/main/11-fylo-dark-theme-landing-page-master',
               site: 'https://fylo-dark-theme-landing-page-master-jade.vercel.app/',
-              more: 'modal4'
+              more: 'modal4',
+              createdAt: 'Criado em: 01/04/21'
             },
       
             {
@@ -221,7 +224,8 @@ export const TextContentDataTest = [
               ],
               repo: 'https://github.com/Vbanety/v-crud-web-app',
               site: 'https://v-crup-web-apps.surge.sh',
-              more: 'modal5'
+              more: 'modal5',
+              createdAt: 'Criado em: 19/07/22'
             }
           ],
         },
@@ -246,6 +250,7 @@ export const TextContentDataTest = [
               ],
             repo: 'https://github.com/vbanety',
             site: 'https://www.vini-dev-it.com.br',
+            createdAt: 'Criado em: 11/07/21',
             },
             {
               index: 'modal1',
@@ -266,6 +271,7 @@ export const TextContentDataTest = [
               ],
             repo: 'https://github.com/Vbanety/To-do-list-localstorage/tree/main',
             site: 'https://to-do-list-localstorage.vercel.app/',
+            createdAt: 'Criado em: 04/06/22',
             },
             {
               index: 'modal3',
@@ -286,6 +292,7 @@ export const TextContentDataTest = [
               ],
             repo: 'https://github.com/vbanety',
             site: 'https://www.vini-dev-it.com.br',
+            createdAt: 'Criado em: 27/03/21',
             },
             {
               index: 'modal2',
@@ -306,6 +313,7 @@ export const TextContentDataTest = [
               ],
             repo: 'https://github.com/vbanety',
             site: 'https://www.vini-dev-it.com.br',
+            createdAt: 'Criado em: 02/04/21',
             },
             {
               index: 'modal4',
@@ -326,6 +334,7 @@ export const TextContentDataTest = [
               ],
             repo: 'https://github.com/vbanety',
             site: 'https://www.vini-dev-it.com.br',
+            createdAt: 'Criado em: 01/04/21',
             },
             {
               index: 'modal5',
@@ -346,6 +355,7 @@ export const TextContentDataTest = [
               ],
             repo: 'https://github.com/vbanety',
             site: 'https://www.vini-dev-it.com.br',
+            createdAt: 'Criado em 19/07/22',
             },
           ],
         }
@@ -517,7 +527,7 @@ export const TextContentDataTest = [
               repo: 'https://github.com/Vbanety/Personal-Portfolio',
               site: 'https://personal-portfolio-roan.vercel.app/',
               more: 'modal0',
-              createdAt: '07/11/2021'
+              createdAt: 'Created: 07/11/21'
       
             },
       
@@ -543,7 +553,7 @@ export const TextContentDataTest = [
               repo: 'https://github.com/Vbanety/To-do-list-localstorage/tree/main',
               site: 'https://to-do-list-localstorage.vercel.app/',
               more: 'modal1',
-              createdAt: '06/04/2022'
+              createdAt: 'Created: 06/04/22'
             },
       
             {
@@ -567,7 +577,8 @@ export const TextContentDataTest = [
               ],
               repo: 'https://github.com/Vbanety/All-NLW-bootcamps/tree/main/NLW%2301',
               site: 'https://morning-dusk-66700.herokuapp.com/',
-              more: 'modal3'
+              more: 'modal3',
+              createdAt: 'Created: 03/27/21'
             },
             {
               index: 3,
@@ -590,7 +601,8 @@ export const TextContentDataTest = [
               ],
               repo: 'https://github.com/Vbanety/All-NLW-bootcamps/tree/main/NLW%2302',
               site: 'https://proffy-neon.vercel.app/',
-              more: 'modal2'
+              more: 'modal2',
+              createdAt: 'Created: 04/02/21'
             },
       
             {
@@ -614,7 +626,8 @@ export const TextContentDataTest = [
               ],
               repo: 'https://github.com/Vbanety/FRONTENDMENTOR03/tree/main/11-fylo-dark-theme-landing-page-master',
               site: 'https://fylo-dark-theme-landing-page-master-jade.vercel.app/',
-              more: 'modal4'
+              more: 'modal4',
+              createdAt: 'Created: 04/01/21'
             },
       
             {
@@ -638,7 +651,8 @@ export const TextContentDataTest = [
               ],
               repo: 'https://github.com/Vbanety/v-crud-web-app',
               site: 'https://v-crup-web-apps.surge.sh',
-              more: 'modal5'
+              more: 'modal5',
+              createdAt: 'Created: 07/19/22'
             }
           ]
         },
@@ -663,6 +677,7 @@ export const TextContentDataTest = [
               ],
             repo: 'https://github.com/vbanety',
             site: 'https://www.vini-dev-it.com.br',
+            createdAt: 'Created: 07/11/21',
             },
             {
               index: 'modal1',
@@ -683,6 +698,7 @@ export const TextContentDataTest = [
               ],
               repo: 'https://github.com/Vbanety/To-do-list-localstorage/tree/main',
               site: 'https://to-do-list-localstorage.vercel.app/',
+              createdAt: 'Created: 06/04/22',
             },
             {
               index: 'modal3',
@@ -703,6 +719,7 @@ export const TextContentDataTest = [
               ],
             repo: 'https://github.com/vbanety',
             site: 'https://www.vini-dev-it.com.br',
+            createdAt: 'Created: 03/27/21',
             },
             {
               index: 'modal2',
@@ -723,6 +740,7 @@ export const TextContentDataTest = [
               ],
             repo: 'https://github.com/vbanety',
             site: 'https://www.vini-dev-it.com.br',
+            createdAt: 'Created: 04/02/21',
             },
             {
               index: 'modal4',
@@ -743,6 +761,7 @@ export const TextContentDataTest = [
               ],
             repo: 'https://github.com/vbanety',
             site: 'https://www.vini-dev-it.com.br',
+            createdAt: 'Created: 04/01/21',
             },
             {
               index: 'modal5',
@@ -763,6 +782,7 @@ export const TextContentDataTest = [
               ],
             repo: 'https://github.com/vbanety',
             site: 'https://www.vini-dev-it.com.br',
+            createdAt: 'Created: 07/19/22',
             },
           ]
         }

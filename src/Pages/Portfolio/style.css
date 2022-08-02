@@ -41,12 +41,21 @@
   margin: auto;
 }
 
+.footer_card {
+  display: flex;
+}
+
 .buttons {
-  margin-left: auto;
-  margin-right: 0;
+  margin: auto;
   width: 180px;
   display: flex;
   justify-content: space-between;
+}
+
+.dates {
+  margin: auto;
+  color: rgba(255, 255, 255, .5);
+  font-size: 12px;
 }
 
 .buttons:first-child,
@@ -72,7 +81,7 @@
 
 .jobs ul li p {
   padding-left: 0;
-  /* padding-right: 3rem; */
+  border-bottom: 1px solid rgba(255, 255, 255, .5);
 }
 
 .jobs ul li ol {
@@ -132,6 +141,12 @@
 
 .content.active {
   transform: translateY(0);
+}
+
+.dataModal {
+  margin: 2rem auto auto 0;
+  width: 100%;
+  
 }
 
 .btnModalClose {
@@ -252,5 +267,17 @@
 
   .content {
     min-height: 70% !important;
+  }
+
+  .dataModal {
+    margin: 6rem auto auto auto;
+    text-align: center;
+    font-weight: bold;
+    color: rgba(0, 0, 0, .5);
+    border-bottom: 1px solid rgba(0, 0, 0, .5);
+  }
+
+  .dates {
+    font-size: 10px;
   }
 }
