@@ -101,8 +101,8 @@ export const TextContentDataTest = [
               site: 'https://personal-portfolio-roan.vercel.app/',
               more: 'modal0',
               createAtText: 'Criado em:',
-              createdAt: '11/07/21'
-      
+              createdAt: '11/07/21',
+              sortDate: 3
             },
       
             {
@@ -128,7 +128,8 @@ export const TextContentDataTest = [
               site: 'https://to-do-list-localstorage.vercel.app/',
               more: 'modal1',
               createAtText: 'Criado em:',
-              createdAt: ' 04/06/22',
+              createdAt: '04/06/22',
+              sortDate: 4
             },
       
             {
@@ -180,7 +181,8 @@ export const TextContentDataTest = [
               site: 'https://proffy-neon.vercel.app/',
               more: 'modal2',
               createAtText: 'Criado em:',
-              createdAt: ' 02/04/21'
+              createdAt: '02/04/21',
+              sortDate: 2
             },
       
             {
@@ -233,7 +235,8 @@ export const TextContentDataTest = [
               site: 'https://v-crup-web-apps.surge.sh',
               more: 'modal5',
               createAtText: 'Criado em:',
-              createdAt: ' 19/07/22'
+              createdAt: '19/07/22',
+              sortDate: 5
             }
           ],
         },
@@ -305,7 +308,7 @@ export const TextContentDataTest = [
             repo: 'https://github.com/vbanety',
             site: 'https://www.vini-dev-it.com.br',
             createAtText: 'Criado em:',
-            createdAt: ' 27/03/21',
+            createdAt: '27/03/21',
             },
             {
               index: 'modal2',

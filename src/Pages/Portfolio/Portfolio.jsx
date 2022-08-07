@@ -85,7 +85,7 @@ export default function Portfolio() {
     const animate = dd.parentNode.parentNode.querySelector('.setLanguages').querySelectorAll('input')
 
     animate.forEach((e) => e.addEventListener('change', () => {
-      console.log(e.id)
+      
       if (e.id == 'pt') {
         return setTransitionText(true) && setTransitionTextEn(false)
       } else if (e.id == 'en') {
@@ -156,9 +156,10 @@ export default function Portfolio() {
           <h1 className='title_page'>Portfolio</h1>
           <AnimationCards>
             <div className="jobs">
-              <div >
+              <div>
+                {/* {console.log(languages)} */}
                 <ul className='jobs'>
-                  {languages.slice(back, prev).map((item, index) => {
+                  {languages.sort((a,b) => { return b.sortDate - a.sortDate}).slice(back, prev).map((item, index) => {
                     return (
                       <>
                         <li key={index} className="boxJobs">
