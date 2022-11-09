@@ -878,7 +878,7 @@ export const TextContentDataTest = [
         
           {
             index: 1  ,
-            person: 'https://media-exp2.licdn.com/dms/image/C4D03AQHbPvopzG62tA/profile-displayphoto-shrink_200_200/0/1616934787177?e=1661385600&v=beta&t=ANIKp6w3qVYFqKCXRNx04yUgC_K5Zp0RCu2yTK6w2UQ',
+            person: 'https://media-exp1.licdn.com/dms/image/C4D03AQHbPvopzG62tA/profile-displayphoto-shrink_200_200/0/1616934787177?e=1673481600&v=beta&t=LS-SEoWt4Oauwh_7oU4_g4Qs21J8-s2wsTjPvTJ3vW0',
             name: 'L. Felipe Camargo',
             position: 'Mobile & Web FronEnd',
             link: 'https://www.linkedin.com/in/lfelipe-camargo/',
