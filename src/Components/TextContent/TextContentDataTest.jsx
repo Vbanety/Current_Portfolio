@@ -16,6 +16,8 @@ import tailwindcssIcon from '/assets/tailwindcss.svg'
 import firebaseIcon from '/assets/firebase.svg'
 import herokuIcon from '/assets/heroku.svg'
 import slackIcon from '/assets/slack.png'
+import nextjsIcon from '/assets/nextjs_icon.svg'
+import nodejsIcon from '/assets/nodejs_icon.svg'
 
 import ImgProffy1 from '/assets/images/proffy1.jpeg'
 import ImgProffy2 from '/assets/images/proffy2.jpeg'
@@ -53,17 +55,17 @@ export const TextContentDataTest = [
       home: {
         welcome: 'Olá, bem vindo!',
         description: 'Eu me chamo Vinícius',
-        position: 'Desenvolvedor FrontEnd'
+        position: 'Desenvolvedor FullStack'
       },      
       shills: {
         titlePage: 'Habilidades',
         titleTechs: 'Tecnologias',
-        titleOne: 'Estrutura',
-        titleTwo: 'Layout de páginas',
-        titleThree: 'Criação de lógicas',
-        descOne: 'Ao iniciar a criação de um projeto, busco desenvolver a base com foco na organização de pastas e criação de bibliotecas reutilizáveis.',
-        descTwo: 'Desenho os layouts no figma e me baseio em layouts já criados pela mesma ferramenta, observando aos detalhes e as especificações solicitadas, verificando as fontes de texto, ícones e inspiração de cores.',
-        descThree: 'Eu me baseio na regra de negócio, consulto e discuto com membros da equipe para desenvolver uma regra clara e objetiva para facilitar em futuras manutenções.',
+        titleOne: 'Frontend Development',
+        titleTwo: 'Backend & APIs',
+        titleThree: 'FullStack Solutions',
+        descOne: 'Desenvolvimento de interfaces modernas e responsivas utilizando React.js, TypeScript e CSS avançado. Criação de componentes reutilizáveis, otimização de performance, implementação de testes e integração com APIs REST e GraphQL. Experiência com Tailwind CSS, Styled Components e design systems.',
+        descTwo: 'Desenvolvimento de APIs RESTful e GraphQL utilizando Node.js e Express. Integração com bancos de dados relacionais e não-relacionais (PostgreSQL, MongoDB). Implementação de autenticação, autorização e segurança. Deploy e manutenção de aplicações em produção usando Firebase, Vercel e AWS.',
+        descThree: 'Arquitetura de soluções completas end-to-end, desde o frontend até o backend. Trabalho com metodologias ágeis, versionamento Git, CI/CD e boas práticas de desenvolvimento. Foco em código limpo, escalabilidade e manutenibilidade. Experiência em trabalhar em equipe e entregar soluções de alta qualidade.',
       },
       contact: {
         titlePage: 'Contato',
@@ -214,29 +216,29 @@ export const TextContentDataTest = [
       
             {
               index: 5,
-              title: 'Crud Web App',
-              text: 'Aplicativo desenvolvido com o intuíto de praticar o framework Tailwindcss e firebase, nesse projeto foi utilizado funções de filtro com o método sort() do javascript.',
+              title: 'ClubPOS',
+              text: 'Sistema de gestão desenvolvido inicialmente em Laravel antigo com jQuery e Bootstrap. Trabalhei na migração completa para Node.js e Next.js, modernizando toda a arquitetura e melhorando performance.',
               icons: [
                 {
                   html: htmlIcon,
-                  css: tailwindcssIcon,
+                  css: cssIcon,
                   js: jsIcon,
                   react: reactIcon,
-                  bootstrap: firebaseIcon,
-                  php: phpIcon,
-                  laravel: laravelIcon,
+                  bootstrap: nextjsIcon,
+                  php: nodejsIcon,
+                  laravel: tsIcon,
                   sql: sqlIcon,
                   apiIcon: apiIcon,
                   github: gitHubIcon,
                   www: wwwIcon
                 },
               ],
-              repo: 'https://github.com/Vbanety/v-crud-web-app',
-              site: 'https://v-crup-web-apps.surge.sh',
+              repo: 'https://github.com/vbanety',
+              site: 'https://clubpos.org',
               more: 'modal5',
-              createAtText: 'Criado em:',
-              createdAt: '19/07/22',
-              sortDate: 5
+              createAtText: 'Migração concluída em:',
+              createdAt: '2024',
+              sortDate: 6
             }
           ],
         },
@@ -357,26 +359,26 @@ export const TextContentDataTest = [
             },
             {
               index: 'modal5',
-              title: 'Crud Web App',
+              title: 'ClubPOS - Migração e Modernização',
               img: [
                 {
-                  img1: ImgCrud1,
-                  img2: ImgCrud2,
-                  img3: ImgCrud3
+                  img1: 'https://clubpos.org/assets/images/screenshot1.jpg',
+                  img2: 'https://clubpos.org/assets/images/screenshot2.jpg',
+                  img3: 'https://clubpos.org/assets/images/screenshot3.jpg'
                 }
               ],
               text: [
                 {
-                  p1: 'No decorrer do desenvolvimento do projeto pude assimilar o manuseio das classes compreendendo melhor a sintase do Tailwind Css, acompanhando a documentação e desenvolvendo ao mesmo tempo.',
-                  p2: 'Outro desafio foi a implementação do formulário de cadastro e edição, onde aproveitei a mesma interface para executar o processo de insert e update através das funções nativas do firebase.',
-                  p3: 'Nesse caso necessitei da utilização dos Hooks do React para manipular estado e referências para monitorar estados com onChange.'
+                  p1: 'O projeto ClubPOS iniciou em um template antigo desenvolvido em Laravel com jQuery e Bootstrap. Trabalhei na manutenção desse projeto legado, identificando pontos de melhoria e planejando a migração completa para tecnologias modernas.',
+                  p2: 'Realizei a migração completa para Node.js e Next.js, modernizando toda a arquitetura do sistema. A nova versão conta com melhor performance, código mais limpo e manutenível, além de uma experiência de usuário significativamente melhorada.',
+                  p3: 'Durante o processo de migração, implementei novas funcionalidades, otimizei consultas ao banco de dados, melhorei a segurança e adotei boas práticas de desenvolvimento. O sistema agora está mais escalável e preparado para futuras expansões.'
                 }
               ],
             repo: 'https://github.com/vbanety',
-            site: 'https://www.vini-dev-it.com.br',
-            createAtText: 'Criado em:',
-            createdAt: '19/07/22',
-            sortDate: 5
+            site: 'https://clubpos.org',
+            createAtText: 'Migração concluída em:',
+            createdAt: '2024',
+            sortDate: 6
             },
           ],
         }
@@ -386,10 +388,10 @@ export const TextContentDataTest = [
           {
             name: 'Vinícius Batista',
             titlePage: 'Sobre',
-            positionJob: 'Desenvolvedor FrontEnd',
+            positionJob: 'Desenvolvedor FrontEnd & FullStack',
             titleDescription: 'Resumo',
             resume: 'Currículo',
-            pdf: '/assets/pdf/cv_br_18_ 04.pdf',
+            pdf: '/assets/pdf/cv_23_dez_2025_pt.pdf',
             paragraphs: [
               {
                 text: `- Após me formar em técnico de informática em 2011, comecei a prestar serviços de freelancer como suporte ténico T.I nos períodos vagos, em 2019 iniciei na empresa ${TIVIT} como suporte técnico para solucionar problemas de microinformática para o cliente ITAU, e nesse mesmo período iniciei meus estudos na área de programação por conta própria.`
@@ -404,8 +406,125 @@ export const TextContentDataTest = [
                 text: '- Desde então, venho trabalhando em criações de funcionalidades, implementação de páginas com reactjs, consumindo dados de API e Backend através de endpoints.'
               }
             ],
+            titleExperience: 'Experiência Profissional',
             titleTestimonies: 'Testemunhos',
             curiosity: '"O sucesso não ocorre por acaso. Em vez de dizer: isto não pode ser feito, continue questionando o seu cérebro: como isto pode ser feito? Comprometa-se com suas metas e encare os obstáculos como etapas para atingir o objetivo final. Faça parte da solução, ao invés de ser parte do problema. Faça bem ­feito não só para agradar aos outros, mas principalmente para agradar a si próprio. Se você falha em planejar, está planejando falhar. - (Doutor. Lair Ribeiro)"'
+          }
+        ],
+        experience: [
+          {
+            id: 1,
+            company: 'VMarket',
+            position: 'Desenvolvedor Frontend',
+            period: 'Presente',
+            location: 'São José dos Campos - SP',
+            type: 'Frontend',
+            description: 'Desenvolvimento de interfaces web responsivas e modernas utilizando React.js e tecnologias modernas. Trabalho na plataforma de gestão de compras para food service, desenvolvendo funcionalidades que ajudam empresas a economizar até 25% nos custos de aquisição.',
+            achievements: [
+              'Desenvolvimento de componentes reutilizáveis em React',
+              'Integração com APIs REST e GraphQL',
+              'Implementação de testes unitários e de integração',
+              'Otimização de performance e SEO',
+              'Trabalho em equipe com metodologias ágeis',
+              'Desenvolvimento de dashboards e métricas de compras',
+              'Implementação de funcionalidades de cotação automatizada'
+            ],
+            technologies: ['React', 'JavaScript', 'TypeScript', 'HTML5', 'CSS3', 'Git', 'REST API', 'GraphQL'],
+            current: true,
+            projects: [
+              {
+                name: 'VMarket Platform',
+                url: 'https://www.vmarket.com.br/',
+                description: 'Plataforma de gestão de compras para restaurantes, hotéis e food service. Sistema que digitaliza processos de compras, permite cotações online e ajuda empresas a economizar até 25% nos custos.',
+                technologies: ['React', 'TypeScript', 'Node.js', 'REST API']
+              }
+            ]
+          },
+          {
+            id: 2,
+            company: 'Freelancer',
+            position: 'Desenvolvedor FullStack',
+            period: '2020 - Presente',
+            location: 'Remoto',
+            type: 'FullStack',
+            description: 'Desenvolvimento de aplicações web completas, desde o frontend até o backend, utilizando tecnologias modernas. Criação de soluções end-to-end para diversos clientes.',
+            achievements: [
+              'Desenvolvimento de aplicações web completas',
+              'Criação de APIs RESTful e GraphQL',
+              'Implementação de autenticação e autorização',
+              'Deploy e manutenção de aplicações em produção',
+              'Arquitetura de sistemas escaláveis'
+            ],
+            technologies: ['React', 'Node.js', 'Express', 'MongoDB', 'PostgreSQL', 'Firebase', 'Vercel', 'AWS'],
+            current: true,
+            projects: [
+              {
+                name: 'Ahsant',
+                url: 'https://ahsant.com.br',
+                description: 'Plataforma desenvolvida como freelancer para gestão e automação de processos. Desenvolvimento fullstack com foco em performance e experiência do usuário.',
+                technologies: ['React', 'Node.js', 'TypeScript', 'REST API']
+              }
+            ]
+          },
+          {
+            id: 4,
+            company: 'ClubPOS',
+            position: 'Desenvolvedor FullStack',
+            period: '2023 - 2024',
+            location: 'Remoto',
+            type: 'FullStack',
+            description: 'Trabalhei na migração completa do sistema ClubPOS de Laravel/jQuery/Bootstrap para Node.js e Next.js. Modernizei toda a arquitetura do sistema, melhorando performance, código e experiência do usuário.',
+            achievements: [
+              'Migração completa de Laravel para Node.js e Next.js',
+              'Modernização da arquitetura do sistema',
+              'Otimização de consultas ao banco de dados',
+              'Melhoria de segurança e boas práticas',
+              'Implementação de novas funcionalidades',
+              'Manutenção do sistema legado durante transição'
+            ],
+            technologies: ['Next.js', 'Node.js', 'React', 'TypeScript', 'SQL', 'REST API', 'Laravel', 'jQuery'],
+            current: false,
+            projects: [
+              {
+                name: 'ClubPOS',
+                url: 'https://clubpos.org',
+                description: 'Sistema de gestão desenvolvido inicialmente em Laravel antigo com jQuery e Bootstrap. Trabalhei na migração completa para Node.js e Next.js, modernizando toda a arquitetura e melhorando significativamente a performance.',
+                technologies: ['Next.js', 'Node.js', 'React', 'TypeScript', 'SQL', 'REST API']
+              }
+            ]
+          },
+          {
+            id: 3,
+            company: 'SETY TECNOLOGIA',
+            position: 'Desenvolvedor Frontend',
+            period: 'Ago 2021 - 2023',
+            location: 'São José dos Campos - SP',
+            type: 'Frontend',
+            description: 'Desenvolvimento de interfaces web responsivas utilizando React.js, implementação de funcionalidades, correção de bugs e otimização de performance.',
+            achievements: [
+              'Desenvolvimento de componentes reutilizáveis em React',
+              'Integração com APIs REST',
+              'Implementação de testes unitários',
+              'Otimização de performance'
+            ],
+            technologies: ['React', 'JavaScript', 'HTML5', 'CSS3', 'Git', 'REST API'],
+            current: false
+          },
+          {
+            id: 4,
+            company: 'TIVIT',
+            position: 'Suporte Técnico T.I',
+            period: '2019 - Ago 2021',
+            location: 'São José dos Campos - SP',
+            type: 'Suporte',
+            description: 'Suporte técnico para solução de problemas de microinformática para cliente ITAU, manutenção de equipamentos e sistemas.',
+            achievements: [
+              'Resolução de problemas técnicos de hardware e software',
+              'Atendimento ao cliente com foco em qualidade',
+              'Manutenção preventiva de equipamentos'
+            ],
+            technologies: ['Windows', 'Linux', 'Hardware', 'Redes'],
+            current: false
           }
         ],
         testimonies: [
@@ -501,17 +620,17 @@ export const TextContentDataTest = [
       home: {
         welcome: 'Hi there, welcome!',
         description: "I'm Vinícius",
-        position: "FrontEnd Web Developer"
+        position: "FullStack Developer"
       },
       shills: {
         titlePage: 'Skills',
         titleTechs: 'Technologies',
-        titleOne: 'Structure',
-        titleTwo: 'Page Layout',
-        titleThree: 'Logic Creation',
-        descOne: 'When starting to create a project, I try to develop the base with a focus on organizing folders and creating reusable libraries.',
-        descTwo: 'I design the layouts in figma and I base myself on layouts already created by the same tool, observing the details and the requested specifications, checking the text fonts, icons and color inspiration.',
-        descThree: 'Based on the business rule, I consult and discuss with team members to develop a clear and objective rule to facilitate future maintenance.',
+        titleOne: 'Frontend Development',
+        titleTwo: 'Backend & APIs',
+        titleThree: 'FullStack Solutions',
+        descOne: 'Development of modern and responsive interfaces using React.js, TypeScript and advanced CSS. Creation of reusable components, performance optimization, test implementation and integration with REST and GraphQL APIs. Experience with Tailwind CSS, Styled Components and design systems.',
+        descTwo: 'Development of RESTful and GraphQL APIs using Node.js and Express. Integration with relational and non-relational databases (PostgreSQL, MongoDB). Implementation of authentication, authorization and security. Deploy and maintenance of applications in production using Firebase, Vercel and AWS.',
+        descThree: 'Architecture of complete end-to-end solutions, from frontend to backend. Work with agile methodologies, Git versioning, CI/CD and development best practices. Focus on clean code, scalability and maintainability. Experience working in teams and delivering high-quality solutions.',
       },
       contact: {
         titlePage: 'Contact',
@@ -658,28 +777,28 @@ export const TextContentDataTest = [
       
             {
               index: 5,
-              title: 'Crud Web App',
-              text: 'Application developed with the intention of practicing the Tailwind Css framework and firebase, in this project we used filter functions with the sort() method of javascript.',
+              title: 'ClubPOS',
+              text: 'Management system initially developed in old Laravel with jQuery and Bootstrap. Worked on complete migration to Node.js and Next.js, modernizing the entire architecture and improving performance.',
               icons: [
                 {
                   html: htmlIcon,
-                  css: tailwindcssIcon,
+                  css: cssIcon,
                   js: jsIcon,
                   react: reactIcon,
-                  bootstrap: firebaseIcon,
-                  php: phpIcon,
-                  laravel: laravelIcon,
+                  bootstrap: nextjsIcon,
+                  php: nodejsIcon,
+                  laravel: tsIcon,
                   sql: sqlIcon,
                   apiIcon: apiIcon,
                   github: gitHubIcon,
                   www: wwwIcon
                 },
               ],
-              repo: 'https://github.com/Vbanety/v-crud-web-app',
-              site: 'https://v-crup-web-apps.surge.sh',
+              repo: 'https://github.com/vbanety',
+              site: 'https://clubpos.org',
               more: 'modal5',
-              createAtText: 'Created: ',
-              createdAt: '07/19/22'
+              createAtText: 'Migration completed: ',
+              createdAt: '2024'
             }
           ]
         },
@@ -797,25 +916,25 @@ export const TextContentDataTest = [
             },
             {
               index: 'modal5',
-              title: 'Crud Web App',
+              title: 'ClubPOS - Migration and Modernization',
               img: [
                 {
-                  img1: ImgCrud1,
-                  img2: ImgCrud2,
-                  img3: ImgCrud3
+                  img1: 'https://clubpos.org/assets/images/screenshot1.jpg',
+                  img2: 'https://clubpos.org/assets/images/screenshot2.jpg',
+                  img3: 'https://clubpos.org/assets/images/screenshot3.jpg'
                 }
               ],
               text: [
                 {
-                  p1: "During the development of the project I was able to assimilate the handling of the classes, understanding the Tailwind Css synthase better, following the documentation and developing at the same time.",
-                   p2: "Another challenge was the implementation of the registration and editing form, where I took advantage of the same interface to execute the insert and update process through firebase's native functions.",
-                   p3: "In this case I needed to use React Hooks to manipulate state and references to monitor states with onChange."
+                  p1: 'The ClubPOS project started in an old template developed in Laravel with jQuery and Bootstrap. I worked on maintaining this legacy project, identifying improvement points and planning the complete migration to modern technologies.',
+                  p2: 'I performed the complete migration to Node.js and Next.js, modernizing the entire system architecture. The new version features better performance, cleaner and more maintainable code, and a significantly improved user experience.',
+                  p3: 'During the migration process, I implemented new features, optimized database queries, improved security and adopted development best practices. The system is now more scalable and ready for future expansions.'
                 }
               ],
             repo: 'https://github.com/vbanety',
-            site: 'https://www.vini-dev-it.com.br',
-            createAtText: 'Created: ',
-            createdAt: '07/19/22',
+            site: 'https://clubpos.org',
+            createAtText: 'Migration completed: ',
+            createdAt: '2024',
             },
           ]
         }
@@ -825,7 +944,7 @@ export const TextContentDataTest = [
           {
             name: 'Vinícius Batista',
             titlePage: 'About',
-            positionJob: 'FrontEnd Web Developer',
+            positionJob: 'FrontEnd & FullStack Developer',
             titleDescription: 'Resume',
             resume: 'Resume',
             paragraphs: [
@@ -842,9 +961,126 @@ export const TextContentDataTest = [
                 text: "- Since then, I've been working on creating features, implementing pages with reactjs, consuming API and Backend data through endpoints."
               }
             ],
-            pdf: '/assets/pdf/cv_en_12_07.pdf',
+            titleExperience: 'Professional Experience',
+            pdf: '/assets/pdf/cv_23_dez_2025_en.pdf',
             titleTestimonies: 'Testimonies',
             curiosity: "'Success does not happen by accident. Instead of saying: this can't be done, keep asking your brain: how can this be done? Commit to your goals and view obstacles as steps to reach the ultimate goal. Be part of the solution instead of being part of the problem. Do it well not only to please others, but mainly to please yourself. If you fail to plan, you are planning to fail. - (Doctor. Lair Ribeiro)'"
+          }
+        ],
+        experience: [
+          {
+            id: 1,
+            company: 'VMarket',
+            position: 'Frontend Developer',
+            period: 'Present',
+            location: 'São José dos Campos - SP',
+            type: 'Frontend',
+            description: 'Development of responsive and modern web interfaces using React.js and modern technologies. Working on the food service purchasing management platform, developing features that help companies save up to 25% on acquisition costs.',
+            achievements: [
+              'Development of reusable React components',
+              'Integration with REST and GraphQL APIs',
+              'Implementation of unit and integration tests',
+              'Performance and SEO optimization',
+              'Teamwork with agile methodologies',
+              'Development of dashboards and purchasing metrics',
+              'Implementation of automated quotation features'
+            ],
+            technologies: ['React', 'JavaScript', 'TypeScript', 'HTML5', 'CSS3', 'Git', 'REST API', 'GraphQL'],
+            current: true,
+            projects: [
+              {
+                name: 'VMarket Platform',
+                url: 'https://www.vmarket.com.br/',
+                description: 'Purchasing management platform for restaurants, hotels and food service. System that digitizes purchasing processes, allows online quotations and helps companies save up to 25% on costs.',
+                technologies: ['React', 'TypeScript', 'Node.js', 'REST API']
+              }
+            ]
+          },
+          {
+            id: 2,
+            company: 'Freelancer',
+            position: 'FullStack Developer',
+            period: '2020 - Present',
+            location: 'Remote',
+            type: 'FullStack',
+            description: 'Development of complete web applications, from frontend to backend, using modern technologies. Creation of end-to-end solutions for various clients.',
+            achievements: [
+              'Development of complete web applications',
+              'Creation of RESTful and GraphQL APIs',
+              'Implementation of authentication and authorization',
+              'Deploy and maintenance of applications in production',
+              'Scalable system architecture'
+            ],
+            technologies: ['React', 'Node.js', 'Express', 'MongoDB', 'PostgreSQL', 'Firebase', 'Vercel', 'AWS'],
+            current: true,
+            projects: [
+              {
+                name: 'Ahsant',
+                url: 'https://ahsant.com.br',
+                description: 'Platform developed as a freelancer for process management and automation. Fullstack development focused on performance and user experience.',
+                technologies: ['React', 'Node.js', 'TypeScript', 'REST API']
+              }
+            ]
+          },
+          {
+            id: 4,
+            company: 'ClubPOS',
+            position: 'FullStack Developer',
+            period: '2023 - 2024',
+            location: 'Remote',
+            type: 'FullStack',
+            description: 'Worked on the complete migration of the ClubPOS system from Laravel/jQuery/Bootstrap to Node.js and Next.js. Modernized the entire system architecture, improving performance, code and user experience.',
+            achievements: [
+              'Complete migration from Laravel to Node.js and Next.js',
+              'System architecture modernization',
+              'Database query optimization',
+              'Security improvements and best practices',
+              'Implementation of new features',
+              'Legacy system maintenance during transition'
+            ],
+            technologies: ['Next.js', 'Node.js', 'React', 'TypeScript', 'SQL', 'REST API', 'Laravel', 'jQuery'],
+            current: false,
+            projects: [
+              {
+                name: 'ClubPOS',
+                url: 'https://clubpos.org',
+                description: 'Management system initially developed in old Laravel with jQuery and Bootstrap. Worked on complete migration to Node.js and Next.js, modernizing the entire architecture and significantly improving performance.',
+                technologies: ['Next.js', 'Node.js', 'React', 'TypeScript', 'SQL', 'REST API']
+              }
+            ]
+          },
+          {
+            id: 3,
+            company: 'SETY TECNOLOGIA',
+            position: 'Frontend Developer',
+            period: 'Aug 2021 - 2023',
+            location: 'São José dos Campos - SP',
+            type: 'Frontend',
+            description: 'Development of responsive web interfaces using React.js, feature implementation, bug fixes and performance optimization.',
+            achievements: [
+              'Development of reusable React components',
+              'Integration with REST APIs',
+              'Implementation of unit tests',
+              'Performance optimization'
+            ],
+            technologies: ['React', 'JavaScript', 'HTML5', 'CSS3', 'Git', 'REST API'],
+            current: false
+          },
+          {
+            id: 4,
+            company: 'TIVIT',
+            position: 'IT Technical Support',
+            period: '2019 - Aug 2021',
+            location: 'São José dos Campos - SP',
+            type: 'Support',
+            description: 'Technical support for solving microcomputer problems for ITAU client, equipment and systems maintenance.',
+            achievements: [
+              'Resolution of hardware and software technical problems',
+              'Customer service focused on quality',
+              'Preventive maintenance of equipment'
+            ],
+            technologies: ['Windows', 'Linux', 'Hardware', 'Networks'],
+            current: false
           }
         ],
         testimonies: [

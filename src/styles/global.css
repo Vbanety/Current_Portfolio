@@ -1,22 +1,61 @@
-@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Outfit:wght@400;700&family=Poppins:ital,wght@0,400;0,600;0,700;1,400&display=swap');
-
-@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Outfit:wght@400;700&family=Poppins:ital,wght@0,400;0,600;0,700;1,400&family=Roboto:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&family=Poppins:ital,wght@0,400;0,600;0,700;1,400&display=swap');
 
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Rajdhani', 'Poppins', sans-serif;
 }
 
 :root {
-  --switch-color-to-cards: #2B313C;
-  --background-color: #1B1F24;
-  --title-page-color: #F8E85F
+  /* Cores inspiradas no Top Gear - Gradiente Azul */
+  --bg-gradient-start: #0a1a3a;      /* Azul escuro profundo */
+  --bg-gradient-end: #1e3a5f;        /* Azul médio */
+  --bg-gradient-light: #2d4f7c;      /* Azul claro */
+  
+  /* Background e Cards */
+  --background-color: #0f1f3d;       /* Azul escuro base */
+  --switch-color-to-cards: #1a2f4f;  /* Cards com tom azul */
+  --card-hover: #234a6b;             /* Hover dos cards */
+  
+  /* Cores de destaque Top Gear */
+  --accent-red: #e63946;             /* Vermelho vibrante */
+  --accent-orange: #ff6b35;          /* Laranja */
+  --accent-yellow: #ffd60a;          /* Amarelo (substitui o #F8E85F) */
+  --accent-yellow-dark: #f4c430;     /* Amarelo escuro */
+  
+  /* Azul principal (mantido mas ajustado) */
+  --primary-blue: #3d7bd4;           /* Azul mais suave */
+  --primary-blue-dark: #2a5a9e;     /* Azul escuro */
+  --primary-blue-light: #5a9ae8;    /* Azul claro */
+  
+  /* Textos */
+  --text-primary: #ffffff;
+  --text-secondary: rgba(255, 255, 255, 0.8);
+  --text-muted: rgba(255, 255, 255, 0.6);
+  
+  /* Títulos */
+  --title-page-color: var(--accent-yellow);
+  --title-gradient-start: var(--accent-red);
+  --title-gradient-end: var(--accent-orange);
+  
+  /* Bordas e linhas */
+  --border-color: rgba(61, 123, 212, 0.3);
+  --line-gradient: linear-gradient(90deg, var(--accent-red), var(--accent-orange), var(--accent-yellow));
 }
 
 body {
-  background-color: var(--background-color);
+  background: linear-gradient(135deg, var(--bg-gradient-start) 0%, var(--bg-gradient-end) 50%, var(--bg-gradient-light) 100%);
+  background-attachment: fixed;
+  min-height: 100vh;
+}
+
+/* Tipografia inspirada no Top Gear */
+h1, h2, h3 {
+  font-family: 'Rajdhani', sans-serif;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
 }
 
 .allPages {
@@ -35,13 +74,20 @@ body {
 .title_page {
   margin: 0 auto 0 0;
   color: var(--title-page-color);
+  text-shadow: 
+    2px 2px 0px var(--accent-red),
+    4px 4px 8px rgba(0, 0, 0, 0.5);
+  font-family: 'Rajdhani', sans-serif;
+  font-weight: 700;
+  letter-spacing: 0.1em;
 }
 
 .line_blue hr {
   border: none;
   width: 100%;
   height: .3rem;
-  background-color: #075FE4;
+  background: var(--line-gradient);
+  box-shadow: 0 2px 8px rgba(255, 214, 10, 0.3);
 }
 
 .home, .reports, .products {
@@ -195,7 +241,7 @@ audio {
 }
 
 .progress {
-  background-color: #075FE4;
+  background-color: var(--primary-blue);
   height: .2rem;
   margin: 0  auto .5rem 0;
   border-radius: .1rem;
@@ -234,20 +280,20 @@ audio {
 }
 
 .hiddenPlayer p {
-  color: #075FE4;
+  color: var(--primary-blue);
   width: 100%;
   text-align: center;
   position: relative;
 }
 
 .hiddenPlayer p svg path:hover {
-  fill: #075FE4
+  fill: var(--primary-blue)
 }
 
 
 
 .btn_player {
-  color: #075FE4;
+  color: var(--primary-blue);
   border: 2px solid #fff;
   width: 1.2rem;
   height: 1.2rem;
@@ -273,14 +319,14 @@ audio {
 .btn_player:hover {
   cursor: pointer;
   color: #fff;
-  border: 2px solid  #075FE4;
+  border: 2px solid var(--primary-blue);
 }
 
 .btn_search svg path {
   fill: #fff
 }
 .btn_search svg path:hover {
-  fill: #075FE4
+  fill: var(--primary-blue)
 }
 
 .btn_search svg:hover {

@@ -11,39 +11,37 @@ import AnimationCards from '../../Components/AnimationCards'
 
 import './style.css'
 
-export default function Contato() {
+export default function Sobre() {
   
   let dataA = localStorage.getItem('data')
 
-  let parseData = JSON.parse(dataA)
+  let parseData = dataA ? JSON.parse(dataA) : null
 
-  var verifyData = parseData == null ? TextContentDataTest[0].portuguese.about : parseData
+  var verifyData = parseData == null ? TextContentDataTest[0].portuguese : parseData
 
   const [languagesBrEn, setLanguagesBrEn] = useState(verifyData) 
 
   useEffect(() => {
     const dx = document.getElementById('container')
-    const verifyInputLanguages = dx.parentNode.parentNode.querySelector('.setLanguages').querySelectorAll('input')
-
-    verifyInputLanguages.forEach((e) => e.addEventListener('change', () => {
-      if(e.id == 'pt') {
-        localStorage.setItem('data', JSON.stringify(TextContentDataTest[0].portuguese))
-        let dataPt = localStorage.getItem('data')
-        let parseDataPt = JSON.parse(dataPt)
-        setLanguagesBrEn(parseDataPt)
-        console.log(languagesBrEn)
-      } else if(e.id == 'en') {
-        localStorage.setItem('data', JSON.stringify(TextContentDataTest[1].english))
-        let dataEn = localStorage.getItem('data')
-        let parseDataEn = JSON.parse(dataEn)
-        setLanguagesBrEn(parseDataEn)
-        console.log(languagesBrEn)
-      } else {
-        return false
-      }
+    if (!dx) return
+    
+    const verifyInputLanguages = dx.parentNode?.parentNode?.querySelector('.setLanguages')?.querySelectorAll('input')
+    
+    if (verifyInputLanguages) {
+      verifyInputLanguages.forEach((e) => e.addEventListener('change', () => {
+        if(e.id == 'pt') {
+          localStorage.setItem('data', JSON.stringify(TextContentDataTest[0].portuguese))
+          let dataPt = localStorage.getItem('data')
+          let parseDataPt = JSON.parse(dataPt)
+          setLanguagesBrEn(parseDataPt)
+        } else if(e.id == 'en') {
+          localStorage.setItem('data', JSON.stringify(TextContentDataTest[1].english))
+          let dataEn = localStorage.getItem('data')
+          let parseDataEn = JSON.parse(dataEn)
+          setLanguagesBrEn(parseDataEn)
+        }
+      }))
     }
-    ))
-
   }, [])
 
   return (
@@ -56,7 +54,7 @@ export default function Contato() {
         </div>
         <div id="container" className='container'>
           <div className='card_me'>
-            <h1 style={{ color: '#f8e85f' }}>{languagesBrEn.about.aboutMe[0].titlePage}</h1>
+            <h1>{languagesBrEn.about.aboutMe[0].titlePage}</h1>
               <div className="card-contact">
                 <img src={mySelf} alt="" />
                 <h1 className='titleName'>{languagesBrEn.about.aboutMe[0].name}</h1>
@@ -78,6 +76,54 @@ export default function Contato() {
               )
             })}
             <a href={languagesBrEn.about.aboutMe[0].pdf} download target="_blank"><img src={downloadIcon} /><span>{languagesBrEn.about.aboutMe[0].resume}</span></a>
+          </div>
+
+          <div className='line_blue_divide'>
+            <hr />
+          </div>
+
+          {/* Timeline de Experiências Profissionais */}
+          <div className="experience_timeline_section">
+            <h1 className="timeline_title">{languagesBrEn.about.aboutMe[0].titleExperience}</h1>
+            <div className="timeline_container">
+              {languagesBrEn.about.experience && languagesBrEn.about.experience.map((exp, index) => (
+                <div key={exp.id} className={`timeline_item ${exp.current ? 'current' : ''} ${exp.type.toLowerCase()}`}>
+                  <div className="timeline_marker">
+                    <div className="marker_dot"></div>
+                    {index < languagesBrEn.about.experience.length - 1 && <div className="marker_line"></div>}
+                  </div>
+                  <div className="timeline_content">
+                    <div className="timeline_header">
+                      <div className="timeline_header_top">
+                        <h3 className="timeline_company">{exp.company}</h3>
+                        {exp.current && <span className="current_badge">Atual</span>}
+                      </div>
+                      <h4 className="timeline_position">{exp.position}</h4>
+                      <div className="timeline_meta">
+                        <span className="timeline_period">{exp.period}</span>
+                        <span className="timeline_location">{exp.location}</span>
+                        <span className={`timeline_type ${exp.type.toLowerCase()}`}>{exp.type}</span>
+                      </div>
+                    </div>
+                    <p className="timeline_description">{exp.description}</p>
+                    {exp.achievements && exp.achievements.length > 0 && (
+                      <ul className="timeline_achievements">
+                        {exp.achievements.map((achievement, idx) => (
+                          <li key={idx}>{achievement}</li>
+                        ))}
+                      </ul>
+                    )}
+                    {exp.technologies && exp.technologies.length > 0 && (
+                      <div className="timeline_technologies">
+                        {exp.technologies.map((tech, idx) => (
+                          <span key={idx} className="tech_badge">{tech}</span>
+                        ))}
+                      </div>
+                    )}
+                  </div>
+                </div>
+              ))}
+            </div>
           </div>
 
           <div className='line_blue_divide'>

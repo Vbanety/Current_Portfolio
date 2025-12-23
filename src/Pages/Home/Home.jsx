@@ -9,35 +9,53 @@ export default function Home() {
 
   let data = localStorage.getItem('data')
 
-  let parseData = JSON.parse(data)
+  let parseData = data ? JSON.parse(data) : null
 
+  // Sempre usar os dados atualizados do arquivo como padrão
   var verifyData = parseData == null ? TextContentDataTest[0].portuguese : parseData
+  
+  // Garantir que os dados estão atualizados
+  if (verifyData && verifyData.home && verifyData.home.position === 'Desenvolvedor FrontEnd') {
+    verifyData = TextContentDataTest[0].portuguese
+    localStorage.setItem('data', JSON.stringify(verifyData))
+  }
 
   const [languagesBrEn, setLanguagesBrEn] = useState(verifyData)  
   
 
   useEffect(() => {
-    const dx = document.getElementById('container')
-    const verifyInputLanguages = dx.parentNode.parentNode.querySelector('.setLanguages').querySelectorAll('input')
-
-    verifyInputLanguages.forEach((e) => e.addEventListener('change', () => {
-      if(e.id == 'pt') {
-        localStorage.setItem('data', JSON.stringify(TextContentDataTest[0].portuguese))
-        let dataPt = localStorage.getItem('data')
-        let parseDataPt = JSON.parse(dataPt)
-        setLanguagesBrEn(parseDataPt)
-      } else if(e.id == 'en') {
-        localStorage.setItem('data', JSON.stringify(TextContentDataTest[1].english))
-        let dataEn = localStorage.getItem('data')
-        let parseDataEn = JSON.parse(dataEn)
-        setLanguagesBrEn(parseDataEn)
-      } else {
-        return false
+    // Atualizar estado inicial com dados atualizados
+    const currentData = localStorage.getItem('data')
+    if (currentData) {
+      const parsed = JSON.parse(currentData)
+      // Verificar se precisa atualizar
+      if (parsed.home && parsed.home.position === 'Desenvolvedor FrontEnd') {
+        const updatedData = TextContentDataTest[0].portuguese
+        localStorage.setItem('data', JSON.stringify(updatedData))
+        setLanguagesBrEn(updatedData)
       }
     }
-    ))
 
+    const dx = document.getElementById('container')
+    if (!dx) return
+    
+    const verifyInputLanguages = dx.parentNode?.parentNode?.querySelector('.setLanguages')?.querySelectorAll('input')
 
+    if (verifyInputLanguages) {
+      verifyInputLanguages.forEach((e) => e.addEventListener('change', () => {
+        if(e.id == 'pt') {
+          localStorage.setItem('data', JSON.stringify(TextContentDataTest[0].portuguese))
+          let dataPt = localStorage.getItem('data')
+          let parseDataPt = JSON.parse(dataPt)
+          setLanguagesBrEn(parseDataPt)
+        } else if(e.id == 'en') {
+          localStorage.setItem('data', JSON.stringify(TextContentDataTest[1].english))
+          let dataEn = localStorage.getItem('data')
+          let parseDataEn = JSON.parse(dataEn)
+          setLanguagesBrEn(parseDataEn)
+        }
+      }))
+    }
   }, [])
 
   return (

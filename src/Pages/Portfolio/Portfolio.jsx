@@ -7,12 +7,14 @@ import Animation from '../../Components/Animation'
 import AnimationCards from '../../Components/AnimationCards'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faAngleLeft, faAngleRight, faPlus, faClose } from '@fortawesome/free-solid-svg-icons'
+import gitHubIcon from '/assets/gitubIcon.svg'
+import wwwIcon from '/assets/www.svg'
 
 
 export default function Portfolio() {
 
   let dataP = localStorage.getItem('data')
-  let parseData = JSON.parse(dataP)
+  let parseData = dataP ? JSON.parse(dataP) : null
 
   var verifyData = parseData == null ? TextContentDataTest[0].portuguese.portfolio : parseData.portfolio
 
@@ -58,22 +60,34 @@ export default function Portfolio() {
   const data = TextContentDataTest[0].portuguese.portfolio.dataModal.ct;
   data.filter(e => e.index === getModal)
   const handleShowModal = () => {
-    var x = document.querySelector('#modal')
-    x.classList.add('active')
-    var b = document.querySelector('.content')
-    b.classList.add('active')
-    window.scroll({
-      top: 0,
-      left: 0,
-      behavior: 'smooth'
-    });
+    const modal = document.querySelector('#modal')
+    const content = document.querySelector('.content')
+    if (modal && content) {
+      modal.classList.add('active')
+      content.classList.add('active')
+      document.body.style.overflow = 'hidden'
+      window.scroll({
+        top: 0,
+        left: 0,
+        behavior: 'smooth'
+      })
+    }
   }
 
   const handleCloseModal = () => {
-    var x = document.querySelector('#modal')
-    x.classList.remove('active')
-    var b = document.querySelector('.content')
-    b.classList.remove('active')
+    const modal = document.querySelector('#modal')
+    const content = document.querySelector('.content')
+    if (modal && content) {
+      modal.classList.remove('active')
+      content.classList.remove('active')
+      document.body.style.overflow = 'auto'
+    }
+  }
+
+  const handleModalBackdropClick = (e) => {
+    if (e.target.id === 'modal') {
+      handleCloseModal()
+    }
   }
 
   useEffect(() => {
@@ -81,36 +95,38 @@ export default function Portfolio() {
       setBtnDisabledBack(btnDisabledBack)
     }
     const dd = document.getElementById('container')
-    const verifyInputLanguages = dd.parentNode.parentNode.querySelector('.setLanguages').querySelectorAll('input')
-    const animate = dd.parentNode.parentNode.querySelector('.setLanguages').querySelectorAll('input')
+    if (!dd) return
+    
+    const verifyInputLanguages = dd.parentNode?.parentNode?.querySelector('.setLanguages')?.querySelectorAll('input')
+    const animate = dd.parentNode?.parentNode?.querySelector('.setLanguages')?.querySelectorAll('input')
 
-    animate.forEach((e) => e.addEventListener('change', () => {
-      
-      if (e.id == 'pt') {
-        return setTransitionText(true) && setTransitionTextEn(false)
-      } else if (e.id == 'en') {
-        return setTransitionText(false) && setTransitionTextEn(true)
-      }
+    if (animate) {
+      animate.forEach((e) => e.addEventListener('change', () => {
+        if (e.id == 'pt') {
+          return setTransitionText(true) && setTransitionTextEn(false)
+        } else if (e.id == 'en') {
+          return setTransitionText(false) && setTransitionTextEn(true)
+        }
+      }))
     }
-    ))
 
-    verifyInputLanguages.forEach((e) => e.addEventListener('change', () => {
-      if (e.id == 'pt') {
-        localStorage.setItem('data', JSON.stringify(TextContentDataTest[0].portuguese))
-        let dataPt = localStorage.getItem('data')
-        let parseDataPt = JSON.parse(dataPt)
-        setLanguages(parseDataPt.portfolio.info.ct)
-        setLanguagesModal(parseDataPt.portfolio.dataModal.ct)
-      } else if (e.id == 'en') {
-        localStorage.setItem('data', JSON.stringify(TextContentDataTest[1].english))
-        let dataEn = localStorage.getItem('data')
-        let parseDataEn = JSON.parse(dataEn)
-        setLanguages(parseDataEn.portfolio.info.ct)
-        setLanguagesModal(parseDataEn.portfolio.dataModal.ct)
-      }
+    if (verifyInputLanguages) {
+      verifyInputLanguages.forEach((e) => e.addEventListener('change', () => {
+        if (e.id == 'pt') {
+          localStorage.setItem('data', JSON.stringify(TextContentDataTest[0].portuguese))
+          let dataPt = localStorage.getItem('data')
+          let parseDataPt = JSON.parse(dataPt)
+          setLanguages(parseDataPt.portfolio.info.ct)
+          setLanguagesModal(parseDataPt.portfolio.dataModal.ct)
+        } else if (e.id == 'en') {
+          localStorage.setItem('data', JSON.stringify(TextContentDataTest[1].english))
+          let dataEn = localStorage.getItem('data')
+          let parseDataEn = JSON.parse(dataEn)
+          setLanguages(parseDataEn.portfolio.info.ct)
+          setLanguagesModal(parseDataEn.portfolio.dataModal.ct)
+        }
+      }))
     }
-    ))
-
   }, [])
 
   // function byDate
@@ -120,8 +136,16 @@ export default function Portfolio() {
       {languagesModal.filter(i => i.index == getModal).map(filtered => {
         return (
           <>
-            <div key={filtered.id} id="modal" className="modal">
-              <div className="content" ref={modalRef} value="modalRef">
+            <div 
+              key={filtered.id} 
+              id="modal" 
+              className="modal"
+              onClick={handleModalBackdropClick}
+            >
+              <div className="content" ref={modalRef} onClick={(e) => e.stopPropagation()}>
+                <button className='btnModalClose' onClick={handleCloseModal} aria-label="Fechar modal">
+                  <FontAwesomeIcon icon={faClose} />
+                </button>
                 <h1>{filtered.title}</h1>
                 <div className='textContent'>
                   <div className='groupText'>
@@ -129,18 +153,34 @@ export default function Portfolio() {
                     <p>{filtered.text[0].p2}</p>
                     <p>{filtered.text[0].p3}</p>
                   </div>
-                  <div className='groupImage'>
-                    <img src={filtered.img[0].img1} alt='images' />
-                    <img src={filtered.img[0].img2} alt='images' />
-                    <img src={filtered.img[0].img3} alt='images' />
-                  </div>
+                  {filtered.img && filtered.img[0] && (
+                    <div className='groupImage'>
+                      {filtered.img[0].img1 && <img src={filtered.img[0].img1} alt={`${filtered.title} screenshot 1`} />}
+                      {filtered.img[0].img2 && <img src={filtered.img[0].img2} alt={`${filtered.title} screenshot 2`} />}
+                      {filtered.img[0].img3 && <img src={filtered.img[0].img3} alt={`${filtered.title} screenshot 3`} />}
+                    </div>
+                  )}
                   <div className='dataModal'>
                     <span>{filtered.createAtText}</span>
                     <span>{filtered.createdAt}</span>
                   </div>
+                  {(filtered.repo || filtered.site) && (
+                    <div className='modal_links'>
+                      {filtered.repo && filtered.repo !== 'https://github.com/vbanety' && (
+                        <a href={filtered.repo} target="_blank" rel="noopener noreferrer" className="modal_link">
+                          <img src={gitHubIcon} alt="GitHub" />
+                          <span>Ver código</span>
+                        </a>
+                      )}
+                      {filtered.site && (
+                        <a href={filtered.site} target="_blank" rel="noopener noreferrer" className="modal_link">
+                          <img src={wwwIcon} alt="Website" />
+                          <span>Visitar site</span>
+                        </a>
+                      )}
+                    </div>
+                  )}
                 </div>
-                <button className='btnModalClose' onClick={() => handleCloseModal()}
-                ><FontAwesomeIcon icon={faClose} /></button>
               </div>
             </div>
           </>
@@ -171,29 +211,43 @@ export default function Portfolio() {
                             transitionText ? 'animateText' : 'animateText active'
                               &&
                               transitionTextEn ? 'animateTextEn' : 'animateTextEn active'
-                          }>{item.text}
-                            <button
-                              id="btnModal"
-                              onMouseOver={(e) => setGetModal(e.currentTarget.value)}
-                              onClick={() => handleShowModal()}
-                              value={item.more}
-                            >
-                              <FontAwesomeIcon icon={faPlus} />
-                            </button>
-                          </p>
+                          }>{item.text}</p>
+                          <button
+                            className="btn_view_more"
+                            id="btnModal"
+                            onMouseOver={(e) => setGetModal(e.currentTarget.value)}
+                            onClick={() => handleShowModal()}
+                            value={item.more}
+                            aria-label="Ver mais detalhes"
+                          >
+                            <FontAwesomeIcon icon={faPlus} />
+                            <span>Ver mais</span>
+                          </button>
 
-                          <ol key={index}>
-                            <li><img src={item.icons[0].html} /></li>
-                            <li><img src={item.icons[0].css} /></li>
-                            <li><img src={item.icons[0].js} /></li>
-                            <li><img src={item.icons[0].bootstrap} /></li>
-                            <li><img src={item.icons[0].react} /></li>
+                          <ol key={index} className="tech_icons_list">
+                            {item.icons[0].html && <li><img src={item.icons[0].html} alt="HTML" title="HTML5" /></li>}
+                            {item.icons[0].css && <li><img src={item.icons[0].css} alt="CSS" title="CSS3" /></li>}
+                            {item.icons[0].js && <li><img src={item.icons[0].js} alt="JavaScript" title="JavaScript" /></li>}
+                            {item.icons[0].react && <li><img src={item.icons[0].react} alt="React" title="React" /></li>}
+                            {item.icons[0].bootstrap && <li><img src={item.icons[0].bootstrap} alt="Tech" title="Technology" /></li>}
+                            {item.icons[0].php && <li><img src={item.icons[0].php} alt="Tech" title="Technology" /></li>}
+                            {item.icons[0].laravel && <li><img src={item.icons[0].laravel} alt="Tech" title="Technology" /></li>}
                           </ol>
 
                           <div className="footer_card">
                             <div className="buttons">
-                              <button><img src={item.icons[0].github} /><a href={item.repo} target="blank">Repo</a></button>
-                              <button><img src={item.icons[0].www} /><a href={item.site} target="blank">Site</a></button>
+                              {item.repo && item.repo !== 'https://github.com/vbanety' && (
+                                <a href={item.repo} target="_blank" rel="noopener noreferrer" className="btn_link">
+                                  <img src={item.icons[0].github} alt="GitHub" />
+                                  <span>Repositório</span>
+                                </a>
+                              )}
+                              {item.site && (
+                                <a href={item.site} target="_blank" rel="noopener noreferrer" className="btn_link">
+                                  <img src={item.icons[0].www} alt="Website" />
+                                  <span>Ver site</span>
+                                </a>
+                              )}
                             </div>
 
                             <div className="dates">

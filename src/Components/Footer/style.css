@@ -15,7 +15,18 @@
 }
 
 .footer p b {
-  color: #075FE4 !important;
+  color: var(--primary-blue) !important;
+}
+
+.footer p a {
+  color: var(--accent-yellow);
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.footer p a:hover {
+  color: var(--accent-orange);
+  text-shadow: 0 0 10px rgba(255, 214, 10, 0.5);
 }
 
 @media (max-width: 600px) {

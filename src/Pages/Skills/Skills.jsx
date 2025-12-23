@@ -11,7 +11,7 @@ export default function Skills() {
   
   let data = localStorage.getItem('data')
 
-  let parseData = JSON.parse(data)
+  let parseData = data ? JSON.parse(data) : null
 
   var verifyData = parseData == null ? TextContentDataTest[0].portuguese : parseData
 
@@ -20,35 +20,36 @@ export default function Skills() {
     const [transitionTextEn, setTransitionTextEn] = useState(false)
   useEffect(() => {
     const d = document.getElementById('container')
-    const verifyInputLanguages = d.parentNode.parentNode.querySelector('.setLanguages').querySelectorAll('input')
+    if (!d) return
+    
+    const verifyInputLanguages = d.parentNode?.parentNode?.querySelector('.setLanguages')?.querySelectorAll('input')
+    const animate = d.parentNode?.parentNode?.querySelector('.setLanguages')?.querySelectorAll('input')
 
-    const animate = d.parentNode.parentNode.querySelector('.setLanguages').querySelectorAll('input')
-
-    animate.forEach((e) => e.addEventListener('change', () => {
-      if (e.id == 'pt') {
-        return setTransitionText(true) && setTransitionTextEn(false)
-      } else if (e.id == 'en') {
-        return setTransitionText(false) && setTransitionTextEn(true)
-      }
+    if (animate) {
+      animate.forEach((e) => e.addEventListener('change', () => {
+        if (e.id == 'pt') {
+          return setTransitionText(true) && setTransitionTextEn(false)
+        } else if (e.id == 'en') {
+          return setTransitionText(false) && setTransitionTextEn(true)
+        }
+      }))
     }
-    ))
 
-    verifyInputLanguages.forEach((e) => e.addEventListener('change', () => {
-      if(e.id == 'pt') {
-        localStorage.setItem('data', JSON.stringify(TextContentDataTest[0].portuguese))
-        let dataPt = localStorage.getItem('data')
-        let parseDataPt = JSON.parse(dataPt)
-        setLanguagesBrEn(parseDataPt)
-      } else if(e.id == 'en') {
-        localStorage.setItem('data', JSON.stringify(TextContentDataTest[1].english))
-        let dataEn = localStorage.getItem('data')
-        let parseDataEn = JSON.parse(dataEn)
-        setLanguagesBrEn(parseDataEn)
-      } else {
-        return false
-      }
+    if (verifyInputLanguages) {
+      verifyInputLanguages.forEach((e) => e.addEventListener('change', () => {
+        if(e.id == 'pt') {
+          localStorage.setItem('data', JSON.stringify(TextContentDataTest[0].portuguese))
+          let dataPt = localStorage.getItem('data')
+          let parseDataPt = JSON.parse(dataPt)
+          setLanguagesBrEn(parseDataPt)
+        } else if(e.id == 'en') {
+          localStorage.setItem('data', JSON.stringify(TextContentDataTest[1].english))
+          let dataEn = localStorage.getItem('data')
+          let parseDataEn = JSON.parse(dataEn)
+          setLanguagesBrEn(parseDataEn)
+        }
+      }))
     }
-    ))
   }, [])
 
   return (

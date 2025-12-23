@@ -1,5 +1,5 @@
 .container {
-  background-color: var(--background-color);
+  background: transparent;
   color: #fff;
   min-height: 78vh;
   height: auto;
@@ -14,15 +14,23 @@
 
 .card {
   border-radius: 1rem;
-  background-color: var(--switch-color-to-cards);
+  background: linear-gradient(135deg, 
+    rgba(10, 26, 58, 0.8) 0%, 
+    rgba(30, 58, 95, 0.7) 50%, 
+    rgba(45, 79, 124, 0.6) 100%);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(61, 123, 212, 0.2);
   width: 100%;
   height: auto;
   min-height: 75vh;
-  /* margin: 0 2rem; */
   padding: 2rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  box-shadow: 
+    0 8px 32px rgba(0, 0, 0, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  transition: all 0.3s ease;
 }
 
 ._description_name {
@@ -30,6 +38,8 @@
   align-items: flex-start;
   justify-content: space-between;
   flex-direction: column;
+  z-index: 2;
+  position: relative;
 }
 
 ._description_name div {
@@ -38,8 +48,29 @@
   width: 100%;
 }
 
+._description_name div p {
+  color: var(--text-secondary);
+  font-family: 'Rajdhani', sans-serif;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
 ._description_name h1 {
   font-size: 60px;
+  color: var(--accent-yellow);
+  font-family: 'Rajdhani', sans-serif;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  text-shadow: 
+    2px 2px 0px var(--accent-red),
+    4px 4px 8px rgba(0, 0, 0, 0.5);
+  background: linear-gradient(135deg, var(--accent-yellow), var(--accent-orange));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-top: 1rem;
 }
 
 ._description_name {
@@ -51,13 +82,34 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  position: relative;
+  z-index: 1;
+}
+
+._my_image::before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle, 
+    rgba(61, 123, 212, 0.3) 0%, 
+    rgba(10, 26, 58, 0.1) 70%, 
+    transparent 100%);
+  border-radius: 50%;
+  filter: blur(40px);
+  z-index: -1;
 }
 
 ._my_image img {
-  z-index: 1;
+  z-index: 2;
   position: relative;
-  /* min-width: 650px; */
   width: 100%;
+  filter: drop-shadow(0 10px 30px rgba(61, 123, 212, 0.4));
+  transition: transform 0.3s ease;
+}
+
+._my_image:hover img {
+  transform: scale(1.05);
 }
 
 @media (min-width: 1460px) {
@@ -96,24 +148,21 @@
   .card {
     margin: 0;
     min-height: 100%;
+    padding: 1.5rem;
   }
 
   ._description_name div {
     margin-bottom: 1rem;
+    margin-right: 0;
   }
 
   ._description_name p {
     margin: auto;
+    font-size: 20px;
   }
 
   ._description_name h1 {
     margin: 0 !important;
-  }
-  ._description_name p {
-    font-size: 20px;
-  }
-  
-  ._description_name h1 {
     font-size: 30px;
   }
 }
