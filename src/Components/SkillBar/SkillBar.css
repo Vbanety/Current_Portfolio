@@ -1,0 +1,74 @@
+.skill-bar-row {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  width: 100%;
+  padding: 0.4rem 0;
+}
+
+.skill-bar-icon {
+  width: 40px;
+  height: 40px;
+  flex-shrink: 0;
+  filter: drop-shadow(0 2px 4px rgba(61, 123, 212, 0.3));
+}
+
+.skill-bar-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.skill-bar-labels {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.3rem;
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+.skill-bar-name {
+  color: var(--text-primary);
+  font-size: 0.95rem;
+}
+
+.skill-bar-level {
+  color: var(--accent-yellow);
+  font-size: 0.85rem;
+}
+
+.skill-bar-track {
+  width: 100%;
+  height: 10px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid var(--border-color);
+  overflow: hidden;
+  position: relative;
+}
+
+.skill-bar-fill {
+  height: 100%;
+  border-radius: 999px;
+  background: var(--line-gradient);
+  position: relative;
+}
+
+.skill-bar-glow {
+  position: absolute;
+  right: -2px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--accent-yellow);
+  box-shadow: 0 0 8px 3px rgba(56, 189, 248, 0.7);
+}
+
+@media (max-width: 700px) {
+  .skill-bar-icon {
+    width: 32px;
+    height: 32px;
+  }
+}

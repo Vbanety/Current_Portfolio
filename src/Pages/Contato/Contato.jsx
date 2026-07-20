@@ -1,5 +1,5 @@
 
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import Navbar from '../../Components/Navbar/Navbar'
 import Footer from '../../Components/Footer/Footer'
 import iconArroba from '/assets/at_arroba.svg'
@@ -12,22 +12,15 @@ import iconLinkedIn from '/assets/linkedin_white.svg'
 import iconTwitter from '/assets/twetter_white.svg'
 import Animation from '../../Components/Animation'
 import './style.css'
-import { TextContentDataTest } from '../../Components/TextContent/TextContentDataTest'
+import { useLangContent } from '../../hooks/useLangContent'
 
-import emailjs from "emailjs-com"
+import emailjs from "@emailjs/browser"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCheckCircle, faSpinner, faPaperPlane, faExclamationCircle, faTimes } from '@fortawesome/free-solid-svg-icons'
 
 
 export default function Contato() {
-
-  let data = localStorage.getItem('data')
-
-  let parseData = JSON.parse(data)
-
-  var verifyData = parseData == null ? TextContentDataTest[0].portuguese : parseData
-
-  const [languagesBrEn, setLanguagesBrEn] = useState(verifyData)
+  const languagesBrEn = useLangContent()
   const [loading, setLoading] = useState(false)
   const [loadingFirst, setLoadingFirst] = useState(false)
   const [modal, setModal] = useState(false)
@@ -143,29 +136,6 @@ export default function Contato() {
   }
 
 
-  useEffect(() => {
-    const dx = document.getElementById('container')
-    if (!dx) return
-    
-    const verifyInputLanguages = dx.parentNode?.parentNode?.querySelector('.setLanguages')?.querySelectorAll('input')
-    
-    if (verifyInputLanguages) {
-      verifyInputLanguages.forEach((e) => e.addEventListener('change', () => {
-        if (e.id == 'pt') {
-          localStorage.setItem('data', JSON.stringify(TextContentDataTest[0].portuguese))
-          let dataPt = localStorage.getItem('data')
-          let parseDataPt = JSON.parse(dataPt)
-          setLanguagesBrEn(parseDataPt)
-        } else if (e.id == 'en') {
-          localStorage.setItem('data', JSON.stringify(TextContentDataTest[1].english))
-          let dataEn = localStorage.getItem('data')
-          let parseDataEn = JSON.parse(dataEn)
-          setLanguagesBrEn(parseDataEn)
-        }
-      }))
-    }
-  }, [])
-
   return (
     <div className="allPages">
 
@@ -203,27 +173,53 @@ export default function Contato() {
               </div>
             </div>
           )}
-          <h1 className='title_contact'>{languagesBrEn.contact.titlePage}</h1>
-          <div className='column_contact'>
-            <div className='flex_contact'>
-              <div className="info_contacts">
-                <div>
-                  <img src={iconArroba} alt="Email" />
-                  <p>{languagesBrEn.contact.myEmail}</p>
+          <h1 className='title_page'>{languagesBrEn.contact.titlePage}</h1>
+
+          <div className='contact-hero'>
+            <div className="contact-info-col">
+              <h2 className="contact-heading">{languagesBrEn.contact.heading}</h2>
+              <p className="contact-subtext">{languagesBrEn.contact.subtext}</p>
+
+              <div className="contact-info-rows">
+                <div className="contact-info-row">
+                  <span className="contact-info-icon"><img src={iconArroba} alt="" /></span>
+                  <div>
+                    <p className="contact-info-label">Email</p>
+                    <p className="contact-info-value">{languagesBrEn.contact.myEmail}</p>
+                  </div>
                 </div>
 
-                <div>
-                  <img src={iconPhoneWight} alt="Telefone" />
-                  <p>{languagesBrEn.contact.phone}</p>
-                </div>
+                <a
+                  className="contact-info-row contact-info-row-link"
+                  href={`https://wa.me/5512982590753?text=${encodeURIComponent('Olá! Vim através do seu portfólio.')}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <span className="contact-info-icon"><img src={iconPhoneWight} alt="" /></span>
+                  <div>
+                    <p className="contact-info-label">Telefone</p>
+                    <p className="contact-info-value">{languagesBrEn.contact.phone}</p>
+                  </div>
+                </a>
 
-                <div>
-                  <img src={iconLocation} alt="Localização" />
-                  <p>{languagesBrEn.contact.address}</p>
+                <div className="contact-info-row">
+                  <span className="contact-info-icon"><img src={iconLocation} alt="" /></span>
+                  <div>
+                    <p className="contact-info-label">Localização</p>
+                    <p className="contact-info-value">{languagesBrEn.contact.address}</p>
+                  </div>
                 </div>
               </div>
 
-              <form onSubmit={handleSend} name="contact-form" noValidate>
+              <ul className='list_icons_contact'>
+                <li><a href='https://twitter.com/Twitte3Vinicius' target="blank" rel="noopener noreferrer"><img src={iconTwitter} alt="Twitter" loading="lazy" /></a></li>
+                <li><a href='https://www.instagram.com/viny_batista_10/' target="blank" rel="noopener noreferrer"><img src={iconInstagram} alt="Instagram" loading="lazy" /></a></li>
+                <li><a href='https://www.linkedin.com/in/vinicius-batista-815983137/' target="blank" rel="noopener noreferrer"><img src={iconLinkedIn} alt="LinkedIn" loading="lazy" /></a></li>
+              </ul>
+            </div>
+
+            <div className="contact-form-col">
+              <form className="contact-form-card" onSubmit={handleSend} name="contact-form" noValidate>
                 <div className="form_group">
                   <input
                     type='email'
@@ -239,7 +235,7 @@ export default function Contato() {
                   />
                   {errors.email && <span className="error_message">{errors.email}</span>}
                 </div>
-                
+
                 <div className="form_group">
                   <input
                     type='text'
@@ -255,13 +251,12 @@ export default function Contato() {
                   />
                   {errors.name && <span className="error_message">{errors.name}</span>}
                 </div>
-                
+
                 <div className="form_group">
                   <textarea
                     name='text'
                     placeholder={languagesBrEn.contact.fieldMessage}
-                    rows="10"
-                    cols="40"
+                    rows="6"
                     value={text}
                     onChange={(e) => {
                       setText(e.target.value)
@@ -271,7 +266,7 @@ export default function Contato() {
                   ></textarea>
                   {errors.text && <span className="error_message">{errors.text}</span>}
                 </div>
-                
+
                 <button type='submit' disabled={loading}>
                   {loading ? (
                     <FontAwesomeIcon className='iconSend running' icon={faSpinner} />
@@ -284,12 +279,6 @@ export default function Contato() {
                 </button>
               </form>
             </div>
-
-            <ul className='list_icons_contact'>
-              <li><a href='https://twitter.com/Twitte3Vinicius' target="blank" rel="noopener noreferrer"><img src={iconTwitter} alt="Twitter" /></a></li>
-              <li><a href='https://www.instagram.com/viny_batista_10/' target="blank" rel="noopener noreferrer"><img src={iconInstagram} alt="Instagram" /></a></li>
-              <li><a href='https://www.linkedin.com/in/vinicius-batista-815983137/' target="blank" rel="noopener noreferrer"><img src={iconLinkedIn} alt="LinkedIn" /></a></li>
-            </ul>
           </div>
         </div>
         <div className='line_blue'>

@@ -1,48 +1,15 @@
-import {useState, useEffect} from 'react'
 import Navbar from '../../Components/Navbar/Navbar'
 import Footer from '../../Components/Footer/Footer'
 import downloadIcon from '/assets/download.svg'
 import mySelf from '/assets/me.png'
 import medal from '/assets/medal.svg'
-import card_message from '/assets/cartao_stars.png'
-import { TextContentDataTest } from '../../Components/TextContent/TextContentDataTest'
+import { useLangContent } from '../../hooks/useLangContent'
 import Animation from '../../Components/Animation'
-import AnimationCards from '../../Components/AnimationCards'
 
 import './style.css'
 
 export default function Sobre() {
-  
-  let dataA = localStorage.getItem('data')
-
-  let parseData = dataA ? JSON.parse(dataA) : null
-
-  var verifyData = parseData == null ? TextContentDataTest[0].portuguese : parseData
-
-  const [languagesBrEn, setLanguagesBrEn] = useState(verifyData) 
-
-  useEffect(() => {
-    const dx = document.getElementById('container')
-    if (!dx) return
-    
-    const verifyInputLanguages = dx.parentNode?.parentNode?.querySelector('.setLanguages')?.querySelectorAll('input')
-    
-    if (verifyInputLanguages) {
-      verifyInputLanguages.forEach((e) => e.addEventListener('change', () => {
-        if(e.id == 'pt') {
-          localStorage.setItem('data', JSON.stringify(TextContentDataTest[0].portuguese))
-          let dataPt = localStorage.getItem('data')
-          let parseDataPt = JSON.parse(dataPt)
-          setLanguagesBrEn(parseDataPt)
-        } else if(e.id == 'en') {
-          localStorage.setItem('data', JSON.stringify(TextContentDataTest[1].english))
-          let dataEn = localStorage.getItem('data')
-          let parseDataEn = JSON.parse(dataEn)
-          setLanguagesBrEn(parseDataEn)
-        }
-      }))
-    }
-  }, [])
+  const languagesBrEn = useLangContent()
 
   return (
     <div className='allPages'>
@@ -53,19 +20,37 @@ export default function Sobre() {
           <hr />
         </div>
         <div id="container" className='container'>
-          <div className='card_me'>
-            <h1>{languagesBrEn.about.aboutMe[0].titlePage}</h1>
-              <div className="card-contact">
-                <img src={mySelf} alt="" />
-                <h1 className='titleName'>{languagesBrEn.about.aboutMe[0].name}</h1>
-                <p>{languagesBrEn.about.aboutMe[0].positionJob}</p>
+          <h1 className='title_page'>{languagesBrEn.about.aboutMe[0].titlePage}</h1>
+
+          <div className="about-hero">
+            <div className="about-hero-media">
+              <div className="about-hero-glow"></div>
+              <div className="about-hero-frame">
+                <img src={mySelf} alt={languagesBrEn.about.aboutMe[0].name} />
               </div>
-            {/* <AnimationCards>
-            </AnimationCards> */}
+            </div>
+
+            <div className="about-hero-content">
+              <span className="about-eyebrow">{languagesBrEn.about.aboutMe[0].eyebrow}</span>
+              <h2 className="about-name">{languagesBrEn.about.aboutMe[0].name}</h2>
+              <p className="about-summary">{languagesBrEn.about.aboutMe[0].paragraphs[0]?.text}</p>
+
+              <div className="about-info-grid">
+                <div className="about-info-card">
+                  <h3>{languagesBrEn.about.aboutMe[0].expertiseTitle}</h3>
+                  <p>{languagesBrEn.about.aboutMe[0].expertiseText}</p>
+                </div>
+                <div className="about-info-card">
+                  <h3>{languagesBrEn.about.aboutMe[0].philosophyTitle}</h3>
+                  <p>{languagesBrEn.about.aboutMe[0].philosophyText}</p>
+                </div>
+              </div>
+            </div>
           </div>
+
           <div className="description_contact">
             <h1>{languagesBrEn.about.aboutMe[0].titleDescription}</h1>
-            {languagesBrEn.about.aboutMe[0].paragraphs.map((item, index) => {
+            {languagesBrEn.about.aboutMe[0].paragraphs.slice(1).map((item, index) => {
               return (
                 <>
                   <div className="medals">
@@ -130,38 +115,35 @@ export default function Sobre() {
             <hr />
           </div>
           <div className="section_bottom">
-
-            <div className="card_testemunhos">
+            <div className="card_testemunhos card_testemunhos-full">
               <h1>{languagesBrEn.about.aboutMe[0].titleTestimonies}</h1>
-              {languagesBrEn.about.testimonies.map((item) => {
-                return (
-                  <div className="depoiments" key={item.index}>
-                    <div className="top_info">
-                      <div className='person_name'>
-                        <a href={item.link} target="blank">
-                        <img src={item.person} alt="person" />
-                        </a>
-                        <div>
-                          <h4>{item.name}</h4>
-                          <p>{item.position}</p>
+              <div className="testimonials_grid">
+                {languagesBrEn.about.testimonies.map((item) => {
+                  return (
+                    <div className="depoiments" key={item.index}>
+                      <div className="top_info">
+                        <div className='person_name'>
+                          <a href={item.link} target="blank">
+                          <img src={item.person} alt="person" loading="lazy" />
+                          </a>
+                          <div>
+                            <h4>{item.name}</h4>
+                            <p>{item.position}</p>
+                          </div>
+                        </div>
+                        <div className="stars">
+                          <img src={item.star[0].one} alt="strelas" loading="lazy" />
+                          <img src={item.star[1].two} alt="strelas" loading="lazy" />
+                          <img src={item.star[2].three} alt="strelas" loading="lazy" />
+                          <img src={item.star[3].four} alt="strelas" loading="lazy" />
+                          <img src={item.star[4].five} alt="strelas" loading="lazy" />
                         </div>
                       </div>
-                      <div className="stars">
-                        <img src={item.star[0].one} alt="strelas" />
-                        <img src={item.star[1].two} alt="strelas" />
-                        <img src={item.star[2].three} alt="strelas" />
-                        <img src={item.star[3].four} alt="strelas" />
-                        <img src={item.star[4].five} alt="strelas" />
-                      </div>
+                      <p className='text_testimonials'>{item.description}</p>
                     </div>
-                    <p className='text_testimonials'>{item.description}</p>
-                  </div>
-                )
-              })}
-            </div>
-            <div className="card_letter_message">
-              <p>{languagesBrEn.about.aboutMe[0].curiosity}</p>
-              <img src={card_message} alt="card_Message" />
+                  )
+                })}
+              </div>
             </div>
           </div>
         </div>

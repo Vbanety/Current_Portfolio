@@ -1,16 +1,22 @@
 
 import React, { useState, useRef, useEffect } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, NavLink } from 'react-router-dom'
 import { DataPlayer } from '../Player/dataPlayer'
 import { SidebarData } from '../Navbar/SidebarData'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faBars, faClose, faCode } from '@fortawesome/free-solid-svg-icons'
 import headerAvatar from '/assets/headerAvatar.svg'
+import { useSettings } from '../../Context/SettingsContext'
+import { playBeep } from '../../utils/playBeep'
 import './Navbar.css'
 
 import PlayerMusic from '../Player/PlayerMusic'
 
 function Navbar() {
+  const { hoverSfx } = useSettings()
+  const handleNavHover = () => {
+    if (hoverSfx) playBeep({ frequency: 700, duration: 0.04, volume: 0.07 })
+  }
   const [songs, setSongs] = useState(DataPlayer)  
   const [isPlaying, setIsPlaying] = useState(false)
   const [currentSong, setCurrentSong] = useState(DataPlayer[0])
@@ -56,7 +62,7 @@ function Navbar() {
 
       <div id="navbarZ" className={sidebar ? 'navbar active' : 'navbar'} ref={sideBarRef}>
         <Link to="" className="menu-bars">
-          <FontAwesomeIcon style={{ color: '#075fe4' }} icon={faBars} onClick={showSidebar} />
+          <FontAwesomeIcon style={{ color: 'var(--primary-blue)' }} icon={faBars} onClick={showSidebar} />
         </Link>
          <div className='header_avatar'> {/* will be relative position*/}
           <div className="setLanguages">
@@ -69,7 +75,7 @@ function Navbar() {
             <span className="iconify usFlag" data-icon="twemoji:flag-united-states" data-width="28"></span>
             </div>
           </div>
-          <FontAwesomeIcon icon={faCode} style={{ color: '#075FE4', fontSize: '32', fontWeight: 'bold' }} />
+          <FontAwesomeIcon icon={faCode} style={{ color: 'var(--primary-blue)', fontSize: '32', fontWeight: 'bold' }} />
 
           <PlayerMusic 
             songs={songs} 
@@ -81,6 +87,8 @@ function Navbar() {
             setCurrentSong={setCurrentSong}
           />
 
+          <Link to="/contato" className="cta-hire-btn">Contato</Link>
+
           <img src={headerAvatar} />
         </div>
       </div>
@@ -88,17 +96,17 @@ function Navbar() {
         <ul className="nav-menu-items" onClick={showSidebar}>
           <li className="navbar-toggle">
             <Link to="" className="menu-bars" ref={refSidebar}>
-              <FontAwesomeIcon color='#075fe4' icon={faClose} />
+              <FontAwesomeIcon color='var(--primary-blue)' icon={faClose} />
             </Link>
           </li>
 
           {SidebarData.map((item, index) => {
             return (
               <li key={index} className={item.cName}>
-                <Link to={item.path}>
-                  <div style={{ color: '#075fe4' }}>{item.icon}</div>
+                <NavLink to={item.path} end={item.path === '/'} onMouseEnter={handleNavHover} className={({ isActive }) => isActive ? 'nav-link-active' : ''}>
+                  <div style={{ color: 'var(--primary-blue)' }}>{item.icon}</div>
                   <span>{item.title}</span>
-                </Link>
+                </NavLink>
               </li>
             )
           })}

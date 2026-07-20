@@ -1,79 +1,79 @@
-import React, {useEffect, useState} from 'react'
+import React from 'react'
+import { Link } from 'react-router-dom'
 import myPicture from '/assets/ComponentMyself.svg'
 import Animation from '../../Components/Animation'
-// import { TextContentData } from '../../Components/TextContent/TextContentDataTest'
-import { TextContentDataTest } from '../../Components/TextContent/TextContentDataTest'
+import { useLangContent } from '../../hooks/useLangContent'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faCircleCheck, faCode, faArrowRight, faDownload } from '@fortawesome/free-solid-svg-icons'
+import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons'
 import './style.css'
 
 export default function Home() {
-
-  let data = localStorage.getItem('data')
-
-  let parseData = data ? JSON.parse(data) : null
-
-  // Sempre usar os dados atualizados do arquivo como padrão
-  var verifyData = parseData == null ? TextContentDataTest[0].portuguese : parseData
-  
-  // Garantir que os dados estão atualizados
-  if (verifyData && verifyData.home && verifyData.home.position === 'Desenvolvedor FrontEnd') {
-    verifyData = TextContentDataTest[0].portuguese
-    localStorage.setItem('data', JSON.stringify(verifyData))
-  }
-
-  const [languagesBrEn, setLanguagesBrEn] = useState(verifyData)  
-  
-
-  useEffect(() => {
-    // Atualizar estado inicial com dados atualizados
-    const currentData = localStorage.getItem('data')
-    if (currentData) {
-      const parsed = JSON.parse(currentData)
-      // Verificar se precisa atualizar
-      if (parsed.home && parsed.home.position === 'Desenvolvedor FrontEnd') {
-        const updatedData = TextContentDataTest[0].portuguese
-        localStorage.setItem('data', JSON.stringify(updatedData))
-        setLanguagesBrEn(updatedData)
-      }
-    }
-
-    const dx = document.getElementById('container')
-    if (!dx) return
-    
-    const verifyInputLanguages = dx.parentNode?.parentNode?.querySelector('.setLanguages')?.querySelectorAll('input')
-
-    if (verifyInputLanguages) {
-      verifyInputLanguages.forEach((e) => e.addEventListener('change', () => {
-        if(e.id == 'pt') {
-          localStorage.setItem('data', JSON.stringify(TextContentDataTest[0].portuguese))
-          let dataPt = localStorage.getItem('data')
-          let parseDataPt = JSON.parse(dataPt)
-          setLanguagesBrEn(parseDataPt)
-        } else if(e.id == 'en') {
-          localStorage.setItem('data', JSON.stringify(TextContentDataTest[1].english))
-          let dataEn = localStorage.getItem('data')
-          let parseDataEn = JSON.parse(dataEn)
-          setLanguagesBrEn(parseDataEn)
-        }
-      }))
-    }
-  }, [])
+  const languagesBrEn = useLangContent()
+  const home = languagesBrEn.home
+  const resumePdf = languagesBrEn.about.aboutMe[0].pdf
 
   return (
     <>
       <Animation>
       <div id="container" className="container">
       <h1 className='title_page'>Home</h1>
-        <div className="card">
-          <div className="_description_name">
-            <div>
-              <p>{languagesBrEn.home.welcome}</p>
-              <p>{languagesBrEn.home.description}</p>
+        <div className="hero-card">
+          <div className="hero-content">
+            <span className="hero-eyebrow">{home.eyebrow}</span>
+            <h1 className="hero-name">{home.position}</h1>
+
+            <div className="hero-chips">
+              <div className="hero-chip">
+                <FontAwesomeIcon icon={faCircleCheck} />
+                <span>{home.chipYears}</span>
+              </div>
+              <div className="hero-chip">
+                <FontAwesomeIcon icon={faCode} />
+                <span>{home.chipStack}</span>
+              </div>
             </div>
-            <h1>{languagesBrEn.home.position}</h1>
+
+            <p className="hero-description">{home.description}</p>
+
+            <div className="hero-highlight">
+              <FontAwesomeIcon icon={faArrowRight} />
+              <p>{home.highlight}</p>
+            </div>
+
+            <div className="hero-actions">
+              <Link to="/portfolio" className="hero-btn-primary">
+                {home.ctaProjects}
+                <FontAwesomeIcon icon={faArrowRight} />
+              </Link>
+              <a href={resumePdf} download target="_blank" rel="noopener noreferrer" className="hero-btn-secondary">
+                <FontAwesomeIcon icon={faDownload} />
+                {home.ctaResume}
+              </a>
+            </div>
+
+            <div className="hero-socials">
+              <a href="https://github.com/vbanety" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+                <FontAwesomeIcon icon={faGithub} />
+              </a>
+              <a href="https://www.linkedin.com/in/vinicius-batista-815983137/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                <FontAwesomeIcon icon={faLinkedin} />
+              </a>
+            </div>
           </div>
-            <div className="_my_image">
-              <img src={myPicture} alt="mySelf" />
+
+          <div className="hero-media">
+            <div className="hero-media-frame">
+              <img src={myPicture} alt="Vinícius Batista" />
             </div>
+            <div className="hero-media-badge">
+              <FontAwesomeIcon icon={faCode} />
+              <div>
+                <p className="hero-media-badge-label">Stack</p>
+                <p className="hero-media-badge-value">{home.badgeLabel}</p>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
       </Animation>

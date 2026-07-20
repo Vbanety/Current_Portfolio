@@ -1,47 +1,141 @@
-@import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&family=Poppins:ital,wght@0,400;0,600;0,700;1,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
 
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  font-family: 'Rajdhani', 'Poppins', sans-serif;
+  font-family: 'Inter', sans-serif;
 }
 
 :root {
-  /* Cores inspiradas no Top Gear - Gradiente Azul */
-  --bg-gradient-start: #0a1a3a;      /* Azul escuro profundo */
-  --bg-gradient-end: #1e3a5f;        /* Azul médio */
-  --bg-gradient-light: #2d4f7c;      /* Azul claro */
-  
+  /* Corporate Modern - Deep Navy + Royal Blue */
+  --bg-gradient-start: #0f172a;
+  --bg-gradient-end: #16213a;
+  --bg-gradient-light: #1e293b;
+
   /* Background e Cards */
-  --background-color: #0f1f3d;       /* Azul escuro base */
-  --switch-color-to-cards: #1a2f4f;  /* Cards com tom azul */
-  --card-hover: #234a6b;             /* Hover dos cards */
-  
-  /* Cores de destaque Top Gear */
-  --accent-red: #e63946;             /* Vermelho vibrante */
-  --accent-orange: #ff6b35;          /* Laranja */
-  --accent-yellow: #ffd60a;          /* Amarelo (substitui o #F8E85F) */
-  --accent-yellow-dark: #f4c430;     /* Amarelo escuro */
-  
-  /* Azul principal (mantido mas ajustado) */
-  --primary-blue: #3d7bd4;           /* Azul mais suave */
-  --primary-blue-dark: #2a5a9e;     /* Azul escuro */
-  --primary-blue-light: #5a9ae8;    /* Azul claro */
-  
+  --background-color: #0f172a;       /* Level 0 */
+  --switch-color-to-cards: #1e293b;  /* Level 1 */
+  --card-hover: #253449;             /* Hover dos cards */
+
+  /* Slots de destaque (nomes mantidos, valores redefinidos) */
+  --accent-red: #2563eb;             /* Primary - Royal Blue */
+  --accent-orange: #38bdf8;          /* Accent - Cyan */
+  --accent-yellow: #60a5fa;          /* Highlight/focus */
+  --accent-yellow-dark: #3b82f6;
+
+  /* Azul principal */
+  --primary-blue: #2563eb;
+  --primary-blue-dark: #1d4ed8;
+  --primary-blue-light: #38bdf8;
+
   /* Textos */
+  --text-primary: #f8fafc;
+  --text-secondary: #c3c6d7;
+  --text-muted: #8d90a0;
+
+  /* Títulos */
+  --title-page-color: var(--text-primary);
+  --title-gradient-start: var(--accent-red);
+  --title-gradient-end: var(--accent-orange);
+
+  /* Bordas e linhas */
+  --border-color: rgba(51, 65, 85, 0.6);
+  --line-gradient: linear-gradient(90deg, var(--accent-red), var(--accent-orange));
+}
+
+/* Tema alternativo "Retro Arcade" - roxo profundo + verde-neon/magenta */
+:root[data-theme='alt'] {
+  --bg-gradient-start: #1a0a2e;
+  --bg-gradient-end: #2d1b4e;
+  --bg-gradient-light: #3d2a5c;
+
+  --background-color: #170a2b;
+  --switch-color-to-cards: #2a1a45;
+  --card-hover: #3d2a5c;
+
+  --accent-red: #ff2e63;
+  --accent-orange: #ff6ec7;
+  --accent-yellow: #39ff14;
+  --accent-yellow-dark: #2ee60d;
+
+  --primary-blue: #b967ff;
+  --primary-blue-dark: #8a3ffc;
+  --primary-blue-light: #d19fff;
+
   --text-primary: #ffffff;
   --text-secondary: rgba(255, 255, 255, 0.8);
   --text-muted: rgba(255, 255, 255, 0.6);
-  
-  /* Títulos */
+
   --title-page-color: var(--accent-yellow);
   --title-gradient-start: var(--accent-red);
   --title-gradient-end: var(--accent-orange);
-  
-  /* Bordas e linhas */
-  --border-color: rgba(61, 123, 212, 0.3);
+
+  --border-color: rgba(185, 103, 255, 0.35);
   --line-gradient: linear-gradient(90deg, var(--accent-red), var(--accent-orange), var(--accent-yellow));
+}
+
+/* Respeita preferencia do SO, independente do toggle manual */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Gate explicito via painel de configuracoes (independente do SO) */
+:root[data-animation='off'] *, :root[data-animation='off'] *::before, :root[data-animation='off'] *::after {
+  animation-duration: 0.01ms !important;
+  animation-iteration-count: 1 !important;
+  transition-duration: 0.01ms !important;
+}
+
+/* Easter egg: Konami code CRT/scanline flourish */
+body.konami-active::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 999999;
+  background: repeating-linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.15),
+    rgba(0, 0, 0, 0.15) 1px,
+    transparent 2px,
+    transparent 3px
+  );
+  mix-blend-mode: overlay;
+  animation: konamiScan 8s linear infinite;
+}
+
+body.konami-active {
+  animation: konamiFlicker 0.15s steps(2) 12;
+  filter: saturate(1.4) contrast(1.05);
+}
+
+@keyframes konamiScan {
+  0% { background-position: 0 0; }
+  100% { background-position: 0 100px; }
+}
+
+@keyframes konamiFlicker {
+  0% { filter: saturate(1.4) contrast(1.05) hue-rotate(0deg); }
+  50% { filter: saturate(1.6) contrast(1.1) hue-rotate(2deg); }
+  100% { filter: saturate(1.4) contrast(1.05) hue-rotate(0deg); }
+}
+
+/* :focus-visible global */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible,
+[tabindex]:focus-visible {
+  outline: 2px solid var(--accent-yellow);
+  outline-offset: 2px;
+  border-radius: 2px;
 }
 
 body {
@@ -50,12 +144,11 @@ body {
   min-height: 100vh;
 }
 
-/* Tipografia inspirada no Top Gear */
+/* Tipografia Corporate Modern */
 h1, h2, h3 {
-  font-family: 'Rajdhani', sans-serif;
+  font-family: 'Inter', sans-serif;
   font-weight: 700;
-  letter-spacing: 0.05em;
-  text-transform: uppercase;
+  letter-spacing: -0.02em;
 }
 
 .allPages {
@@ -74,12 +167,10 @@ h1, h2, h3 {
 .title_page {
   margin: 0 auto 0 0;
   color: var(--title-page-color);
-  text-shadow: 
-    2px 2px 0px var(--accent-red),
-    4px 4px 8px rgba(0, 0, 0, 0.5);
-  font-family: 'Rajdhani', sans-serif;
-  font-weight: 700;
-  letter-spacing: 0.1em;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+  font-family: 'Inter', sans-serif;
+  font-weight: 800;
+  letter-spacing: -0.02em;
 }
 
 .line_blue hr {
@@ -87,7 +178,7 @@ h1, h2, h3 {
   width: 100%;
   height: .3rem;
   background: var(--line-gradient);
-  box-shadow: 0 2px 8px rgba(255, 214, 10, 0.3);
+  box-shadow: 0 2px 8px rgba(37, 99, 235, 0.3);
 }
 
 .home, .reports, .products {

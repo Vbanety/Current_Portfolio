@@ -2,26 +2,24 @@ import React, { useState, useEffect, useRef } from 'react'
 import Navbar from '../../Components/Navbar/Navbar'
 import Footer from '../../Components/Footer/Footer'
 import { TextContentDataTest } from '../../Components/TextContent/TextContentDataTest'
+import { useLangContent } from '../../hooks/useLangContent'
 import '../../Pages/Portfolio/style.css'
 import Animation from '../../Components/Animation'
 import AnimationCards from '../../Components/AnimationCards'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faAngleLeft, faAngleRight, faPlus, faClose } from '@fortawesome/free-solid-svg-icons'
+import { faAngleLeft, faAngleRight, faClose } from '@fortawesome/free-solid-svg-icons'
 import gitHubIcon from '/assets/gitubIcon.svg'
 import wwwIcon from '/assets/www.svg'
+import ProjectCard from './ProjectCard'
 
 
 export default function Portfolio() {
-
-  let dataP = localStorage.getItem('data')
-  let parseData = dataP ? JSON.parse(dataP) : null
-
-  var verifyData = parseData == null ? TextContentDataTest[0].portuguese.portfolio : parseData.portfolio
+  const languagesBrEn = useLangContent()
+  const languages = languagesBrEn.portfolio.info.ct
+  const languagesModal = languagesBrEn.portfolio.dataModal.ct
 
   const [transitionText, setTransitionText] = useState(false)
   const [transitionTextEn, setTransitionTextEn] = useState(false)
-  const [languages, setLanguages] = useState(verifyData.info.ct)
-  const [languagesModal, setLanguagesModal] = useState(verifyData.dataModal.ct)
   const [getModal, setGetModal] = useState('')
   const [back, setback] = useState(0)
   const [prev, setPrev] = useState(3)
@@ -96,8 +94,7 @@ export default function Portfolio() {
     }
     const dd = document.getElementById('container')
     if (!dd) return
-    
-    const verifyInputLanguages = dd.parentNode?.parentNode?.querySelector('.setLanguages')?.querySelectorAll('input')
+
     const animate = dd.parentNode?.parentNode?.querySelector('.setLanguages')?.querySelectorAll('input')
 
     if (animate) {
@@ -106,24 +103,6 @@ export default function Portfolio() {
           return setTransitionText(true) && setTransitionTextEn(false)
         } else if (e.id == 'en') {
           return setTransitionText(false) && setTransitionTextEn(true)
-        }
-      }))
-    }
-
-    if (verifyInputLanguages) {
-      verifyInputLanguages.forEach((e) => e.addEventListener('change', () => {
-        if (e.id == 'pt') {
-          localStorage.setItem('data', JSON.stringify(TextContentDataTest[0].portuguese))
-          let dataPt = localStorage.getItem('data')
-          let parseDataPt = JSON.parse(dataPt)
-          setLanguages(parseDataPt.portfolio.info.ct)
-          setLanguagesModal(parseDataPt.portfolio.dataModal.ct)
-        } else if (e.id == 'en') {
-          localStorage.setItem('data', JSON.stringify(TextContentDataTest[1].english))
-          let dataEn = localStorage.getItem('data')
-          let parseDataEn = JSON.parse(dataEn)
-          setLanguages(parseDataEn.portfolio.info.ct)
-          setLanguagesModal(parseDataEn.portfolio.dataModal.ct)
         }
       }))
     }
@@ -155,9 +134,9 @@ export default function Portfolio() {
                   </div>
                   {filtered.img && filtered.img[0] && (
                     <div className='groupImage'>
-                      {filtered.img[0].img1 && <img src={filtered.img[0].img1} alt={`${filtered.title} screenshot 1`} />}
-                      {filtered.img[0].img2 && <img src={filtered.img[0].img2} alt={`${filtered.title} screenshot 2`} />}
-                      {filtered.img[0].img3 && <img src={filtered.img[0].img3} alt={`${filtered.title} screenshot 3`} />}
+                      {filtered.img[0].img1 && <img src={filtered.img[0].img1} alt={`${filtered.title} screenshot 1`} loading="lazy" />}
+                      {filtered.img[0].img2 && <img src={filtered.img[0].img2} alt={`${filtered.title} screenshot 2`} loading="lazy" />}
+                      {filtered.img[0].img3 && <img src={filtered.img[0].img3} alt={`${filtered.title} screenshot 3`} loading="lazy" />}
                     </div>
                   )}
                   <div className='dataModal'>
@@ -168,13 +147,13 @@ export default function Portfolio() {
                     <div className='modal_links'>
                       {filtered.repo && filtered.repo !== 'https://github.com/vbanety' && (
                         <a href={filtered.repo} target="_blank" rel="noopener noreferrer" className="modal_link">
-                          <img src={gitHubIcon} alt="GitHub" />
+                          <img src={gitHubIcon} alt="GitHub" loading="lazy" />
                           <span>Ver código</span>
                         </a>
                       )}
                       {filtered.site && (
                         <a href={filtered.site} target="_blank" rel="noopener noreferrer" className="modal_link">
-                          <img src={wwwIcon} alt="Website" />
+                          <img src={wwwIcon} alt="Website" loading="lazy" />
                           <span>Visitar site</span>
                         </a>
                       )}
@@ -200,63 +179,20 @@ export default function Portfolio() {
                 {/* {console.log(languages)} */}
                 <ul className='jobs'>
                   {languages.sort((a,b) => { return b.sortDate - a.sortDate}).slice(back, prev).map((item, index) => {
+                    const transitionClassName = transitionText ? 'animateText' : 'animateText active'
+                      && transitionTextEn ? 'animateTextEn' : 'animateTextEn active'
+                    const modalEntry = languagesModal.find((m) => m.index === item.more)
+                    const thumbnail = modalEntry?.img?.[0]?.img1 || null
                     return (
-                      <>
-                        <li key={index} className="boxJobs">
-
-                          <div className="title">
-                            {item.title}
-                          </div>
-                          <p className={
-                            transitionText ? 'animateText' : 'animateText active'
-                              &&
-                              transitionTextEn ? 'animateTextEn' : 'animateTextEn active'
-                          }>{item.text}</p>
-                          <button
-                            className="btn_view_more"
-                            id="btnModal"
-                            onMouseOver={(e) => setGetModal(e.currentTarget.value)}
-                            onClick={() => handleShowModal()}
-                            value={item.more}
-                            aria-label="Ver mais detalhes"
-                          >
-                            <FontAwesomeIcon icon={faPlus} />
-                            <span>Ver mais</span>
-                          </button>
-
-                          <ol key={index} className="tech_icons_list">
-                            {item.icons[0].html && <li><img src={item.icons[0].html} alt="HTML" title="HTML5" /></li>}
-                            {item.icons[0].css && <li><img src={item.icons[0].css} alt="CSS" title="CSS3" /></li>}
-                            {item.icons[0].js && <li><img src={item.icons[0].js} alt="JavaScript" title="JavaScript" /></li>}
-                            {item.icons[0].react && <li><img src={item.icons[0].react} alt="React" title="React" /></li>}
-                            {item.icons[0].bootstrap && <li><img src={item.icons[0].bootstrap} alt="Tech" title="Technology" /></li>}
-                            {item.icons[0].php && <li><img src={item.icons[0].php} alt="Tech" title="Technology" /></li>}
-                            {item.icons[0].laravel && <li><img src={item.icons[0].laravel} alt="Tech" title="Technology" /></li>}
-                          </ol>
-
-                          <div className="footer_card">
-                            <div className="buttons">
-                              {item.repo && item.repo !== 'https://github.com/vbanety' && (
-                                <a href={item.repo} target="_blank" rel="noopener noreferrer" className="btn_link">
-                                  <img src={item.icons[0].github} alt="GitHub" />
-                                  <span>Repositório</span>
-                                </a>
-                              )}
-                              {item.site && (
-                                <a href={item.site} target="_blank" rel="noopener noreferrer" className="btn_link">
-                                  <img src={item.icons[0].www} alt="Website" />
-                                  <span>Ver site</span>
-                                </a>
-                              )}
-                            </div>
-
-                            <div className="dates">
-                              <span>{item.createAtText}</span>
-                              <span>{item.createdAt}</span>
-                            </div>
-                          </div>
-                        </li>
-                      </>
+                      <ProjectCard
+                        key={index}
+                        item={item}
+                        thumbnail={thumbnail}
+                        featured={index === 0}
+                        transitionClassName={transitionClassName}
+                        setGetModal={setGetModal}
+                        handleShowModal={handleShowModal}
+                      />
                     );
                   }).sort((a, b) => {
                     return a.sortDate - b.sortDate;
@@ -268,7 +204,7 @@ export default function Portfolio() {
                     className={btnDisabledBack ? 'btnDisabled' : 'btnDisabled active'}
                     onClick={() => handleBack()}
                     >
-                    <FontAwesomeIcon icon={faAngleLeft} size={50} />
+                    <FontAwesomeIcon icon={faAngleLeft} />
                   </button>
                   <button className='number'>
                     {count}
@@ -277,7 +213,7 @@ export default function Portfolio() {
                     className={!btnDisabledPrev ? 'btnDisabledPrev' : 'btnDisabledPrev active'}
                     onClick={() => handleNext()}
                     >
-                  <FontAwesomeIcon icon={faAngleRight} size={50} />
+                  <FontAwesomeIcon icon={faAngleRight} />
                   </button>
                 </div>
               </div>

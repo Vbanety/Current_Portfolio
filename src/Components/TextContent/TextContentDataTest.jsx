@@ -43,6 +43,8 @@ import ImgCrud1 from '/assets/images/crud1.jpeg'
 import ImgCrud2 from '/assets/images/crud2.jpeg'
 import ImgCrud3 from '/assets/images/crud3.jpeg'
 
+import ImgClubpos1 from '/assets/images/clubpos1.jpg'
+import ImgVmarket1 from '/assets/images/vmarket1.jpg'
 
 import starIcon from '/assets/star.svg'
 import coteIcon from '/assets/cotes.svg'
@@ -53,22 +55,32 @@ export const TextContentDataTest = [
   {
     portuguese: {
       home: {
-        welcome: 'Olá, bem vindo!',
-        description: 'Eu me chamo Vinícius',
-        position: 'Desenvolvedor FullStack'
-      },      
+        welcome: 'FullStack Developer — PHP · Node.js · React · Next.js',
+        description: 'Evoluí de auxiliar a responsável por migrar sistemas legados, e hoje construo produtos que geram resultado real — como a plataforma que ajuda empresas a economizar até 25% em compras.',
+        position: 'Vinícius Batista',
+        eyebrow: 'FullStack Developer',
+        chipYears: '+4 anos como developer',
+        chipStack: 'PHP • React • Node',
+        highlight: 'Atualmente atuo na plataforma de gestão de compras da VMarket, que ajuda restaurantes e hotéis a economizar até 25% nos custos de aquisição.',
+        ctaProjects: 'Ver Projetos',
+        ctaResume: 'Baixar CV',
+        badgeLabel: 'Full-Stack'
+      },
       shills: {
         titlePage: 'Habilidades',
+        subtitle: 'Tecnologias e práticas que uso no dia a dia para construir produtos web, do frontend ao backend.',
         titleTechs: 'Tecnologias',
         titleOne: 'Frontend Development',
         titleTwo: 'Backend & APIs',
         titleThree: 'FullStack Solutions',
-        descOne: 'Desenvolvimento de interfaces modernas e responsivas utilizando React.js, TypeScript e CSS avançado. Criação de componentes reutilizáveis, otimização de performance, implementação de testes e integração com APIs REST e GraphQL. Experiência com Tailwind CSS, Styled Components e design systems.',
-        descTwo: 'Desenvolvimento de APIs RESTful e GraphQL utilizando Node.js e Express. Integração com bancos de dados relacionais e não-relacionais (PostgreSQL, MongoDB). Implementação de autenticação, autorização e segurança. Deploy e manutenção de aplicações em produção usando Firebase, Vercel e AWS.',
+        descOne: 'Desenvolvimento de interfaces modernas e responsivas utilizando React.js, TypeScript e CSS avançado. Criação de componentes reutilizáveis, otimização de performance, implementação de testes e integração com APIs REST. Experiência com Tailwind CSS, Styled Components e design systems.',
+        descTwo: 'Desenvolvimento de APIs RESTful utilizando PHP, Node.js e Express. Integração com bancos de dados relacionais, com maior experiência em SQL e PostgreSQL. Implementação de autenticação, autorização e segurança. Deploy e manutenção de aplicações em produção usando Vercel e AWS.',
         descThree: 'Arquitetura de soluções completas end-to-end, desde o frontend até o backend. Trabalho com metodologias ágeis, versionamento Git, CI/CD e boas práticas de desenvolvimento. Foco em código limpo, escalabilidade e manutenibilidade. Experiência em trabalhar em equipe e entregar soluções de alta qualidade.',
       },
       contact: {
         titlePage: 'Contato',
+        heading: 'Vamos construir algo juntos.',
+        subtext: 'Disponível para oportunidades como FullStack Developer, freelas e projetos de migração/modernização de sistemas.',
         fieldEmail: 'E-mail',
         fieldName: 'Nome',
         fieldMessage: 'Mensagem',
@@ -224,11 +236,14 @@ export const TextContentDataTest = [
                   css: cssIcon,
                   js: jsIcon,
                   react: reactIcon,
-                  bootstrap: nextjsIcon,
-                  php: nodejsIcon,
-                  laravel: tsIcon,
+                  bootstrap: '',
+                  php: phpIcon,
+                  laravel: laravelIcon,
                   sql: sqlIcon,
                   apiIcon: apiIcon,
+                  nextjs: nextjsIcon,
+                  node: nodejsIcon,
+                  ts: tsIcon,
                   github: gitHubIcon,
                   www: wwwIcon
                 },
@@ -239,6 +254,36 @@ export const TextContentDataTest = [
               createAtText: 'Migração concluída em:',
               createdAt: '2024',
               sortDate: 6
+            },
+
+            {
+              index: 6,
+              title: 'VMarket',
+              text: 'Plataforma de gestão de compras para restaurantes, hotéis e food service. Atuo em sprints de melhoria contínua — novas features, integrações e correção de bugs em produção, atualmente focado em refatoração de layout UX/UI com apoio do Codex AI — no sistema que ajuda empresas a economizar até 25% nos custos de aquisição.',
+              icons: [
+                {
+                  html: '',
+                  css: '',
+                  js: '',
+                  react: reactIcon,
+                  bootstrap: '',
+                  php: '',
+                  laravel: '',
+                  sql: '',
+                  apiIcon: apiIcon,
+                  nextjs: '',
+                  node: nodejsIcon,
+                  ts: tsIcon,
+                  github: '',
+                  www: wwwIcon
+                },
+              ],
+              repo: '',
+              site: 'https://www.vmarket.com.br/',
+              more: 'modal6',
+              createAtText: 'Em produção desde:',
+              createdAt: '2024',
+              sortDate: 7
             }
           ],
         },
@@ -362,9 +407,7 @@ export const TextContentDataTest = [
               title: 'ClubPOS - Migração e Modernização',
               img: [
                 {
-                  img1: 'https://clubpos.org/assets/images/screenshot1.jpg',
-                  img2: 'https://clubpos.org/assets/images/screenshot2.jpg',
-                  img3: 'https://clubpos.org/assets/images/screenshot3.jpg'
+                  img1: ImgClubpos1
                 }
               ],
               text: [
@@ -380,6 +423,28 @@ export const TextContentDataTest = [
             createdAt: '2024',
             sortDate: 6
             },
+
+            {
+              index: 'modal6',
+              title: 'VMarket - Plataforma de Gestão de Compras',
+              img: [
+                {
+                  img1: ImgVmarket1
+                }
+              ],
+              text: [
+                {
+                  p1: 'A VMarket é uma plataforma de gestão de compras para restaurantes, hotéis e food service. O sistema digitaliza processos de compras, permite cotações online e ajuda empresas a economizar até 25% nos custos de aquisição.',
+                  p2: 'Atuo em sprints de melhoria contínua na plataforma — desenvolvimento de novas features, integrações com sistemas e APIs REST, e correção de bugs reportados em produção.',
+                  p3: 'Trabalho com React, TypeScript e Node.js no dia a dia, em equipe com metodologias ágeis, entregando funcionalidades que geram impacto direto no negócio dos clientes. Atualmente também atuo em refatoração de layout UX/UI no frontend com apoio do Codex AI.'
+                }
+              ],
+            repo: '',
+            site: 'https://www.vmarket.com.br/',
+            createAtText: 'Em produção desde:',
+            createdAt: '2024',
+            sortDate: 7
+            },
           ],
         }
       },
@@ -388,48 +453,51 @@ export const TextContentDataTest = [
           {
             name: 'Vinícius Batista',
             titlePage: 'Sobre',
-            positionJob: 'Desenvolvedor FrontEnd & FullStack',
-            titleDescription: 'Resumo',
+            eyebrow: 'Sobre mim',
+            positionJob: 'Desenvolvedor FullStack',
+            titleDescription: 'Trajetória',
             resume: 'Currículo',
-            pdf: '/assets/pdf/cv_23_dez_2025_pt.pdf',
+            pdf: '/assets/pdf/cv_20_jul_2026_pt.pdf',
+            expertiseTitle: 'Expertise',
+            expertiseText: 'React, Node.js e PHP — migração de sistemas legados e arquitetura full-stack de ponta a ponta.',
+            philosophyTitle: 'Filosofia',
+            philosophyText: 'Aprendizado contínuo não é hábito, é princípio de trabalho — acompanho de perto as tendências de IA aplicada a desenvolvimento.',
             paragraphs: [
               {
-                text: `- Após me formar em técnico de informática em 2011, comecei a prestar serviços de freelancer como suporte ténico T.I nos períodos vagos, em 2019 iniciei na empresa ${TIVIT} como suporte técnico para solucionar problemas de microinformática para o cliente ITAU, e nesse mesmo período iniciei meus estudos na área de programação por conta própria.`
+                text: '- FullStack Developer com base sólida em PHP e Node.js, e foco atual em React, Next.js e TypeScript. Na VMarket, atuo em sprints de melhoria contínua — novas features, integrações e correção de bugs em produção — na plataforma de gestão de compras que ajuda restaurantes e hotéis a economizar até 25% nos custos de aquisição.'
               },
               {
-                text: '- Dei inicio no curso a distância de Análise e desenvolvimento de Sistemas da faculdade Anhambi em agosto de 2019 com previsão para conclusão em dezembro de 2022, além de participar de cursos gratuitos de programação praticando com a mão no código.'
+                text: '- Comecei como auxiliar de frontend na SETY TECNOLOGIA, atendendo a conta do cliente ClubPOS. Quando a Sety encerrou seu setor de software house, fui contratado diretamente como PJ pelo próprio ClubPOS, por desempenho e comprometimento — lá, evoluí até ficar responsável pela migração completa do sistema de Laravel/jQuery/Bootstrap para Node.js e Next.js. Hoje sigo colaborando pontualmente com apoio de ferramentas de IA para novas implementações.'
               },
               {
-                text: '- Atualmente estou atuando como desenvolvedor frontend na empresa SETY TECNOLOGIA desde agosto de 2021, onde venho absorvendo muito conhecimento e experiência, cuidando do desenvolvimento dos requisitos funcionais e atuando em correções de bugs.'
+                text: `- Após me formar em técnico de informática em 2011, cheguei a criar dois sistemas em Delphi (controle de estoque e gestão de fluxo para imobiliárias) por conta própria — não avançaram profissionalmente, já que na época eu trabalhava em logística numa terceirizada da Volkswagen (2007-2015), fazendo suporte técnico esporádico em paralelo pra não perder contato com tecnologia. Entrei em TI formalmente como suporte técnico na ${TIVIT} em 2019, solucionando problemas de microinformática para o cliente ITAU, e iniciei, no mesmo período, a graduação em Análise e Desenvolvimento de Sistemas.`
               },
               {
-                text: '- Desde então, venho trabalhando em criações de funcionalidades, implementação de páginas com reactjs, consumindo dados de API e Backend através de endpoints.'
+                text: '- Meu aprendizado é contínuo e autodirigido — acompanho de perto conteúdo técnico e tendências de IA aplicada a desenvolvimento, para manter minha stack e meu fluxo de trabalho atualizados com o que o mercado está adotando agora.'
               }
             ],
             titleExperience: 'Experiência Profissional',
-            titleTestimonies: 'Testemunhos',
-            curiosity: '"O sucesso não ocorre por acaso. Em vez de dizer: isto não pode ser feito, continue questionando o seu cérebro: como isto pode ser feito? Comprometa-se com suas metas e encare os obstáculos como etapas para atingir o objetivo final. Faça parte da solução, ao invés de ser parte do problema. Faça bem ­feito não só para agradar aos outros, mas principalmente para agradar a si próprio. Se você falha em planejar, está planejando falhar. - (Doutor. Lair Ribeiro)"'
+            titleTestimonies: 'Testemunhos'
           }
         ],
         experience: [
           {
             id: 1,
             company: 'VMarket',
-            position: 'Desenvolvedor Frontend',
-            period: 'Presente',
+            position: 'Desenvolvedor FullStack',
+            period: 'Ago 2024 - Presente',
             location: 'São José dos Campos - SP',
-            type: 'Frontend',
-            description: 'Desenvolvimento de interfaces web responsivas e modernas utilizando React.js e tecnologias modernas. Trabalho na plataforma de gestão de compras para food service, desenvolvendo funcionalidades que ajudam empresas a economizar até 25% nos custos de aquisição.',
+            type: 'FullStack',
+            description: 'Atuo em sprints de melhoria contínua na plataforma de gestão de compras para restaurantes, hotéis e food service — desenvolvimento de novas features, integrações e correção de bugs reportados em produção. Atualmente focado em demandas de refatoração de layout UX/UI no frontend, com apoio do Codex AI. O sistema ajuda empresas a economizar até 25% nos custos de aquisição.',
             achievements: [
+              'Refatoração de layout UX/UI no frontend com apoio do Codex AI',
+              'Desenvolvimento de novas features em sprints de melhoria contínua',
+              'Integrações com sistemas e APIs REST',
+              'Atuação em quadro dedicado de bugfix para produção',
               'Desenvolvimento de componentes reutilizáveis em React',
-              'Integração com APIs REST e GraphQL',
-              'Implementação de testes unitários e de integração',
-              'Otimização de performance e SEO',
-              'Trabalho em equipe com metodologias ágeis',
-              'Desenvolvimento de dashboards e métricas de compras',
-              'Implementação de funcionalidades de cotação automatizada'
+              'Trabalho em equipe com metodologias ágeis'
             ],
-            technologies: ['React', 'JavaScript', 'TypeScript', 'HTML5', 'CSS3', 'Git', 'REST API', 'GraphQL'],
+            technologies: ['React', 'JavaScript', 'TypeScript', 'HTML5', 'CSS3', 'Git', 'REST API'],
             current: true,
             projects: [
               {
@@ -456,7 +524,7 @@ export const TextContentDataTest = [
               'Arquitetura de sistemas escaláveis'
             ],
             technologies: ['React', 'Node.js', 'Express', 'MongoDB', 'PostgreSQL', 'Firebase', 'Vercel', 'AWS'],
-            current: true,
+            current: false,
             projects: [
               {
                 name: 'Ahsant',
@@ -469,27 +537,28 @@ export const TextContentDataTest = [
           {
             id: 4,
             company: 'ClubPOS',
-            position: 'Desenvolvedor FullStack',
-            period: '2023 - 2024',
+            position: 'Desenvolvedor FullStack (PJ)',
+            period: 'Ago 2022 - Presente',
             location: 'Remoto',
             type: 'FullStack',
-            description: 'Trabalhei na migração completa do sistema ClubPOS de Laravel/jQuery/Bootstrap para Node.js e Next.js. Modernizei toda a arquitetura do sistema, melhorando performance, código e experiência do usuário.',
+            description: 'Comecei como auxiliar de frontend na SETY TECNOLOGIA, atendendo a conta do cliente ClubPOS. Quando a Sety encerrou seu setor de software house em 2022, fui contratado diretamente como PJ pelo próprio ClubPOS, por desempenho e comprometimento. Atuação principal como PJ até Ago 2023, evoluindo até ficar responsável pela migração completa do sistema de Laravel/jQuery/Bootstrap para Node.js e Next.js. Desde então, sigo colaborando pontualmente conforme demanda.',
             achievements: [
-              'Migração completa de Laravel para Node.js e Next.js',
+              'Evolução de auxiliar de frontend a responsável pela migração do sistema',
+              'Migração completa de Laravel/jQuery/Bootstrap para Node.js e Next.js',
               'Modernização da arquitetura do sistema',
-              'Otimização de consultas ao banco de dados',
+              'Otimização de consultas ao banco de dados (SQL)',
               'Melhoria de segurança e boas práticas',
-              'Implementação de novas funcionalidades',
-              'Manutenção do sistema legado durante transição'
+              'Manutenção do sistema legado durante a transição',
+              'Atualmente colaboro pontualmente como freelancer, com apoio de ferramentas de IA'
             ],
-            technologies: ['Next.js', 'Node.js', 'React', 'TypeScript', 'SQL', 'REST API', 'Laravel', 'jQuery'],
+            technologies: ['PHP', 'Laravel', 'jQuery', 'Next.js', 'Node.js', 'React', 'TypeScript', 'SQL', 'REST API'],
             current: false,
             projects: [
               {
                 name: 'ClubPOS',
                 url: 'https://clubpos.org',
-                description: 'Sistema de gestão desenvolvido inicialmente em Laravel antigo com jQuery e Bootstrap. Trabalhei na migração completa para Node.js e Next.js, modernizando toda a arquitetura e melhorando significativamente a performance.',
-                technologies: ['Next.js', 'Node.js', 'React', 'TypeScript', 'SQL', 'REST API']
+                description: 'Sistema de gestão desenvolvido inicialmente em PHP/Laravel com jQuery e Bootstrap. Evoluí de auxiliar a responsável pela migração completa para Node.js e Next.js, modernizando toda a arquitetura e melhorando significativamente a performance.',
+                technologies: ['PHP', 'Laravel', 'Next.js', 'Node.js', 'React', 'TypeScript', 'SQL', 'REST API']
               }
             ]
           },
@@ -497,10 +566,10 @@ export const TextContentDataTest = [
             id: 3,
             company: 'SETY TECNOLOGIA',
             position: 'Desenvolvedor Frontend',
-            period: 'Ago 2021 - 2023',
+            period: 'Ago 2021 - Jul 2022',
             location: 'São José dos Campos - SP',
             type: 'Frontend',
-            description: 'Desenvolvimento de interfaces web responsivas utilizando React.js, implementação de funcionalidades, correção de bugs e otimização de performance.',
+            description: 'Iniciei como auxiliar de frontend, atuando principalmente na conta do cliente ClubPOS — desenvolvimento de interfaces com React.js, implementação de funcionalidades e correção de bugs.',
             achievements: [
               'Desenvolvimento de componentes reutilizáveis em React',
               'Integração com APIs REST',
@@ -511,10 +580,42 @@ export const TextContentDataTest = [
             current: false
           },
           {
+            id: 5,
+            company: 'Freelance — Panamá',
+            position: 'Desenvolvedor FullStack (Freelance)',
+            period: '2022',
+            location: 'Cidade do Panamá, Panamá',
+            type: 'FullStack',
+            description: 'Freelance de curta duração (~2 semanas) via um investidor da SETY TECNOLOGIA, que também investia em uma plataforma de investimentos. Fui até a Panamá para investigar e implementar o consumo da API de cartão de crédito do Atlas Bank (Banistmo).',
+            achievements: [
+              'Implementação de autenticação OAuth2 com Node.js',
+              'Consumo de API bancária do Atlas Bank/Banistmo',
+              'Criação de interface de login',
+              'Exibição de dados dos endpoints na tela'
+            ],
+            technologies: ['Node.js', 'OAuth2', 'REST API', 'JavaScript'],
+            current: false
+          },
+          {
+            id: 6,
+            company: 'DXC Technology',
+            position: 'Técnico de Suporte I (Help Desk)',
+            period: 'Mai 2021 - Ago 2021',
+            location: 'São José dos Campos - SP',
+            type: 'Suporte',
+            description: 'Passagem curta em suporte de Help Desk, na sequência do TIVIT, atendendo ainda a conta do cliente ITAÚ.',
+            achievements: [
+              'Resolução de incidentes escalados do suporte de Nível 1',
+              'Soluções de problemas de software para os departamentos do ITAÚ'
+            ],
+            technologies: ['Windows', 'Suporte Técnico'],
+            current: false
+          },
+          {
             id: 4,
             company: 'TIVIT',
             position: 'Suporte Técnico T.I',
-            period: '2019 - Ago 2021',
+            period: 'Mai 2019 - Mai 2021',
             location: 'São José dos Campos - SP',
             type: 'Suporte',
             description: 'Suporte técnico para solução de problemas de microinformática para cliente ITAU, manutenção de equipamentos e sistemas.',
@@ -524,6 +625,21 @@ export const TextContentDataTest = [
               'Manutenção preventiva de equipamentos'
             ],
             technologies: ['Windows', 'Linux', 'Hardware', 'Redes'],
+            current: false
+          },
+          {
+            id: 7,
+            company: 'Freelancer',
+            position: 'Suporte Técnico T.I (esporádico)',
+            period: '2012 - 2020',
+            location: 'São José dos Campos - SP',
+            type: 'Suporte',
+            description: 'Suporte técnico remoto e presencial esporádico em sistemas Windows, em paralelo ao trabalho em logística na indústria automotiva — forma de manter contato com tecnologia, minha paixão desde cedo.',
+            achievements: [
+              'Suporte remoto e presencial em sistemas Windows',
+              'Configuração de softwares e hardware'
+            ],
+            technologies: ['Windows', 'Hardware', 'Suporte Técnico'],
             current: false
           }
         ],
@@ -558,7 +674,7 @@ export const TextContentDataTest = [
         
           {
             index: 1  ,
-            person: 'https://media-exp1.licdn.com/dms/image/C4D03AQHbPvopzG62tA/profile-displayphoto-shrink_200_200/0/1616934787177?e=1673481600&v=beta&t=LS-SEoWt4Oauwh_7oU4_g4Qs21J8-s2wsTjPvTJ3vW0',
+            person: 'https://media.licdn.com/dms/image/v2/D4D03AQG4lxIwUh8RcQ/profile-displayphoto-scale_400_400/B4DZp.ZOZ3KQAk-/0/1763057133940?e=1785974400&v=beta&t=Jm7MAVgRnSUh82eBRvSY8c3qiOfqy6EYkxgFPdr6lIg',
             name: 'L. Felipe Camargo',
             position: 'Mobile & Web FronEnd',
             link: 'https://www.linkedin.com/in/lfelipe-camargo/',
@@ -582,33 +698,6 @@ export const TextContentDataTest = [
             description: 'Trabalhar com o Vini foi um prazer enorme! Uma pessoa muito esforçada, flexível, pronta pra ouvir, aprender e ensinar, além de ser um ótimo colega de trabalho, sempre bem humorado e focado nas coisas importantes.',
             iconCote: coteIcon
           },
-          
-          {
-            index: 2,
-            person: 'https://media-exp2.licdn.com/dms/image/C4D03AQEdwgTt8QU1jA/profile-displayphoto-shrink_200_200/0/1516816691829?e=1661990400&v=beta&t=xYrZkxSY-6A472ky7OpTPF9icDWGM1tlvpto6-zfKlg',
-            name: 'André Estevão',
-            position: 'Dev. FullStack & Comunicador Social',
-            link: 'https://www.linkedin.com/in/andreaesil/',
-            star: [
-              {
-                one: starIcon
-              },
-              {
-                two: starIcon
-              },
-              {
-                three: starIcon
-              },
-              {
-                four: starIcon
-              },
-              {
-                five: starIcon
-              }
-            ],
-            description: 'O Vinícius é um profissional que, acima de outras qualidades, é dedicado. Muito focado e quando aceita uma missão, procura cumpri-la da melhor forma e trata com seriedade os projetos os quais participa. Eu participei de dois projetos com ele e em ambos ele depositou seu profissionalismo, buscando entregar o melhor código.',
-            iconCote: coteIcon
-          },
         ]
       },
       
@@ -618,22 +707,32 @@ export const TextContentDataTest = [
   {
     english: {
       home: {
-        welcome: 'Hi there, welcome!',
-        description: "I'm Vinícius",
-        position: "FullStack Developer"
+        welcome: 'FullStack Developer — PHP · Node.js · React · Next.js',
+        description: 'I evolved from assistant to lead on a legacy system migration, and today I build products that drive real results — like the platform that helps businesses save up to 25% on purchasing.',
+        position: 'Vinícius Batista',
+        eyebrow: 'FullStack Developer',
+        chipYears: '+4 years as a developer',
+        chipStack: 'PHP • React • Node',
+        highlight: 'I currently work on VMarket\'s purchasing management platform, which helps restaurants and hotels save up to 25% on acquisition costs.',
+        ctaProjects: 'View Projects',
+        ctaResume: 'Download CV',
+        badgeLabel: 'Full-Stack'
       },
       shills: {
         titlePage: 'Skills',
+        subtitle: 'Technologies and practices I use day-to-day to build web products, from frontend to backend.',
         titleTechs: 'Technologies',
         titleOne: 'Frontend Development',
         titleTwo: 'Backend & APIs',
         titleThree: 'FullStack Solutions',
-        descOne: 'Development of modern and responsive interfaces using React.js, TypeScript and advanced CSS. Creation of reusable components, performance optimization, test implementation and integration with REST and GraphQL APIs. Experience with Tailwind CSS, Styled Components and design systems.',
-        descTwo: 'Development of RESTful and GraphQL APIs using Node.js and Express. Integration with relational and non-relational databases (PostgreSQL, MongoDB). Implementation of authentication, authorization and security. Deploy and maintenance of applications in production using Firebase, Vercel and AWS.',
+        descOne: 'Development of modern and responsive interfaces using React.js, TypeScript and advanced CSS. Creation of reusable components, performance optimization, test implementation and integration with REST APIs. Experience with Tailwind CSS, Styled Components and design systems.',
+        descTwo: 'Development of RESTful APIs using PHP, Node.js and Express. Integration with relational databases, with strongest experience in SQL and PostgreSQL. Implementation of authentication, authorization and security. Deploy and maintenance of applications in production using Vercel and AWS.',
         descThree: 'Architecture of complete end-to-end solutions, from frontend to backend. Work with agile methodologies, Git versioning, CI/CD and development best practices. Focus on clean code, scalability and maintainability. Experience working in teams and delivering high-quality solutions.',
       },
       contact: {
         titlePage: 'Contact',
+        heading: "Let's build something together.",
+        subtext: 'Available for FullStack Developer opportunities, freelance work, and system migration/modernization projects.',
         fieldEmail: 'E-mail',
         fieldName: 'Name',
         fieldMessage: 'Message',
@@ -785,11 +884,14 @@ export const TextContentDataTest = [
                   css: cssIcon,
                   js: jsIcon,
                   react: reactIcon,
-                  bootstrap: nextjsIcon,
-                  php: nodejsIcon,
-                  laravel: tsIcon,
+                  bootstrap: '',
+                  php: phpIcon,
+                  laravel: laravelIcon,
                   sql: sqlIcon,
                   apiIcon: apiIcon,
+                  nextjs: nextjsIcon,
+                  node: nodejsIcon,
+                  ts: tsIcon,
                   github: gitHubIcon,
                   www: wwwIcon
                 },
@@ -798,7 +900,38 @@ export const TextContentDataTest = [
               site: 'https://clubpos.org',
               more: 'modal5',
               createAtText: 'Migration completed: ',
-              createdAt: '2024'
+              createdAt: '2024',
+              sortDate: 6
+            },
+
+            {
+              index: 6,
+              title: 'VMarket',
+              text: 'Purchasing management platform for restaurants, hotels and food service. I work in continuous-improvement sprints — new features, integrations and production bugfixes, currently focused on UX/UI layout refactoring with Codex AI support — on the system that helps companies save up to 25% on acquisition costs.',
+              icons: [
+                {
+                  html: '',
+                  css: '',
+                  js: '',
+                  react: reactIcon,
+                  bootstrap: '',
+                  php: '',
+                  laravel: '',
+                  sql: '',
+                  apiIcon: apiIcon,
+                  nextjs: '',
+                  node: nodejsIcon,
+                  ts: tsIcon,
+                  github: '',
+                  www: wwwIcon
+                },
+              ],
+              repo: '',
+              site: 'https://www.vmarket.com.br/',
+              more: 'modal6',
+              createAtText: 'In production since:',
+              createdAt: '2024',
+              sortDate: 7
             }
           ]
         },
@@ -919,9 +1052,7 @@ export const TextContentDataTest = [
               title: 'ClubPOS - Migration and Modernization',
               img: [
                 {
-                  img1: 'https://clubpos.org/assets/images/screenshot1.jpg',
-                  img2: 'https://clubpos.org/assets/images/screenshot2.jpg',
-                  img3: 'https://clubpos.org/assets/images/screenshot3.jpg'
+                  img1: ImgClubpos1
                 }
               ],
               text: [
@@ -935,6 +1066,29 @@ export const TextContentDataTest = [
             site: 'https://clubpos.org',
             createAtText: 'Migration completed: ',
             createdAt: '2024',
+            sortDate: 6
+            },
+
+            {
+              index: 'modal6',
+              title: 'VMarket - Purchasing Management Platform',
+              img: [
+                {
+                  img1: ImgVmarket1
+                }
+              ],
+              text: [
+                {
+                  p1: 'VMarket is a purchasing management platform for restaurants, hotels and food service. The system digitizes purchasing processes, enables online quotations and helps companies save up to 25% on acquisition costs.',
+                  p2: 'I work in continuous-improvement sprints on the platform — developing new features, integrating with systems and REST APIs, and fixing bugs reported in production.',
+                  p3: 'I work daily with React, TypeScript and Node.js, on an agile team, delivering features that drive direct business impact for clients. I currently also work on UX/UI layout refactoring on the frontend with Codex AI support.'
+                }
+              ],
+            repo: '',
+            site: 'https://www.vmarket.com.br/',
+            createAtText: 'In production since:',
+            createdAt: '2024',
+            sortDate: 7
             },
           ]
         }
@@ -944,48 +1098,51 @@ export const TextContentDataTest = [
           {
             name: 'Vinícius Batista',
             titlePage: 'About',
-            positionJob: 'FrontEnd & FullStack Developer',
-            titleDescription: 'Resume',
+            eyebrow: 'About me',
+            positionJob: 'FullStack Developer',
+            titleDescription: 'Trajectory',
             resume: 'Resume',
+            expertiseTitle: 'Expertise',
+            expertiseText: 'React, Node.js and PHP — legacy system migration and end-to-end full-stack architecture.',
+            philosophyTitle: 'Philosophy',
+            philosophyText: "Continuous learning isn't a habit, it's a working principle — I closely follow AI-in-development trends.",
             paragraphs: [
               {
-                text: `- After graduating as a computer technician in 2011, I started to provide freelance services as technical support T.I in vacant periods, in 2019 I started at the company TIVIT as technical support to solve microcomputer problems for the ITAU client, and in that same period I started my studies in the programming area on their own.`
+                text: "- FullStack Developer with a solid base in PHP and Node.js, currently focused on React, Next.js and TypeScript. At VMarket, I work in continuous-improvement sprints — new features, integrations and production bugfixes — on the purchasing management platform that helps restaurants and hotels save up to 25% on acquisition costs."
               },
               {
-                text: '- I started the distance course in Systems Analysis and Development at the Anhambi College in August 2019, with a forecast for completion in December 2022, in addition to participating in free programming courses practicing with my hands on the code.'
+                text: '- I started as a frontend assistant at SETY TECNOLOGIA, working on the ClubPOS client account. When Sety closed its software house division, I was hired directly as a contractor by ClubPOS itself, based on performance and commitment — there, I grew into the person responsible for the complete migration from Laravel/jQuery/Bootstrap to Node.js and Next.js. Today I still collaborate occasionally, using AI tools to speed up new implementations.'
               },
               {
-                text: '- I am currently working as a frontend developer at SETY TECNOLOGIA since August 2021, where I have been absorbing a lot of knowledge and experience, taking care of the development of functional requirements and working on bug fixes.'
+                text: "- After graduating as a computer technician in 2011, I built two personal systems in Delphi (inventory control and real estate flow management) on my own — they didn't go further professionally, since at the time I worked in logistics at a Volkswagen third-party contractor (2007-2015), doing sporadic technical support on the side to stay in touch with technology. I formally entered IT as technical support at TIVIT in 2019, solving microcomputer problems for the ITAU client, and started my degree in Systems Analysis and Development during that same period."
               },
               {
-                text: "- Since then, I've been working on creating features, implementing pages with reactjs, consuming API and Backend data through endpoints."
+                text: "- My learning is continuous and self-directed — I closely follow technical content and AI-in-development trends to keep my stack and workflow up to date with what the market is adopting now."
               }
             ],
             titleExperience: 'Professional Experience',
-            pdf: '/assets/pdf/cv_23_dez_2025_en.pdf',
-            titleTestimonies: 'Testimonies',
-            curiosity: "'Success does not happen by accident. Instead of saying: this can't be done, keep asking your brain: how can this be done? Commit to your goals and view obstacles as steps to reach the ultimate goal. Be part of the solution instead of being part of the problem. Do it well not only to please others, but mainly to please yourself. If you fail to plan, you are planning to fail. - (Doctor. Lair Ribeiro)'"
+            pdf: '/assets/pdf/cv_20_jul_2026_en.pdf',
+            titleTestimonies: 'Testimonies'
           }
         ],
         experience: [
           {
             id: 1,
             company: 'VMarket',
-            position: 'Frontend Developer',
-            period: 'Present',
+            position: 'FullStack Developer',
+            period: 'Aug 2024 - Present',
             location: 'São José dos Campos - SP',
-            type: 'Frontend',
-            description: 'Development of responsive and modern web interfaces using React.js and modern technologies. Working on the food service purchasing management platform, developing features that help companies save up to 25% on acquisition costs.',
+            type: 'FullStack',
+            description: 'I work in continuous-improvement sprints on the purchasing management platform for restaurants, hotels and food service — developing new features, integrations and fixing bugs reported in production. Currently focused on UX/UI layout refactoring on the frontend, with Codex AI support. The system helps companies save up to 25% on acquisition costs.',
             achievements: [
+              'UX/UI layout refactoring on the frontend with Codex AI support',
+              'Development of new features in continuous-improvement sprints',
+              'Integrations with systems and REST APIs',
+              'Ownership of a dedicated production bugfix board',
               'Development of reusable React components',
-              'Integration with REST and GraphQL APIs',
-              'Implementation of unit and integration tests',
-              'Performance and SEO optimization',
-              'Teamwork with agile methodologies',
-              'Development of dashboards and purchasing metrics',
-              'Implementation of automated quotation features'
+              'Teamwork with agile methodologies'
             ],
-            technologies: ['React', 'JavaScript', 'TypeScript', 'HTML5', 'CSS3', 'Git', 'REST API', 'GraphQL'],
+            technologies: ['React', 'JavaScript', 'TypeScript', 'HTML5', 'CSS3', 'Git', 'REST API'],
             current: true,
             projects: [
               {
@@ -1012,7 +1169,7 @@ export const TextContentDataTest = [
               'Scalable system architecture'
             ],
             technologies: ['React', 'Node.js', 'Express', 'MongoDB', 'PostgreSQL', 'Firebase', 'Vercel', 'AWS'],
-            current: true,
+            current: false,
             projects: [
               {
                 name: 'Ahsant',
@@ -1025,27 +1182,28 @@ export const TextContentDataTest = [
           {
             id: 4,
             company: 'ClubPOS',
-            position: 'FullStack Developer',
-            period: '2023 - 2024',
+            position: 'FullStack Developer (Contractor)',
+            period: 'Aug 2022 - Present',
             location: 'Remote',
             type: 'FullStack',
-            description: 'Worked on the complete migration of the ClubPOS system from Laravel/jQuery/Bootstrap to Node.js and Next.js. Modernized the entire system architecture, improving performance, code and user experience.',
+            description: 'I started as a frontend assistant at SETY TECNOLOGIA, working on the ClubPOS client account. When Sety closed its software house division in 2022, I was hired directly as a contractor by ClubPOS itself, based on performance and commitment. Main engagement as a contractor until Aug 2023, growing into the person responsible for the complete migration from Laravel/jQuery/Bootstrap to Node.js and Next.js. Since then, I continue collaborating occasionally as needed.',
             achievements: [
-              'Complete migration from Laravel to Node.js and Next.js',
+              'Grew from frontend assistant to lead on the system migration',
+              'Complete migration from Laravel/jQuery/Bootstrap to Node.js and Next.js',
               'System architecture modernization',
-              'Database query optimization',
+              'Database query optimization (SQL)',
               'Security improvements and best practices',
-              'Implementation of new features',
-              'Legacy system maintenance during transition'
+              'Legacy system maintenance during transition',
+              'Currently collaborate occasionally as a freelancer, using AI tools'
             ],
-            technologies: ['Next.js', 'Node.js', 'React', 'TypeScript', 'SQL', 'REST API', 'Laravel', 'jQuery'],
+            technologies: ['PHP', 'Laravel', 'jQuery', 'Next.js', 'Node.js', 'React', 'TypeScript', 'SQL', 'REST API'],
             current: false,
             projects: [
               {
                 name: 'ClubPOS',
                 url: 'https://clubpos.org',
-                description: 'Management system initially developed in old Laravel with jQuery and Bootstrap. Worked on complete migration to Node.js and Next.js, modernizing the entire architecture and significantly improving performance.',
-                technologies: ['Next.js', 'Node.js', 'React', 'TypeScript', 'SQL', 'REST API']
+                description: 'Management system initially developed in PHP/Laravel with jQuery and Bootstrap. I grew from assistant to lead on the complete migration to Node.js and Next.js, modernizing the entire architecture and significantly improving performance.',
+                technologies: ['PHP', 'Laravel', 'Next.js', 'Node.js', 'React', 'TypeScript', 'SQL', 'REST API']
               }
             ]
           },
@@ -1053,10 +1211,10 @@ export const TextContentDataTest = [
             id: 3,
             company: 'SETY TECNOLOGIA',
             position: 'Frontend Developer',
-            period: 'Aug 2021 - 2023',
+            period: 'Aug 2021 - Jul 2022',
             location: 'São José dos Campos - SP',
             type: 'Frontend',
-            description: 'Development of responsive web interfaces using React.js, feature implementation, bug fixes and performance optimization.',
+            description: 'Started as a frontend assistant, working mainly on the ClubPOS client account — interface development with React.js, feature implementation and bug fixes.',
             achievements: [
               'Development of reusable React components',
               'Integration with REST APIs',
@@ -1067,10 +1225,42 @@ export const TextContentDataTest = [
             current: false
           },
           {
+            id: 5,
+            company: 'Freelance — Panama',
+            position: 'FullStack Developer (Freelance)',
+            period: '2022',
+            location: 'Panama City, Panama',
+            type: 'FullStack',
+            description: 'Short-term freelance engagement (~2 weeks) through an investor at SETY TECNOLOGIA, who also invested in an investment platform. I traveled to Panama to investigate and implement credit card API consumption for Atlas Bank (Banistmo).',
+            achievements: [
+              'Implemented OAuth2 authentication with Node.js',
+              'Consumed Atlas Bank/Banistmo banking API',
+              'Built a login interface',
+              'Displayed endpoint data on screen'
+            ],
+            technologies: ['Node.js', 'OAuth2', 'REST API', 'JavaScript'],
+            current: false
+          },
+          {
+            id: 6,
+            company: 'DXC Technology',
+            position: 'Support Technician I (Help Desk)',
+            period: 'May 2021 - Aug 2021',
+            location: 'São José dos Campos - SP',
+            type: 'Support',
+            description: 'Short stint in Help Desk support, right after TIVIT, still serving the ITAU client account.',
+            achievements: [
+              'Resolution of escalated Level 1 support incidents',
+              'Software troubleshooting for ITAU departments'
+            ],
+            technologies: ['Windows', 'Technical Support'],
+            current: false
+          },
+          {
             id: 4,
             company: 'TIVIT',
             position: 'IT Technical Support',
-            period: '2019 - Aug 2021',
+            period: 'May 2019 - May 2021',
             location: 'São José dos Campos - SP',
             type: 'Support',
             description: 'Technical support for solving microcomputer problems for ITAU client, equipment and systems maintenance.',
@@ -1080,6 +1270,21 @@ export const TextContentDataTest = [
               'Preventive maintenance of equipment'
             ],
             technologies: ['Windows', 'Linux', 'Hardware', 'Networks'],
+            current: false
+          },
+          {
+            id: 7,
+            company: 'Freelancer',
+            position: 'IT Technical Support (sporadic)',
+            period: '2012 - 2020',
+            location: 'São José dos Campos - SP',
+            type: 'Support',
+            description: 'Sporadic remote and on-site technical support on Windows systems, alongside a logistics job in the automotive industry — a way to stay in touch with technology, my passion since early on.',
+            achievements: [
+              'Remote and on-site support on Windows systems',
+              'Software and hardware configuration'
+            ],
+            technologies: ['Windows', 'Hardware', 'Technical Support'],
             current: false
           }
         ],
@@ -1136,33 +1341,6 @@ export const TextContentDataTest = [
               }
             ],
             description: 'Working with Vini was a great pleasure! A very hardworking, flexible person, ready to listen, learn and teach, in addition to being a great co-worker, always in a good mood and focused on important things.',
-            iconCote: coteIcon
-          },
-          
-          {
-            index: 2,
-            person: 'https://media-exp2.licdn.com/dms/image/C4D03AQEdwgTt8QU1jA/profile-displayphoto-shrink_200_200/0/1516816691829?e=1661990400&v=beta&t=xYrZkxSY-6A472ky7OpTPF9icDWGM1tlvpto6-zfKlg',
-            name: 'André Estevão',
-            position: 'Dev. FullStack & Social Communicator',
-            link: 'https://www.linkedin.com/in/andreaesil/',
-            star: [
-              {
-                one: starIcon
-              },
-              {
-                two: starIcon
-              },
-              {
-                three: starIcon
-              },
-              {
-                four: starIcon
-              },
-              {
-                five: starIcon
-              }
-            ],
-            description: 'Vinícius is a professional who, above other qualities, is dedicated. Very focused and when he accepts a mission, he tries to fulfill it in the best way and treats the projects in which he participates seriously. I participated in two projects with him and in both he put his professionalism, seeking to deliver the best code.',
             iconCote: coteIcon
           },
         ]

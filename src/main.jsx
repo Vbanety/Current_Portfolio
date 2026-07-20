@@ -11,20 +11,24 @@ import Skills from './Pages/Skills/Skills'
 import Sobre from './Pages/Sobre/Sobre'
 import Contato from './Pages/Contato/Contato'
 import { AnimatePresence } from 'framer-motion';
+import { SettingsProvider } from './Context/SettingsContext'
+import SettingsPanel from './Components/SettingsPanel/SettingsPanel'
 import './styles/global.css'
 
 
 ReactDOM.createRoot(document.getElementById('root')).render(
-    <AnimatePresence>
-      <BrowserRouter>
-        <Routes>
-          <Route path='/' exact element={<App />} />
-          <Route path='/portfolio' exact element={<Portfolio />} />
-          <Route path='/skills' exact element={<Skills />} />
-          <Route path='/sobre' exact element={<Sobre />} />
-          <Route path='/contato' exact element={<Contato />} />
-        </Routes>
-      </BrowserRouter>
-    </AnimatePresence>
-
+    <SettingsProvider>
+      <AnimatePresence>
+        <BrowserRouter>
+          <SettingsPanel />
+          <Routes>
+            <Route path='/' exact element={<App />} />
+            <Route path='/portfolio' exact element={<Portfolio />} />
+            <Route path='/skills' exact element={<Skills />} />
+            <Route path='/sobre' exact element={<Sobre />} />
+            <Route path='/contato' exact element={<Contato />} />
+          </Routes>
+        </BrowserRouter>
+      </AnimatePresence>
+    </SettingsProvider>
 )

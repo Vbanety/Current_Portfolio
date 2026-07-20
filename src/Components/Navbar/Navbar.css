@@ -19,14 +19,14 @@
 .header_avatar {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  width: 300px;
+  justify-content: flex-end;
+  gap: 1.25rem;
   position: relative;
 }
 
 .header_avatar h1 {
   color: var(--text-primary);
-  font-family: 'Rajdhani', sans-serif;
+  font-family: 'Inter', sans-serif;
   font-weight: 700;
   letter-spacing: 0.05em;
   text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
@@ -36,9 +36,44 @@
   width: 55px
 }
 
+.cta-hire-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 40px;
+  padding: 0 1.1rem;
+  border-radius: 999px;
+  background: var(--primary-blue);
+  color: #fff !important;
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  font-size: 0.9rem;
+  text-decoration: none;
+  white-space: nowrap;
+  box-shadow: 0 2px 8px rgba(37, 99, 235, 0.35);
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.cta-hire-btn:hover {
+  background: var(--primary-blue-dark);
+  transform: translateY(-1px);
+}
+
+@media (max-width: 600px) {
+  .cta-hire-btn {
+    padding: 0 0.8rem;
+    font-size: 0.8rem;
+  }
+}
+
 .menu-bars {
   font-size: 2rem;
   background: none;
+  min-width: 44px;
+  min-height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .navbar.active {
@@ -145,7 +180,7 @@
   text-decoration: none;
   color: var(--text-secondary);
   font-size: 18px;
-  font-family: 'Rajdhani', sans-serif;
+  font-family: 'Inter', sans-serif;
   font-weight: 600;
   width: 95%;
   height: 100%;
@@ -154,15 +189,20 @@
   padding: 0 16px;
   border-radius: 4px;
   transition: all 0.3s ease;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
+  letter-spacing: -0.01em;
 }
 
 .nav-text a:hover {
-  background: linear-gradient(90deg, rgba(61, 123, 212, 0.2), transparent);
+  background: linear-gradient(90deg, rgba(37, 99, 235, 0.2), transparent);
   color: var(--accent-yellow);
   border-left: 3px solid var(--accent-yellow);
   transform: translateX(5px);
+}
+
+.nav-text a.nav-link-active {
+  background: linear-gradient(90deg, rgba(37, 99, 235, 0.2), transparent);
+  color: var(--primary-blue-light);
+  border-left: 3px solid var(--primary-blue);
 }
 
 .nav-menu-items {
@@ -180,7 +220,7 @@
   border-bottom: 1px solid var(--border-color);
 }
 
-span {
+.nav-text span {
   margin-left: 16px;
 }
 
@@ -224,7 +264,8 @@ span {
   }
 
   .header_avatar {
-    width: 80%;
+    gap: 0.6rem;
+    flex-wrap: nowrap;
   }
 
   .header_avatar h1 {
